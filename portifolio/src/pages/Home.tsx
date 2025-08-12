@@ -8,9 +8,24 @@ import { ExperienceSection } from "../components/sections/ExperienceSection";
 import { ContactSection } from "../components/sections/ContactSection";
 import { PersonalChat } from "../components/PersonalChat";
 import { Footer } from "../components/Footer";
+import { TechSkills } from "../components/TechSkills";
 import profileImg from "../assets/profile.jpeg";
 
+
 export const Home: React.FC = () => {
+
+  const techs = [
+    { name: "React", src: '' },
+    { name: "TypeScript", src: '' },
+    { name: "Node.js", src: '' },
+    { name: "Next.js", src: '', bg: "#0B0F14" },
+    { name: "Docker", src: '' },
+    { name: "PostgreSQL", src: '' },
+    { name: "Material UI", src: '' },
+    { name: "Vite", src: '' },
+    { name: "Tailwind CSS", src: '' },
+  ];
+
   return (
     <Box
       sx={{
@@ -49,6 +64,10 @@ export const Home: React.FC = () => {
         <ProjectsSection /> 
         <Divider />
         <ExperienceSection />
+        <Divider />
+        <Container sx={{ py: 4 }}>
+          <TechSkills items={techs} rounded={2} imageHeight={64} clickable />
+        </Container>
         <Divider />
         <ContactSection />
       </main>
