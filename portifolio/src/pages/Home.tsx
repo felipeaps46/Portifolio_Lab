@@ -49,7 +49,7 @@ export const Home: React.FC = () => {
         >
           <Container maxWidth="md" sx={{ textAlign: "center" }}>
             <Typography variant="h2" fontWeight={800} gutterBottom>
-              Olá, sou Desenvolvedor Frontend
+              Olá, sou Desenvolvedor Frontend e backend
             </Typography>
             <Typography variant="h6" color="text.secondary">
               React • TypeScript • UI/UX • Performance
