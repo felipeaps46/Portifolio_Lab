@@ -53,7 +53,7 @@ export const ProjectsSection: React.FC = () => {
               display: "flex",
               flexWrap: "wrap",
               justifyContent: "center",
-              gap: 1,
+
             }}
           >
             {FILTERS.map((f) => (
@@ -62,25 +62,35 @@ export const ProjectsSection: React.FC = () => {
                 value={f}
                 aria-label={`Filtrar por ${f}`}
                 sx={{
-                  borderRadius: 9999, // totalmente arredondado
                   textTransform: "none",
                   px: 2,
                   py: 0.75,
-                  fontWeight: 600,
-                  borderColor: "divider",
+                  fontWeight: 500,
+                  borderColor: "#e5e5e5",
                   color: "text.primary",
                   bgcolor: "background.paper",
-                  // estados
+                  borderRadius: 0,
+                  transition: '0.3s',
+                  "&:first-of-type": {
+                    borderTopLeftRadius: 9999,
+                    borderBottomLeftRadius: 9999,
+                  },
+                  "&:last-of-type": {
+                    borderTopRightRadius: 9999,
+                    borderBottomRightRadius: 9999,
+                  },
                   "&.Mui-selected": {
-                    bgcolor: "primary.main",
-                    color: "primary.contrastText",
-                    borderColor: "primary.main",
+                    bgcolor: "#2c2c2c",
+                    color: "#fff",
+                    borderColor: "#2c2c2c",
                     "&:hover": {
-                      bgcolor: "primary.dark",
+                      bgcolor: "#1f1f1f",
                     },
                   },
                   "&:hover": {
-                    bgcolor: "action.hover",
+                    bgcolor: "#f5f5f5",
+                    borderColor: "#e5e5e5",
+                    transition: '0.3s',
                   },
                 }}
               >
