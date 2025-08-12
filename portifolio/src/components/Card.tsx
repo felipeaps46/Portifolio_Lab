@@ -19,17 +19,7 @@ import HelpOutlineIcon from '@mui/icons-material/HelpOutline';
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 import CloseIcon from '@mui/icons-material/Close';
 
-// Tipos fornecidos
-export type ProjectType = 'Sites' | 'Landing Pages' | 'Aplicativos' | 'E-Commerce' | 'Outros';
-
-export interface CardType {
-  id: string,
-  title: string,
-  description: string,
-  languages: string[],
-  type: ProjectType,
-  image?: string,
-}
+import type { CardType, ProjectType } from '../Types/cardType';
 
 // Helper para ícone do tipo
 const getTypeIcon = (type: ProjectType) => {
