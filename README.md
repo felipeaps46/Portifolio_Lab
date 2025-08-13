@@ -54,12 +54,15 @@ PORTIFOLIO_LAB
 ├── README.md
 └── vite
 
-## 📸 Protótipos do Portfólio
+## 📸 Wireframes do Portfólio
 
-A seguir estão os protótipos do portfólio que está em desenvolvimento, ilustrando a proposta visual e estrutural da interface antes da implementação final.
+A seguir estão os Wireframes do portfólio que está em desenvolvimento, ilustrando a proposta visual e estrutural da interface antes da implementação final.
 
 | Tela / Seção | Protótipo |
 |--------------|-----------|
-| Página Inicial | ![Protótipo Página Inicial](./images/PaginaInicial.png) |
-| Seção de Projetos | ![Protótipo Seção de Projetos](caminho/para/imagem2.png) |
-| Página de Contato | ![Protótipo Página de Contato](caminho/para/imagem3.png) |
+| Página Inicial (Sobre) | ![Protótipo Página Inicial (Sobre)](./images/PaginaInicial.png) |
+| Seção de Experiências | ![Protótipo Seção de Experiências](./images/Experiencias.png) |
+| Seção de Habilidades e Estatísticas | ![Protótipo Página de Habilidades e Estatísticas](./images/PaginaHbilidades.png) |
+| Seção de Projetos | ![Protótipo Seção de Projetos](./images/PaginaProjetos.png) |
+| Seção de Contato | ![Protótipo Seção de Contato](./images/PaginaContatos.png) |
+| Seção de ChatBot | ![Protótipo Seção de Contato](./images/PaginaChatBot.png) |
