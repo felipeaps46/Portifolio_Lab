@@ -58,6 +58,8 @@ PORTIFOLIO_LAB
 
 A seguir estão os Wireframes do portfólio que está em desenvolvimento, ilustrando a proposta visual e estrutural da interface antes da implementação final.
 
+### 💡 Versão Light Mode
+
 | Tela / Seção | Protótipo |
 |--------------|-----------|
 | Página Inicial (Sobre) | <img src="./images/PaginaInicial.png" width="400" heigth="400"> |
