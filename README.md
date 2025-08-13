@@ -1,7 +1,9 @@
 # 📌 Portfólio de Projetos
 
-Este repositório apresenta um portfólio profissional com projetos desenvolvidos para demonstrar habilidades em programação, desenvolvimento de sistemas e criação de interfaces.  
-O objetivo é permitir que recrutadores, empresas ou colaboradores conheçam melhor as competências técnicas e o estilo de trabalho da pessoa responsável pelos projetos, por meio de exemplos práticos e organizados.
+Este repositório apresenta um portfólio profissional com projetos desenvolvidos para demonstrar habilidades em programação, desenvolvimento de sistemas e criação de interfaces. 
+
+Seu objetivo é disponibilizar exemplos práticos e organizados que evidenciem a aplicação de tecnologias modernas e boas práticas no desenvolvimento de soluções funcionais, facilitando o acesso de recrutadores e interessados aos trabalhos realizados.
+
 
 **🌐 Acesse aqui:** Link do portifólio será inserido aqui.
 
