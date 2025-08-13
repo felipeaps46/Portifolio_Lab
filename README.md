@@ -21,27 +21,34 @@ Este repositório apresenta um portfólio de projetos desenvolvidos para demonst
 
 ## 📂 Estrutura de Diretórios
 
-PORTIFOLIO_LAB/
-├── backend/ # API em Python
-│ ├── controller/ # Controladores
-│ ├── model/ # Modelos de dados
-│ ├── repository/ # Repositórios e acesso a dados
-│ ├── routes/ # Definição de rotas
-│ ├── service/ # Serviços e regras de negócio
-│ ├── container.py # Injeção de dependências
-│ └── main.py # Ponto de entrada do backend
-│
-├── portfolio/ # Aplicação frontend (React + TypeScript)
-│ └── src/
-│ ├── assets/ # Imagens e arquivos estáticos
-│ ├── components/ # Componentes e seções da interface
-│ ├── data/ # Dados estáticos
-│ ├── pages/ # Páginas principais
-│ ├── Types/ # Definições de tipos TypeScript
-│ ├── App.tsx # Componente raiz
-│ ├── index.css # Estilos globais
-│ └── main.tsx # Ponto de entrada do frontend
-│
-├── package.json # Dependências do frontend
-├── README.md # Documentação do projeto
-└── vite.config.ts # Configuração do Vite
+## Estrutura do projeto:
+
+PORTIFOLIO_LAB
+|
+├── backend
+|   ├── controller
+|   ├── model
+|   ├── repository
+|   ├── routes
+|   ├── service
+|   │   ├── __init__.py
+|   │   └── container.py
+|   └── main.py
+|
+├── portfolio
+|   └── src
+|       ├── assets
+|       ├── components
+|       ├── data
+|       ├── pages
+|       ├── Types
+|       ├── App.tsx
+|       ├── index.css
+|       ├── main.tsx
+|       └── vite-env.d.ts
+|
+├── package.json
+├── README.md
+└── vite
+
+
