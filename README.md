@@ -10,8 +10,17 @@ Seu objetivo é disponibilizar exemplos práticos e organizados que evidenciem a
 ---
 
 ## 🚀 Tecnologias Utilizadas
+
+### Frontend
+- **React.js** + **TypeScript**
+- **Material UI** – Componentes e estilização
 - **HTML5** e **CSS3**
-- **React.js** – Desenvolvimento da interface
+
+### Backend
+- **Python**
+- **LangChain** – Integração e processamento de linguagem natural
+
+### Outros
 - **Git** e **GitHub** – Controle de versão
 
 ---
