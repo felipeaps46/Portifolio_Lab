@@ -27,35 +27,33 @@ Seu objetivo é disponibilizar exemplos práticos e organizados que evidenciem a
 
 ## 📂 Estrutura de Diretórios
 
-## Estrutura do projeto:
-
+**Estrutura do projeto:**
+``` 
 PORTIFOLIO_LAB
-|
 ├── backend
-|   ├── controller
-|   ├── model
-|   ├── repository
-|   ├── routes
-|   ├── service
-|   │   ├── __init__.py
-|   │   └── container.py
-|   └── main.py
-|
+│   ├── controller
+│   ├── model
+│   ├── repository
+│   ├── routes
+│   ├── service
+│   │   ├── __init__.py
+│   │   └── container.py
+│   └── main.py
 ├── portfolio
-|   └── src
-|       ├── assets
-|       ├── components
-|       ├── data
-|       ├── pages
-|       ├── Types
-|       ├── App.tsx
-|       ├── index.css
-|       ├── main.tsx
-|       └── vite-env.d.ts
-|
+│   └── src
+│       ├── assets
+│       ├── components
+│       ├── data
+│       ├── pages
+│       ├── Types
+│       ├── App.tsx
+│       ├── index.css
+│       ├── main.tsx
+│       └── vite-env.d.ts
 ├── package.json
-├── README.md
-└── vite
+└── README.md
+```
+---
 
 ## 📸 Wireframes do Portfólio
 
