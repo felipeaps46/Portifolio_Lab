@@ -55,9 +55,9 @@ PORTIFOLIO_LAB
 ```
 ---
 
-## 📸 Wireframes do Portfólio
+## 📸 Protótipos do Portfólio
 
-A seguir estão os Wireframes do portfólio que está em desenvolvimento, ilustrando a proposta visual e estrutural da interface antes da implementação final.
+A seguir estão os Protótipos do portfólio que está em desenvolvimento, ilustrando a proposta visual e estrutural da interface antes da implementação final.
 
 ### 💡 Versão Light Mode
 
