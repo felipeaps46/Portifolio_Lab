@@ -10,7 +10,7 @@ export const Header = () => {
       position="static"
       elevation={10}
       sx={{
-        background: 'linear-gradient(90deg, #0f2027 0%, #2c5364 100%)',
+        background: '#FFFFFF',
         width: '100vw',
         boxShadow: '0 4px 30px rgba(44,83,100,0.18)',
       }}
@@ -26,11 +26,12 @@ export const Header = () => {
         <Typography
           variant="h5"
           sx={{
-            letterSpacing: 4,
-            fontWeight: 800,
+            letterSpacing: 1,
+            fontWeight: 600,
             textTransform: 'uppercase',
-            color: '#FFFFFF',
-            textShadow: '2px 2px 10px #000A',
+            color: '#2C2C2C',
+            fontFamily: 'Inter, sans-serif',
+           // textShadow: '2px 2px 10px #000A',
             fontSize: { xs: '1.2rem', sm: '1.7rem' },
           }}
         >
@@ -41,14 +42,15 @@ export const Header = () => {
           <Button
             href="#sobre"
             sx={{
-              color: "#fff",
+              color: "#757575",
               fontWeight: 500,
               mx: 1,
               transition: 'all 0.2s',
               '&:hover': {
-                color: "#00c6ff",
+                color: "#FFFFFF",
                 transform: 'translateY(-2px) scale(1.08)',
-                background: "transparent",
+                backgroundColor: "#2C2C2C",
+                borderRadius: 2
               },
             }}
           >
@@ -57,14 +59,15 @@ export const Header = () => {
           <Button
             href="#projetos"
             sx={{
-              color: "#fff",
+              color: "#757575",
               fontWeight: 500,
               mx: 1,
               transition: 'all 0.2s',
               '&:hover': {
-                color: "#00c6ff",
+                color: "#FFFFFF",
                 transform: 'translateY(-2px) scale(1.08)',
-                background: "transparent",
+                backgroundColor: "#2C2C2C",
+                borderRadius: 2
               },
             }}
           >
@@ -73,14 +76,15 @@ export const Header = () => {
           <Button
             href="#contato"
             sx={{
-              color: "#fff",
+              color: "#757575",
               fontWeight: 500,
               mx: 1,
               transition: 'all 0.2s',
               '&:hover': {
-                color: "#00c6ff",
+                color: "#FFFFFF",
                 transform: 'translateY(-2px) scale(1.08)',
-                background: "transparent",
+                backgroundColor: "#2C2C2C",
+                borderRadius: 2
               },
             }}
           >
