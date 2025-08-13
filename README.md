@@ -68,4 +68,6 @@ A seguir estão os Wireframes do portfólio que está em desenvolvimento, ilustr
 | Seção de ChatBot | ![Protótipo Seção de Contato](./images/PaginaChatBot.png) |
 
 ### 🌙 Versão Dark Mode
-![Protótipo Seção de Contato](./images/DarkMode1.png)
+![Protótipo DarkMode 1](./images/DarkMode1.png)
+
+![Protótipo DarkMode 2](./images/DarkMode2.png)
