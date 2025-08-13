@@ -60,12 +60,12 @@ A seguir estão os Wireframes do portfólio que está em desenvolvimento, ilustr
 
 | Tela / Seção | Protótipo |
 |--------------|-----------|
-| Página Inicial (Sobre) | ![Protótipo Página Inicial (Sobre)](./images/PaginaInicial.png) |
-| Seção de Experiências | ![Protótipo Seção de Experiências](./images/Experiencias.png) |
-| Seção de Habilidades e Estatísticas | ![Protótipo Página de Habilidades e Estatísticas](./images/PaginaHbilidades.png) |
-| Seção de Projetos | ![Protótipo Seção de Projetos](./images/PaginaProjetos.png) |
-| Seção de Contato | ![Protótipo Seção de Contato](./images/PaginaContatos.png) |
-| Seção de ChatBot | ![Protótipo Seção de Contato](./images/PaginaChatBot.png) |
+| Página Inicial (Sobre) | <img src="./images/PaginaInicial.png" width="400"> |
+| Seção de Experiências | <img src="./images/Experiencias.png" width="400"> |
+| Seção de Habilidades e Estatísticas | <img src="./images/PaginaHbilidades.png" width="400"> |
+| Seção de Projetos | <img src="./images/PaginaProjetos.png" width="400"> |
+| Seção de Contato | <img src="./images/PaginaContatos.png" width="400"> |
+| Seção de ChatBot | <img src="./images/PaginaChatBot.png" width="400"> |
 
 ### 🌙 Versão Dark Mode
 ![Protótipo DarkMode 1](./images/DarkMode1.png)
