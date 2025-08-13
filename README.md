@@ -25,12 +25,6 @@ Seu objetivo é disponibilizar exemplos práticos e organizados que evidenciem a
 
 ---
 
-## 📦 Dependências e Bibliotecas/Frameworks
-### Dependências principais:
-- [React](https://react.dev/)
-
----
-
 ## 📂 Estrutura de Diretórios
 
 ## Estrutura do projeto:
