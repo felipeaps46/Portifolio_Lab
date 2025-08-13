@@ -54,4 +54,12 @@ PORTIFOLIO_LAB
 ├── README.md
 └── vite
 
+## 📸 Protótipos do Portfólio
 
+A seguir estão os protótipos do portfólio que está em desenvolvimento, ilustrando a proposta visual e estrutural da interface antes da implementação final.
+
+| Tela / Seção | Protótipo |
+|--------------|-----------|
+| Página Inicial | ![Protótipo Página Inicial](./images/PaginaInicial.png) |
+| Seção de Projetos | ![Protótipo Seção de Projetos](caminho/para/imagem2.png) |
+| Página de Contato | ![Protótipo Página de Contato](caminho/para/imagem3.png) |
