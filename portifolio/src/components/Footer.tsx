@@ -38,16 +38,36 @@ export const Footer: React.FC<FooterProps> = ({
     { text: "Contato", href: "#contato" },
   ],
   connectLinks = [
-    { Icon: LinkedInIcon, text: "LinkedIn", href: "https://www.linkedin.com/in/seuperfil" },
+    {
+      Icon: LinkedInIcon,
+      text: "LinkedIn",
+      href: "https://www.linkedin.com/in/seuperfil",
+    },
     { Icon: GitHubIcon, text: "GitHub", href: "https://github.com/seuperfil" },
-    { Icon: WhatsAppIcon, text: "WhatsApp", href: "https://wa.me/seunumerodetelefone" },
+    {
+      Icon: WhatsAppIcon,
+      text: "WhatsApp",
+      href: "https://wa.me/seunumerodetelefone",
+    },
     { Icon: MailOutlineIcon, text: "Gmail", href: "mailto:seuemail@gmail.com" },
   ],
   socialIcons = [
-    { Icon: InstagramIcon, href: "https://www.instagram.com/seuperfil", label: "Instagram" },
-    { Icon: LinkedInIcon, href: "https://www.linkedin.com/in/seuperfil", label: "LinkedIn" },
+    {
+      Icon: InstagramIcon,
+      href: "https://www.instagram.com/seuperfil",
+      label: "Instagram",
+    },
+    {
+      Icon: LinkedInIcon,
+      href: "https://www.linkedin.com/in/seuperfil",
+      label: "LinkedIn",
+    },
     { Icon: GitHubIcon, href: "https://github.com/seuperfil", label: "GitHub" },
-    { Icon: WhatsAppIcon, href: "https://wa.me/seunumerodetelefone", label: "WhatsApp" },
+    {
+      Icon: WhatsAppIcon,
+      href: "https://wa.me/seunumerodetelefone",
+      label: "WhatsApp",
+    },
   ],
 }) => {
   const currentYear = new Date().getFullYear();
@@ -57,8 +77,8 @@ export const Footer: React.FC<FooterProps> = ({
       component="footer"
       sx={{
         py: { xs: 6, md: 5 },
-        bgcolor: "background.paper",
-        color: "text.primary",
+        bgcolor: "#1E1E1E",
+        color: "#F5F5F5",
         borderTop: "1px solid",
         borderColor: "divider",
       }}
@@ -78,7 +98,7 @@ export const Footer: React.FC<FooterProps> = ({
 
               <Typography
                 variant="body2"
-                color="text.secondary"
+                color="#F5F5F5"
                 sx={{
                   // Garante quebra correta sem deformar o layout
                   overflowWrap: "break-word",
@@ -98,13 +118,13 @@ export const Footer: React.FC<FooterProps> = ({
                     aria-label={label}
                     component="a"
                     href={href}
-                    
                     rel="noopener noreferrer"
                     sx={{
-                      color: "text.primary",
+                      color: "#F5F5F5",
                       width: 40,
                       height: 40,
-                      transition: "transform .2s ease-in-out, color .2s ease-in-out",
+                      transition:
+                        "transform .2s ease-in-out, color .2s ease-in-out",
                       "&:hover": {
                         color: "primary.main",
                         transform: "scale(1.1)",
@@ -155,7 +175,6 @@ export const Footer: React.FC<FooterProps> = ({
                   href={href}
                   color="inherit"
                   underline="none"
-                  
                   rel="noopener noreferrer"
                   sx={{
                     display: "flex",
@@ -177,7 +196,7 @@ export const Footer: React.FC<FooterProps> = ({
         <Divider sx={{ my: { xs: 4, md: 6 } }} />
 
         <Box sx={{ textAlign: { xs: "center", md: "left" } }}>
-          <Typography variant="body2" color="text.secondary">
+          <Typography variant="body2" color="#F5F5F5">
             © {currentYear} {name}. Todos os direitos reservados.
           </Typography>
         </Box>
