@@ -59,6 +59,7 @@ PORTIFOLIO_LAB
 
 A seguir estão os Protótipos do portfólio que está em desenvolvimento, ilustrando a proposta visual e estrutural da interface antes da implementação final.
 
+<!--
 ### 💡 Versão Light Mode
 
 | Tela / Seção | Protótipo |
@@ -69,8 +70,15 @@ A seguir estão os Protótipos do portfólio que está em desenvolvimento, ilust
 | Seção de Projetos | <img src="./images/PaginaProjetos.png" width="400" heigth="400"> |
 | Seção de Contato | <img src="./images/PaginaContatos.png" width="400" heigth="400"> |
 | Seção de ChatBot | <img src="./images/PaginaChatBot.png" width="400" heigth="400"> |
+-->
 
 ### 🌙 Versão Dark Mode
-![Protótipo DarkMode 1](./images/DarkMode1.png)
 
-![Protótipo DarkMode 2](./images/DarkMode2.png)
+| Tela / Seção                      | Protótipo |
+|-----------------------------------|-----------|
+| Página Inicial (Home) | <img src='./images/DarkMode/Home.png' width="400">|
+| Seção de Sobre            | <img src="./images/DarkMode/Sobre.png" width="400"> |
+| Seção de Experiências              | <img src="./images/DarkMode/Experiencias.png" width="400"> |
+| Seção de Habilidades e Estatísticas| <img src="./images/DarkMode/Habilidades.png" width="400"> |
+| Seção de Projetos                  | <img src="./images/DarkMode/Projetos.png" width="400"> |
+| Seção de Contato                   | <img src="./images/DarkMode/Contato.png" width="400"> |
