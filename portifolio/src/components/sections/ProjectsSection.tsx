@@ -10,15 +10,26 @@ import {
 } from "@mui/material";
 import { ProjectCard } from "../../components/Card";
 import { projects } from "../../data/projects";
+import { Button } from "@mui/material";
 
 // Lista de filtros (inclui "Todos")
-const FILTERS = ["Todos", "Sites", "Landing Pages", "Aplicativos", "E-Commerce", "Outros"] as const;
-type FilterType = typeof FILTERS[number];
+const FILTERS = [
+  "Todos",
+  "Sites",
+  "Landing Pages",
+  "Aplicativos",
+  "E-Commerce",
+  "Outros",
+] as const;
+type FilterType = (typeof FILTERS)[number];
 
 export const ProjectsSection: React.FC = () => {
   const [filter, setFilter] = useState<FilterType>("Todos");
 
-  const handleFilter = (_: React.MouseEvent<HTMLElement>, newFilter: FilterType | null) => {
+  const handleFilter = (
+    _: React.MouseEvent<HTMLElement>,
+    newFilter: FilterType | null
+  ) => {
     if (newFilter !== null) {
       setFilter(newFilter);
     }
@@ -43,61 +54,41 @@ export const ProjectsSection: React.FC = () => {
         </Typography>
 
         {/* Filtro com botões arredondados */}
-        <Box sx={{ display: "flex", justifyContent: "center", mb: 4 }}>
-          <ToggleButtonGroup
-            value={filter}
-            exclusive
-            onChange={handleFilter}
-            aria-label="Filtro de projetos"
-            sx={{
-              display: "flex",
-              flexWrap: "wrap",
-              justifyContent: "center",
-
-            }}
-          >
-            {FILTERS.map((f) => (
-              <ToggleButton
+        <Box
+          sx={{
+            display: "flex",
+            flexWrap: "wrap",
+            justifyContent: "center",
+            gap: 1,
+            mb: 4,
+          }}
+        >
+          {FILTERS.map((f) => {
+            const selected = filter === f;
+            return (
+              <Button
                 key={f}
-                value={f}
-                aria-label={`Filtrar por ${f}`}
+                onClick={() => setFilter(f)}
                 sx={{
+                  borderRadius: 9999,
                   textTransform: "none",
-                  px: 2,
-                  py: 0.75,
-                  fontWeight: 500,
-                  borderColor: "#e5e5e5",
-                  color: "text.primary",
-                  bgcolor: "background.paper",
-                  borderRadius: 0,
-                  transition: '0.3s',
-                  "&:first-of-type": {
-                    borderTopLeftRadius: 9999,
-                    borderBottomLeftRadius: 9999,
-                  },
-                  "&:last-of-type": {
-                    borderTopRightRadius: 9999,
-                    borderBottomRightRadius: 9999,
-                  },
-                  "&.Mui-selected": {
-                    bgcolor: "#2c2c2c",
-                    color: "#fff",
-                    borderColor: "#2c2c2c",
-                    "&:hover": {
-                      bgcolor: "#1f1f1f",
-                    },
-                  },
+                  px: 3,
+                  py: 1,
+                  fontWeight: 600,
+                  border: "1px solid",
+                  borderColor: selected ? "black" : "divider",
+                  color: selected ? "primary.contrastText" : "text.primary",
+                  bgcolor: selected ? "black" : "background.paper",
                   "&:hover": {
-                    bgcolor: "#f5f5f5",
-                    borderColor: "#e5e5e5",
-                    transition: '0.3s',
+                    bgcolor: selected ? "black" : "action.hover",
+                    borderColor: selected ? "black" : "divider",
                   },
                 }}
               >
                 {f}
-              </ToggleButton>
-            ))}
-          </ToggleButtonGroup>
+              </Button>
+            );
+          })}
         </Box>
 
         {filteredProjects.length === 0 ? (
