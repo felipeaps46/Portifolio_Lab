@@ -82,3 +82,7 @@ A seguir estão os Protótipos do portfólio que está em desenvolvimento, ilust
 | Seção de Habilidades e Estatísticas| <img src="./images/DarkMode/Habilidades.png" width="400"> |
 | Seção de Projetos                  | <img src="./images/DarkMode/Projetos.png" width="400"> |
 | Seção de Contato                   | <img src="./images/DarkMode/Contato.png" width="400"> |
+
+A seguir, segue o link do Figma, para melhor visualização: 
+
+[Figma](https://www.figma.com/design/LqHm5tfo3egT98sxfLxkWz/Projeto-Portifolio?node-id=0-1&t=6dl58xE7lbwZyT1c-1)
