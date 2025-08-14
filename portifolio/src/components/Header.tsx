@@ -60,7 +60,27 @@ export const Header = () => {
         </Box>
         <Box>
           <Button
-            href="#sobre"
+            href="/"
+            sx={{
+              color: "#fff",
+              fontWeight: 500,
+              mx: 1,
+              px: 2,
+              py: 0.5,
+              borderRadius: "8px",
+              transition: "all 0.2s ease",
+              border: "none",
+              "&:hover": {
+                color: "#2c2c2c",
+                backgroundColor: "#fff",
+                transform: "translateY(-2px) scale(1.08)",
+              },
+            }}
+          >
+            Home
+          </Button>
+          <Button
+            href="/sobre"
             sx={{
               color: "#fff",
               fontWeight: 500,
@@ -80,27 +100,7 @@ export const Header = () => {
             Sobre
           </Button>
           <Button
-            href="#projetos"
-            sx={{
-              color: "#fff",
-              fontWeight: 500,
-              mx: 1,
-              px: 2,
-              py: 0.5,
-              borderRadius: "8px",
-              transition: "all 0.2s ease",
-              border: "none",
-              "&:hover": {
-                color: "#2c2c2c",
-                backgroundColor: "#fff",
-                transform: "translateY(-2px) scale(1.08)",
-              },
-            }}
-          >
-            Experiências
-          </Button>
-          <Button
-            href="#projetos"
+            href="/habilidades"
             sx={{
               color: "#fff",
               fontWeight: 500,
@@ -120,7 +120,7 @@ export const Header = () => {
             Habilidades
           </Button>
           <Button
-            href="#projetos"
+            href="/projetos"
             sx={{
               color: "#fff",
               fontWeight: 500,
@@ -140,7 +140,7 @@ export const Header = () => {
             Projetos
           </Button>
           <Button
-            href="#contato"
+            href="/contato"
             sx={{
               color: "#fff",
               fontWeight: 500,

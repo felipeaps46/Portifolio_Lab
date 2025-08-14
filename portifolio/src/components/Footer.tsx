@@ -56,7 +56,7 @@ export const Footer: React.FC<FooterProps> = ({
     <Box
       component="footer"
       sx={{
-        py: { xs: 6, md: 8 },
+        py: { xs: 6, md: 5 },
         bgcolor: "background.paper",
         color: "text.primary",
         borderTop: "1px solid",
