@@ -1,11 +1,11 @@
-export const TechsData = [
-    { name: "React", src: "" },
-    { name: "TypeScript", src: "" },
-    { name: "Node.js", src: "" },
-    { name: "Next.js", src: "", bg: "#0B0F14" },
-    { name: "Docker", src: "" },
-    { name: "PostgreSQL", src: "" },
-    { name: "Material UI", src: "" },
-    { name: "Vite", src: "" },
-    { name: "Tailwind CSS", src: "" },
+import type { TechItem } from "../Types/techItem";
+import { SiReact, SiTypescript, SiNextdotjs, SiDocker, SiPostgresql, SiNodedotjs } from "react-icons/si"
+
+export const TechsData: TechItem[] = [
+    { name: "React", icon: SiReact },
+    { name: "TypeScript", icon: SiTypescript },
+    { name: "Node.js", icon: SiNodedotjs },
+    { name: "Next.js", icon: SiNextdotjs },
+    { name: "Docker", icon: SiDocker},
+    { name: "PostgreSQL", icon: SiPostgresql },
 ];

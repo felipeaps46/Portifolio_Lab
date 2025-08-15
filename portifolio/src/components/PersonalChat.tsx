@@ -1,11 +1,8 @@
-// src/components/PersonalChat.tsx
 import * as React from "react";
 import Box from "@mui/material/Box";
 import SpeedDial from "@mui/material/SpeedDial";
-import SpeedDialAction from "@mui/material/SpeedDialAction";
 import Avatar from "@mui/material/Avatar";
-import ChatIcon from "@mui/icons-material/Chat";
-// Ajuste o import abaixo para o caminho real do seu componente de chat
+import Badge from '@mui/material/Badge';
 import { ChatWindow } from "./Chat";
 
 type PersonalChatProps = {
@@ -23,22 +20,16 @@ export const PersonalChat: React.FC<PersonalChatProps> = ({
   bottom = 16,
   right = 16,
 }) => {
-  const [openDial, setOpenDial] = React.useState(false);
   const [openChat, setOpenChat] = React.useState(false);
+  let badgeValue = 1
+  if (window.onload) {
+    let badgeValue = 1
+  }
 
-  const handleOpenDial = () => setOpenDial(true);
-  const handleCloseDial = () => setOpenDial(false);
-
-  const actions = [
-    {
-      icon: <ChatIcon />,
-      name: "Chat",
-      onClick: () => {
-        setOpenChat(true);
-        handleCloseDial();
-      },
-    },
-  ];
+  const handleToggleChat = () => {
+    badgeValue = 0
+    setOpenChat((prev) => !prev);
+  };
 
   return (
     <>
@@ -51,7 +42,9 @@ export const PersonalChat: React.FC<PersonalChatProps> = ({
             right,
             zIndex: (t) => t.zIndex.tooltip + 1,
           }}
+          open={false}
           FabProps={{
+            onClick: handleToggleChat,
             sx: {
               width: 56,
               height: 56,
@@ -62,6 +55,7 @@ export const PersonalChat: React.FC<PersonalChatProps> = ({
             },
           }}
           icon={
+            <Badge badgeContent={badgeValue} color="secondary">
             <Avatar
               src={avatarUrl}
               alt={avatarAlt}
@@ -74,20 +68,11 @@ export const PersonalChat: React.FC<PersonalChatProps> = ({
             >
               {initials}
             </Avatar>
+            </Badge>
           }
-          onClose={handleCloseDial}
-          onOpen={handleOpenDial}
-          open={openDial}
-        >
-          {actions.map((action) => (
-            <SpeedDialAction
-              key={action.name}
-              icon={action.icon}
-              tooltipTitle={action.name}
-              onClick={action.onClick}
-            />
-          ))}
-        </SpeedDial>
+          onOpen={undefined}
+          onClose={undefined}
+        />
       </Box>
 
       <ChatWindow open={openChat} onClose={() => setOpenChat(false)} />

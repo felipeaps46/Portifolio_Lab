@@ -2,6 +2,8 @@ import { Box } from "@mui/material"
 import { Header } from "../components/Header"
 import { ContactSection } from "../components/sections/ContactSection"
 import Footer from "../components/Footer"
+import profileImg from "../assets/profile.jpeg";
+import { PersonalChat } from "../components/PersonalChat";
 
 export const Contato: React.FC = () => {
     return (
@@ -23,7 +25,11 @@ export const Contato: React.FC = () => {
                 <Footer
                     name="Seu Nome"
                     description="Breve bio/descrição sobre você, missão e foco profissional."
-                // Você pode passar seus próprios arrays de links aqui, ou usar os defaults do componente
+                />
+                <PersonalChat
+                        avatarUrl={profileImg}
+                        avatarAlt="Foto do meu perfil"
+                        initials="GV"
                 />
             </Box>
         </>
