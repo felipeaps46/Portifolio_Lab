@@ -5,8 +5,6 @@ import {
   Container,
   Typography,
   Grid,
-  ToggleButtonGroup,
-  ToggleButton,
 } from "@mui/material";
 import { ProjectCard } from "../../components/Card";
 import { projects } from "../../data/projects";
@@ -25,15 +23,6 @@ type FilterType = (typeof FILTERS)[number];
 
 export const ProjectsSection: React.FC = () => {
   const [filter, setFilter] = useState<FilterType>("Todos");
-
-  const handleFilter = (
-    _: React.MouseEvent<HTMLElement>,
-    newFilter: FilterType | null
-  ) => {
-    if (newFilter !== null) {
-      setFilter(newFilter);
-    }
-  };
 
   const filteredProjects = useMemo(() => {
     if (filter === "Todos") return projects;
@@ -78,7 +67,7 @@ export const ProjectsSection: React.FC = () => {
                   border: "1px solid",
                   borderColor: selected ? "black" : "divider",
                   color: selected ? "primary.contrastText" : "text.primary",
-                  bgcolor: selected ? "black" : "background.paper",
+                  bgcolor: selected ? "#2c2c2c" : "background.paper",
                   "&:hover": {
                     bgcolor: selected ? "black" : "action.hover",
                     borderColor: selected ? "black" : "divider",

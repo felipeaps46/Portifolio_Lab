@@ -12,7 +12,27 @@ import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 
 
 
+// Se você colocou o hook em outro arquivo, importe:
+import { useTypewriter } from "../hooks/useTypewriter";
+
 export const Home: React.FC = () => {
+  // Palavras que entram depois de "Desenvolvedor "
+  const palavras = [
+    "Backend",
+    "de Software",
+    "de Inteligência Artificial",
+    "Front-end",
+    "Full Stack",
+  ];
+
+  const { text } = useTypewriter(palavras, {
+    typingSpeed: 90,
+    deletingSpeed: 50,
+    pauseTime: 1000,
+    startDelay: 300,
+    loop: true,
+  });
+
   return (
     <Box
       sx={{
@@ -23,29 +43,75 @@ export const Home: React.FC = () => {
       }}
     >
       <Header />
-      <Box component="main" sx={{ flex: 1 }}>
+      <Box component="main" sx={{ flex: 1,  width: "100vw" }}>
         {/* Hero opcional */}
         <Box
           component="section"
           id="hero"
           sx={{
+            flex: 1,
             py: { xs: 8, md: 12 },
             backgroundImage: `url(${fundo})`,
             backgroundSize: "cover",
             backgroundPosition: "center",
+            width: "100vw",
+            height: "70vh",
+            justifyContent: "center",
+            alignItems: "center",
+            alignContent: "center",
           }}
         >
-          <Container maxWidth="lg" sx={{ textAlign: "center" }}>
+          <Container maxWidth="md" sx={{ textAlign: "center"}}>
+            {/* Linha 1: Seu nome */}
             <Typography
               variant="h2"
+              component="h1"
               fontWeight={800}
               gutterBottom
               color="#F5F5F5"
+              sx={{
+                fontSize: { xs: "2rem", sm: "2.5rem", md: "4rem" },
+              }}
             >
-              Olá, sou Desenvolvedor Frontend e backend
+              Guilherme Vieira
             </Typography>
-            <Typography variant="h6" color="#F5F5F5">
-              React • TypeScript • UI/UX • Performance
+
+            {/* Linha 2: "Desenvolvedor " + palavra animada */}
+            <Typography
+              variant="h5"
+              component="h2"
+              color="#F5F5F5"
+              sx={{
+                fontWeight: 600,
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center",
+                gap: 1,
+                fontSize: { xs: "1.125rem", sm: "1.25rem", md: "1.5rem" },
+              }}
+              aria-live="polite"
+              aria-atomic="true"
+            >
+              <Box component="span">Desenvolvedor</Box>
+              <Box
+                component="span"
+                sx={{
+                  display: "inline-block",
+                  minWidth: "8ch", 
+                  whiteSpace: "nowrap",
+                  borderRight: "2px solid #F5F5F5",
+                  pr: 0.5,
+                  // cursor piscando
+                  animation: "blink 1s step-end infinite",
+                  "@keyframes blink": {
+                    "0%": { borderColor: "transparent" },
+                    "50%": { borderColor: "#F5F5F5" },
+                    "100%": { borderColor: "transparent" },
+                  },
+                }}
+              >
+                {" "}{text}
+              </Box>
             </Typography>
           </Container>
           <Container maxWidth="sm">
@@ -109,12 +175,11 @@ export const Home: React.FC = () => {
         // Você pode passar seus próprios arrays de links aqui, ou usar os defaults do componente
       />
 
-      {/* Botão/Widget de Chat flutuante */}
       <PersonalChat
         avatarUrl={profileImg}
         avatarAlt="Foto do meu perfil"
         initials="GV"
       />
     </Box>
-  );
-};
+  )
+}
