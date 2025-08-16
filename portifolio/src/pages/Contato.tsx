@@ -1,9 +1,10 @@
-import { Box } from "@mui/material"
+import { Box, Typography } from "@mui/material"
 import { Header } from "../components/Header"
 import { ContactSection } from "../components/sections/ContactSection"
 import Footer from "../components/Footer"
 import profileImg from "../assets/profile.jpeg";
 import { PersonalChat } from "../components/PersonalChat";
+import fundo from "../assets/fundo.png";
 
 export const Contato: React.FC = () => {
     return (
@@ -16,6 +17,7 @@ export const Contato: React.FC = () => {
                     bgcolor: "background.default",
                     color: "text.primary",
                     scrollBehavior: "smooth",
+                    backgroundImage: `url(${fundo})`
                 }}
             >
                 <Header />
