@@ -137,8 +137,11 @@ export const Home: React.FC = () => {
               mt: '1.7rem',
               border: 'none'
             }}>
+              {/*Mudar aqui o caminho se necessario para o novo curriculo*/}
               <Button
-                href="/"
+                component="a"
+                href="src/download/curriculo.pdf"
+                download
                 sx={{
                   color: "#2c2c2c",
                   backgroundColor: "#fff",

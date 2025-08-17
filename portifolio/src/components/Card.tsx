@@ -7,9 +7,6 @@ import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import Chip from '@mui/material/Chip';
 import Stack from '@mui/material/Stack';
-import Box from '@mui/material/Box';
-import Modal from '@mui/material/Modal';
-import IconButton from '@mui/material/IconButton';
 
 import PublicIcon from '@mui/icons-material/Public';
 import AppsIcon from '@mui/icons-material/Apps';
@@ -17,9 +14,9 @@ import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import WebAssetIcon from '@mui/icons-material/WebAsset';
 import HelpOutlineIcon from '@mui/icons-material/HelpOutline';
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
-import CloseIcon from '@mui/icons-material/Close';
 
 import type { CardType, ProjectType } from '../Types/cardType';
+import { ProjectModal } from './ProjectModal';
 
 // Helper para ícone do tipo
 const getTypeIcon = (type: ProjectType) => {
@@ -30,21 +27,6 @@ const getTypeIcon = (type: ProjectType) => {
     case 'E-Commerce': return <ShoppingCartIcon />;
     default: return <HelpOutlineIcon />;
   }
-};
-
-// Estilo do modal
-const modalStyle = {
-  position: 'absolute' as 'absolute',
-  top: '50%', left: '50%',
-  transform: 'translate(-50%, -50%)',
-  width: 420,
-  bgcolor: 'background.paper',
-  borderRadius: 2,
-  boxShadow: 24,
-  p: 4,
-  outline: 'none',
-  maxHeight: '90vh',
-  overflowY: 'auto',
 };
 
 interface ProjectCardProps {
@@ -98,12 +80,12 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
           <Typography
             variant="body2"
             sx={{
-              color: 'text.secondary',
+              color: '#93A3AF',
               mb: 2,
               display: '-webkit-box',
-              overflow: 'hidden',
-              WebkitLineClamp: 3,
-              WebkitBoxOrient: 'vertical',
+              lineHeight: "1.5rem",     
+              maxHeight: "3.75rem",    
+              overflow: "hidden",
             }}
           >
             {project.description}
@@ -148,37 +130,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
         </CardActions>
       </Card>
 
-      <Modal open={open} onClose={handleClose} aria-labelledby="modal-title">
-        <Box sx={modalStyle}>
-          <Box sx={{display: 'flex', justifyContent: 'space-between', alignItems: 'center', mb: 2}}>
-            <Typography id="modal-title" variant="h5" fontWeight="bold">
-              {project.title}
-            </Typography>
-            <IconButton onClick={handleClose}><CloseIcon /></IconButton>
-          </Box>
-          {project.image && (
-            <Box component="img"
-              src={project.image}
-              alt={project.title}
-              sx={{ width: '100%', height: 200, objectFit: 'cover', borderRadius: 1, mb: 2 }}
-            />
-          )}
-          <Typography color="text.secondary" sx={{ mb: 2 }}>
-            {project.description}
-          </Typography>
-          <Stack direction="row" spacing={1} flexWrap="wrap">
-            {project.languages.map((lang, i) => (
-              <Chip
-                key={i}
-                label={lang}
-                size="small"
-                color="primary"
-                variant="outlined"
-              />
-            ))}
-          </Stack>
-        </Box>
-      </Modal>
+      <ProjectModal open={open} handleClose={handleClose} project={project} />
     </>
   );
 };
