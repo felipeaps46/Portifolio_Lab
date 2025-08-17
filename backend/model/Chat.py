@@ -8,54 +8,11 @@ from langchain_google_genai import ChatGoogleGenerativeAI, GoogleGenerativeAIEmb
 from langchain.text_splitter import RecursiveCharacterTextSplitter
 from dotenv import load_dotenv
 
-load_dotenv()
-
-key = os.environ["GEMINI_API_KEY"]
-
-model = ChatGoogleGenerativeAI(
-    model="gemini-2.5-pro",
-    google_api_key=key
-
-)
-
-pdf_path = "media/Profile.pdf"
-loader = PyPDFLoader(pdf_path)
-
-docs = loader.load()
-
-text_splitter = RecursiveCharacterTextSplitter(
-    chunk_size=1000,
-    chunk_overlap=200,
-)
-
-chunks = text_splitter.split_documents(
-    documents=docs
-)
-
-embedding = GoogleGenerativeAIEmbeddings(model="gemini-embedding-001", google_api_key=key)
-
-vector_store = Chroma.from_documents(
-    documents=chunks,
-    embedding=embedding,
-    collection_name="profile_information"
-)
-
-retriever = vector_store.as_retriever()
-
-prompt = hub.pull('rlm/rag-prompt')
-
-rag_chain = (
-    {
-        'context': retriever,
-        'question': RunnablePassthrough()
-    }
-    | prompt
-    | model
-    | StrOutputParser()
-)
-
-question = "Me conte sobre as experiências profissionais de Guilherme"
-
-response = rag_chain.invoke(question)
-
-print(response)
+class ProfileChat: 
+    def __init__(self, model='gemini-2.5-pro', embedding_model='gemini-embedding-001'):
+        load_dotenv()
+        self.google_api_key = os.environ["GEMINI_API_KEY"]
+        self.model = model
+        self.embedding_model = embedding_model
+    
+    
