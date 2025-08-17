@@ -6,11 +6,11 @@ import Badge from '@mui/material/Badge';
 import { ChatWindow } from "./Chat";
 
 type PersonalChatProps = {
-  avatarUrl?: string;   // URL da sua foto de perfil
-  avatarAlt?: string;   // Texto alternativo (acessibilidade)
-  initials?: string;    // Iniciais de fallback (ex.: "SN")
-  bottom?: number;      // Offset opcional do bottom
-  right?: number;       // Offset opcional do right
+  avatarUrl?: string;   
+  avatarAlt?: string;   
+  initials?: string;    
+  bottom?: number;    
+  right?: number;     
 };
 
 export const PersonalChat: React.FC<PersonalChatProps> = ({
