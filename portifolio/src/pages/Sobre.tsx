@@ -5,6 +5,7 @@ import { ExperienceSection } from "../components/sections/ExperienceSection"
 import Footer from "../components/Footer"
 import profileImg from "../assets/profile.jpeg";
 import { PersonalChat } from "../components/PersonalChat"
+import { EstatitcSection } from "../components/sections/EstatistcSection"
 
 
 export const Sobre: React.FC = () => {
@@ -15,7 +16,7 @@ export const Sobre: React.FC = () => {
                     display: 'flex',
                     flexDirection: 'column',
                     minHeight: "100vh",
-                    bgcolor: "background.default",
+                    bgcolor: "#2c2c2c",
                     color: "text.primary",
                     scrollBehavior: "smooth",
                 }}
@@ -25,6 +26,8 @@ export const Sobre: React.FC = () => {
                     <AboutSection />
                     <Divider />
                     <ExperienceSection />
+                    <Divider />
+                    <EstatitcSection />
                 </Box>
                 <Footer
                     name="Seu Nome"

@@ -107,8 +107,8 @@ export const StatsPanel: React.FC<StatsPanelProps> = ({
   sx={{
     p: { xs: 2, sm: 3 },
     borderRadius: 4,
-    background: "linear-gradient(135deg, rgb(10,25,41) 0%, rgb(30,80,119) 100%)",
-    border: "1px solid rgba(25,118,210,0.4)",
+background: 'linear-gradient(135deg, #1a1a1a 0%, #2c2c2c 100%)',
+    border: "1px solid rgba(255, 255, 255, 0.4)",
     boxShadow: "0 4px 12px rgba(25,118,210,0.25)",
     color: "#fff",
   }}

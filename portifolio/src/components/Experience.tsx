@@ -34,7 +34,7 @@ const growY = keyframes`
   100% { transform: scaleY(1); }
 `;
 const pulse = keyframes`
-  0%, 100% { box-shadow: 0 0 0 0 rgba(33,150,243,.35); }
+  0%, 100% { box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.35); }
   50% { box-shadow: 0 0 0 10px rgba(33,150,243,0); }
 `;
 
@@ -118,16 +118,48 @@ const TiltCard: React.FC<TiltCardProps> = ({
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
       whileHover={{ scale: hoverScale }}
-      style={{ perspective: 900, transformStyle: 'preserve-3d' }}
-      {...baseProps}
+      style={{
+        perspective: 900,
+        transformStyle: 'preserve-3d',
+        filter: 'drop-shadow(0 12px 22px rgba(181, 193, 204, 0.28))',
+        WebkitFilter: 'drop-shadow(0 12px 22px rgba(181, 193, 204, 0.28))',
+        backfaceVisibility: 'hidden',
+      }}
+      initial={{ opacity: 0, scale: 0.95, y: 30 }}
+      whileInView={{ opacity: 1, scale: 1, y: 0 }}
+      viewport={{ once: true, amount: 0.3 }}
+      transition={{ delay: initialDelay, duration: 4.2, ease: [0.16, 1, 0.3, 1] }}
     >
       <motion.div
-        style={{ rotateX: springRx as any, rotateY: springRy as any, boxShadow: shadow as any, willChange: 'transform' }}
+        style={{
+          rotateX: springRx as any,
+          rotateY: springRy as any,
+          willChange: 'transform',
+          borderRadius: 5,
+        }}
       >
-        <Box sx={sx}>{children}</Box>
+        <Box
+          sx={{
+            background: "#2c2c2c",
+            border: "1px solid rgba(255, 255, 255, 0.4)",
+            borderRadius: 5,
+            overflow: "hidden",           
+            backgroundClip: "padding-box", 
+            color: "#fff",
+            p: 2,
+            transition: "background .25s ease, border-color .25s ease",
+            "&:hover": {
+              background: "linear-gradient(135deg, rgb(94, 94, 94) 0%, rgb(174, 177, 180) 100%)",
+              borderColor: "rgba(255, 255, 255, 0.3)",
+            },
+          }}
+        >
+          {children}
+        </Box>
       </motion.div>
     </motion.div>
   );
+
 };
 
 /* ===== componente principal ===== */
@@ -163,8 +195,8 @@ export const ExperienceTimeline = () => {
                   color="primary"
                   variant={idx === 0 ? "filled" : "outlined"}
                   sx={{
-                    backgroundColor: "#243341",     
-                    border: "3px solid #90caf9",    
+                    backgroundColor: "#2c2c2c",
+                    border: "3px solid #2c2c2c",
                     position: "relative",
                     '::after': {
                       content: '""',
@@ -174,8 +206,8 @@ export const ExperienceTimeline = () => {
                       animation: `${pulse} 2.4s ease-out infinite`,
                     },
                     '& .MuiSvgIcon-root': {
-                      color: "#fff",  
-                      filter: "drop-shadow(0 0 6px rgba(25,118,210,0.4))"
+                      color: "#fff",
+                      filter: "drop-shadow(0 0 6px rgba(255, 255, 255, 0.4))"
                     }
                   }}
                 >
@@ -189,7 +221,7 @@ export const ExperienceTimeline = () => {
                     sx={{
                       transformOrigin: 'top',
                       animation: `${growY} 600ms ease-out ${idx * 0.12 + 0.2}s both`,
-                      backgroundColor: alpha(theme.palette.primary.main, 0.4),
+                      backgroundColor: 'rgb(255, 255, 255)',
                       animationPlayState: inView ? 'running' : 'paused'
                     }}
                   />
@@ -211,17 +243,17 @@ export const ExperienceTimeline = () => {
                     maxTilt={8}
                     hoverScale={1.02}
                     sx={{
-                      background: "linear-gradient(135deg, rgb(10,25,41) 0%, rgb(30,80,119) 100%)",
-                      border: "1px solid rgba(25,118,210,0.4)",
+                      background: "linear-gradient(135deg, rgb(30,30,30) 0%, rgb(80,120,160) 100%)",
+                      border: "1px solid rgba(255, 255, 255, 0.4)",
                       borderRadius: 3,
-                      boxShadow: "0 4px 12px rgba(25,118,210,0.25)",
-                      minWidth: 280,
+                      boxShadow: "0 4px 12px rgba(194, 202, 211, 0.25)",
+                      minWidth: 20,
                       color: "#fff",
                       p: 2,
                       transition: "background .25s ease, border-color .25s ease",
                       "&:hover": {
                         background: "linear-gradient(135deg, rgb(12,35,70) 0%, rgb(45,100,150) 100%)",
-                        borderColor: "rgba(255,255,255,0.3)",
+                        borderColor: "rgba(255, 255, 255, 0.3)",
                       }
                     }}
                   >
