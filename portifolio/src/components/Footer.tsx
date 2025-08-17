@@ -79,8 +79,6 @@ export const Footer: React.FC<FooterProps> = ({
         py: { xs: 6, md: 5 },
         bgcolor: "#1E1E1E",
         color: "#F5F5F5",
-        borderTop: "1px solid",
-        borderColor: "divider",
       }}
     >
       <Container maxWidth="lg">
@@ -193,7 +191,7 @@ export const Footer: React.FC<FooterProps> = ({
           </Grid>
         </Grid>
 
-        <Divider sx={{ my: { xs: 4, md: 6 } }} />
+        <Divider sx={{ my: { xs: 4, md: 6, backgroundColor: "rgba(255, 255, 255, 0.1)" } }} />
 
         <Box sx={{ textAlign: { xs: "center", md: "left" } }}>
           <Typography variant="body2" color="#F5F5F5">

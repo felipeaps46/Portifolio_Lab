@@ -7,5 +7,10 @@ export interface CardType {
     languages: string[],
     type: ProjectType,
     image?: string,
+    video?: string,
+    highlight?: boolean
+    date: string
+    siteLink?: string,
+    gitHubLink?: string
 }
 
