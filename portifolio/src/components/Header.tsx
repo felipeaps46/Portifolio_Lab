@@ -3,8 +3,7 @@ import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
 import Box from "@mui/material/Box";
-import { TbCircleLetterFFilled } from "react-icons/tb"; //importacao do icone de letra
-import { useState } from "react";
+import { TbCircleLetterGFilled } from "react-icons/tb"; //importacao do icone de letra
 import { useLocation } from "react-router-dom";
 
 export const Header = () => {
@@ -52,7 +51,7 @@ export const Header = () => {
             gap: "1rem",
           }}
         >
-          <TbCircleLetterFFilled
+          <TbCircleLetterGFilled
             style={{
               color: "#f5f5f5",
               fontSize: "2.5rem",
@@ -69,7 +68,7 @@ export const Header = () => {
             }}
           >
             {/* Substitua pelo seu nome ou logo */}
-            Seu Nome
+            Guilherme Vieira
           </Typography>
         </Box>
         <Box>

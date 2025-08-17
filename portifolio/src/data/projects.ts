@@ -7,7 +7,8 @@ export const projects: CardType[] = [
     description: "Site pessoal com tema minimalista, seções animadas e suporte a dark mode.",
     languages: ["React", "TypeScript", "Vite", "Styled-Components"],
     type: "Sites",
-    image: "https://picsum.photos/seed/portfolio-minimal/800/600"
+    image: "https://picsum.photos/seed/portfolio-minimal/800/600",
+    highlight: true
   },
   {
     id: "2",
@@ -15,7 +16,8 @@ export const projects: CardType[] = [
     description: "Landing page otimizada para conversão, com A/B testing de CTA e analytics.",
     languages: ["Next.js", "TypeScript", "Tailwind CSS", "Framer Motion"],
     type: "Landing Pages",
-    image: "https://picsum.photos/seed/landing-saas/800/600"
+    image: "https://picsum.photos/seed/landing-saas/800/600",
+    highlight: true
   },
   {
     id: "3",
@@ -23,7 +25,8 @@ export const projects: CardType[] = [
     description: "App mobile para rastrear hábitos diários, notificações e gamificação.",
     languages: ["React Native", "Expo", "TypeScript", "Zustand"],
     type: "Aplicativos",
-    image: "https://picsum.photos/seed/habits-app/800/600"
+    image: "https://picsum.photos/seed/habits-app/800/600",
+    highlight: true
   },
   {
     id: "4",

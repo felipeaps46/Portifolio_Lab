@@ -1,5 +1,5 @@
 // modified version of random-normal
-function normalPool(o){var r=0;do{var a=Math.round(normal({mean:o.mean,dev:o.dev}));if(a<o.pool.length&&a>=0)return o.pool[a];r++}while(r<100)}function randomNormal(o){if(o=Object.assign({mean:0,dev:1,pool:[]},o),Array.isArray(o.pool)&&o.pool.length>0)return normalPool(o);var r,a,n,e,l=o.mean,t=o.dev;do{r=(a=2*Math.random()-1)*a+(n=2*Math.random()-1)*n}while(r>=1);return e=a*Math.sqrt(-2*Math.log(r)/r),t*e+l}
+function normalPool(o) { var r = 0; do { var a = Math.round(normal({ mean: o.mean, dev: o.dev })); if (a < o.pool.length && a >= 0) return o.pool[a]; r++ } while (r < 100) } function randomNormal(o) { if (o = Object.assign({ mean: 0, dev: 1, pool: [] }, o), Array.isArray(o.pool) && o.pool.length > 0) return normalPool(o); var r, a, n, e, l = o.mean, t = o.dev; do { r = (a = 2 * Math.random() - 1) * a + (n = 2 * Math.random() - 1) * n } while (r >= 1); return e = a * Math.sqrt(-2 * Math.log(r) / r), t * e + l }
 
 const NUM_PARTICLES = 600;
 const PARTICLE_SIZE = 0.5; // View heights
@@ -12,12 +12,14 @@ function rand(low: number, high: number) {
 }
 
 function createParticle(canvas: HTMLCanvasElement) {
-  const colour = {
-    r: 255,
-    g: randomNormal({ mean: 125, dev: 20 }),
-    b: 50,
-    a: rand(0, 1),
-  };
+  // const colour = {
+  //   r: 255,
+  //   g: randomNormal({ mean: 125, dev: 20 }),
+  //   b: 50,
+  //   a: rand(0, 1),
+  // };
+  const gray = Math.round(rand(180, 255));
+  const alpha = rand(0.2, 0.9);
   return {
     x: -2,
     y: -2,
@@ -27,7 +29,8 @@ function createParticle(canvas: HTMLCanvasElement) {
     offsetY: randomNormal({ mean: 0, dev: 10 }),
     arc: Math.PI * 2,
     startTime: performance.now() - rand(0, SPEED),
-    colour: `rgba(${colour.r}, ${colour.g}, ${colour.b}, ${colour.a})`,
+    //colour: `rgba(${colour.r}, ${colour.g}, ${colour.b}, ${colour.a})`,
+    colour: `rgba(${gray}, ${gray}, ${gray}, ${alpha})`,
   }
 }
 

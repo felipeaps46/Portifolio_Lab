@@ -1,0 +1,47 @@
+import { Box, Button } from "@mui/material"
+import { Title } from "../Title"
+import { projects } from "../../data/projects"
+import { ProjectCard } from "../Card"
+import ArrowCircleRightIcon from '@mui/icons-material/ArrowCircleRight';
+
+export const HighLightsSection = () => {
+
+    return (
+        <>
+            <Box component='main' sx={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', backgroundColor: '#2c2c2c', pb: '4rem' }}>
+                <Title title='Meus Destaques' subtitle="Veja aqui alguns dos meus principais trabalhos."></Title>
+                <Box sx={{ display: 'flex', flexDirection: 'row', gap: '1rem', justifyContent: 'center' }}>
+                    {projects
+                        .filter((p) => p.highlight).map((p) => (
+                            <ProjectCard project={p} />
+                        ))}
+                </Box>
+                <Box sx={{display: "flex", justifyContent: 'center', mt: '2rem'}}>
+                    <Button
+                        href="/projetos"
+                        sx={{
+                            color: "#2c2c2c",
+                            backgroundColor: "#fff",
+                            fontWeight: 500,
+                            px: 2,
+                            py: 1,
+                            gap: '6px',
+                            borderRadius: "8px",
+                            transition: "all 0.2s ease",
+                            fontSize: '0.9rem',
+                            border: "none",
+                            "&:hover": {
+                                color: "#2c2c2c",
+                                transform: "translateY(-2px) scale(1.08)",
+                            },
+                        }}
+                    >
+
+                        Ver Todos os Projetos
+                        <ArrowCircleRightIcon />
+                    </Button>
+                </Box>
+            </Box>
+        </>
+    )
+}
