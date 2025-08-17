@@ -67,7 +67,6 @@ export const Header = () => {
               fontSize: { xs: "1.2rem", sm: "1.7rem" },
             }}
           >
-            {/* Substitua pelo seu nome ou logo */}
             Guilherme Vieira
           </Typography>
         </Box>

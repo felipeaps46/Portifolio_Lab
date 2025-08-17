@@ -8,15 +8,20 @@ import {
   Divider,
   TextField,
   InputAdornment,
+  CircularProgress,
+  Avatar,
 } from "@mui/material";
 import CloseIcon from "@mui/icons-material/Close";
 import SendIcon from "@mui/icons-material/Send";
+import { ask } from "./../api/chatApi";
+import assistantAvatar from "../assets/profile.jpeg"; // <-- importe a imagem
 
 type Message = {
   id: string;
   role: "user" | "assistant";
   text: string;
   timestamp: number;
+  pending?: boolean;
 };
 
 type ChatWindowProps = {
@@ -29,22 +34,23 @@ export const ChatWindow: React.FC<ChatWindowProps> = ({ open, onClose }) => {
     {
       id: crypto.randomUUID(),
       role: "assistant",
-      text: "Olá! Como posso ajudar no seu portfólio hoje?",
+      text: "Olá! Como posso ajudar hoje? Pergunte qualquer coisa sobre o Guilherme.",
       timestamp: Date.now(),
     },
   ]);
   const [input, setInput] = useState("");
+  const [isPending, setIsPending] = useState(false);
   const scrollRef = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
     if (open && scrollRef.current) {
       scrollRef.current.scrollTop = scrollRef.current.scrollHeight;
     }
-  }, [open, messages.length]);
+  }, [open, messages.length, isPending]);
 
-  const sendMessage = () => {
+  const sendMessage = async () => {
     const text = input.trim();
-    if (!text) return;
+    if (!text || isPending) return;
 
     const userMsg: Message = {
       id: crypto.randomUUID(),
@@ -53,19 +59,50 @@ export const ChatWindow: React.FC<ChatWindowProps> = ({ open, onClose }) => {
       timestamp: Date.now(),
     };
 
-    setMessages((prev) => [...prev, userMsg]);
-    setInput("");
+    const botPlaceholderId = crypto.randomUUID();
+    const botPlaceholder: Message = {
+      id: botPlaceholderId,
+      role: "assistant",
+      text: "Digitando...",
+      timestamp: Date.now(),
+      pending: true,
+    };
 
-    // Mock de resposta do robô — depois você integra com sua API/LLM
-    setTimeout(() => {
-      const botMsg: Message = {
-        id: crypto.randomUUID(),
-        role: "assistant",
-        text: "Recebi sua mensagem! Em breve responderei com detalhes.",
-        timestamp: Date.now(),
-      };
-      setMessages((prev) => [...prev, botMsg]);
-    }, 600);
+    setMessages((prev) => [...prev, userMsg, botPlaceholder]);
+    setInput("");
+    setIsPending(true);
+
+    try {
+      const answer = await ask(text);
+      setMessages((prev) =>
+        prev.map((m) =>
+          m.id === botPlaceholderId
+            ? {
+                ...m,
+                text: answer || "Sem conteúdo na resposta.",
+                pending: false,
+                timestamp: Date.now(),
+              }
+            : m
+        )
+      );
+    } catch (err: any) {
+      setMessages((prev) =>
+        prev.map((m) =>
+          m.id === botPlaceholderId
+            ? {
+                ...m,
+                text:
+                  "Desculpe, ocorreu um erro ao buscar a resposta. Tente novamente.",
+                pending: false,
+                timestamp: Date.now(),
+              }
+            : m
+        )
+      );
+    } finally {
+      setIsPending(false);
+    }
   };
 
   if (!open) return null;
@@ -101,13 +138,19 @@ export const ChatWindow: React.FC<ChatWindowProps> = ({ open, onClose }) => {
         <Typography variant="subtitle1" fontWeight={700}>
           Assistente Pessoal
         </Typography>
-        <IconButton aria-label="Fechar chat" onClick={onClose} size="small">
+        <IconButton
+          aria-label="Fechar chat"
+          onClick={onClose}
+          size="small"
+          disabled={isPending}
+        >
           <CloseIcon />
         </IconButton>
       </Box>
 
       <Divider />
 
+      {/* Lista de mensagens com avatar apenas nas bolhas */}
       <Box
         ref={scrollRef}
         sx={{
@@ -117,35 +160,52 @@ export const ChatWindow: React.FC<ChatWindowProps> = ({ open, onClose }) => {
           bgcolor: "background.default",
         }}
       >
-        {messages.map((m) => (
-          <Box
-            key={m.id}
-            sx={{
-              mb: 1.5,
-              display: "flex",
-              justifyContent: m.role === "user" ? "flex-end" : "flex-start",
-            }}
-          >
+        {messages.map((m) => {
+          const isUser = m.role === "user";
+
+          return (
             <Box
+              key={m.id}
               sx={{
-                maxWidth: "80%",
-                px: 1.5,
-                py: 1,
-                borderRadius: 2,
-                bgcolor:
-                  m.role === "user" ? "primary.main" : "grey.200",
-                color:
-                  m.role === "user" ? "primary.contrastText" : "text.primary",
+                mb: 1.5,
+                display: "flex",
+                alignItems: "flex-end",
+                justifyContent: isUser ? "flex-end" : "flex-start",
+                gap: 1,
               }}
             >
-              <Typography variant="body2">{m.text}</Typography>
+              {/* Avatar do assistente na esquerda */}
+              {!isUser && (
+                <Avatar
+                  src={assistantAvatar} // <-- usar o import
+                  alt="Avatar do assistente"
+                  sx={{ width: 28, height: 28, bgcolor: "primary.main" }}
+                />
+              )}
+
+              {/* Bolha */}
+              <Box
+                sx={{
+                  maxWidth: "80%",
+                  px: 1.5,
+                  py: 1,
+                  borderRadius: 2,
+                  bgcolor: isUser ? "primary.main" : "grey.200",
+                  color: isUser ? "primary.contrastText" : "text.primary",
+                }}
+              >
+                <Typography variant="body2">
+                  {m.text}
+                </Typography>
+              </Box>
             </Box>
-          </Box>
-        ))}
+          );
+        })}
       </Box>
 
       <Divider />
 
+      {/* Entrada de texto */}
       <Box sx={{ p: 1 }}>
         <TextField
           fullWidth
@@ -153,22 +213,32 @@ export const ChatWindow: React.FC<ChatWindowProps> = ({ open, onClose }) => {
           placeholder="Digite sua mensagem..."
           value={input}
           onChange={(e) => setInput(e.target.value)}
+          disabled={isPending}
           onKeyDown={(e) => {
+            if (isPending) {
+              e.preventDefault();
+              return;
+            }
             if (e.key === "Enter" && !e.shiftKey) {
               e.preventDefault();
-              sendMessage();
+              void sendMessage();
             }
           }}
           InputProps={{
             endAdornment: (
               <InputAdornment position="end">
-                <IconButton
-                  aria-label="Enviar mensagem"
-                  color="primary"
-                  onClick={sendMessage}
-                >
-                  <SendIcon />
-                </IconButton>
+                {isPending ? (
+                  <CircularProgress size={18} />
+                ) : (
+                  <IconButton
+                    aria-label="Enviar mensagem"
+                    color="primary"
+                    onClick={() => void sendMessage()}
+                    disabled={isPending || !input.trim()}
+                  >
+                    <SendIcon />
+                  </IconButton>
+                )}
               </InputAdornment>
             ),
           }}

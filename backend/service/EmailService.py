@@ -2,8 +2,9 @@ import smtplib
 from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
 from model.Email import Email
+from repository.EmailRepository import EmailRepository
 
-class EmailService:
+class EmailService(EmailRepository):
     def __init__(self, email_config: Email):
         self.email_config = email_config
 

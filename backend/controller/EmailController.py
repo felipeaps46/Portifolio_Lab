@@ -1,7 +1,7 @@
 from fastapi import Depends, HTTPException, status
 from pydantic import BaseModel, EmailStr
 from model.Email import Email
-from service.EmailService import EmailService
+from repository.EmailRepository import EmailRepository
 
 class EmailRequest(BaseModel):
     recipient: EmailStr
@@ -10,7 +10,7 @@ class EmailRequest(BaseModel):
 
 
 class EmailController:
-    def __init__(self, email_service: EmailService):
+    def __init__(self, email_service: EmailRepository):
         self.email_service = email_service
 
     def sendEmail(self, email_request: EmailRequest):
