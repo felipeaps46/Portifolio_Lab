@@ -12,10 +12,10 @@ export const AboutSection: React.FC = () => {
             src="/meu-avatar.jpg"
             sx={{ width: 120, height: 120 }}
           />
-          <Typography variant="h3" component="h2" fontWeight={700}>
+          <Typography variant="h3" component="h2" fontWeight={700} sx={{color: "#fff"}}>
             Sobre mim
           </Typography>
-          <Typography variant="body1" color="text.secondary">
+          <Typography variant="body1" color="text.secondary" sx={{color: "#fff"}}>
             Sou desenvolvedor focado em construir experiências web rápidas,
             acessíveis e bem estruturadas. Gosto de React, TypeScript e boas
             práticas de UI/UX. Aqui você encontra minha experiência, projetos e
