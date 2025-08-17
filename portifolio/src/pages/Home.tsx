@@ -5,11 +5,11 @@ import { Header } from "../components/Header";
 import { PersonalChat } from "../components/PersonalChat";
 import { Footer } from "../components/Footer";
 import profileImg from "../assets/profile.jpeg";
-import fundo from "../assets/fundo.png";
 import Button from "@mui/material/Button";
 import DownloadIcon from '@mui/icons-material/Download';
 import ArrowCircleRightIcon from '@mui/icons-material/ArrowCircleRight';
 import AnimatedCanvas from "../assets/animatedBackground/index.tsx";
+import { HighLightsSection } from "../components/sections/HighLightsSection.tsx";
 
 // Se você colocou o hook em outro arquivo, importe:
 import { useTypewriter } from "../hooks/useTypewriter";
@@ -56,7 +56,7 @@ export const Home: React.FC = () => {
             //backgroundPosition: "center",
             backgroundColor: "#2c2c2c",
             width: "100vw",
-            height: "70vh",
+            height: "70.5vh",
             justifyContent: "center",
             alignItems: "center",
             alignContent: "center",
@@ -72,11 +72,16 @@ export const Home: React.FC = () => {
               <Typography
                 variant="h2"
                 component="h1"
-                fontWeight={800}
                 gutterBottom
-                color="#F5F5F5"
                 sx={{
-                  fontSize: { xs: "2rem", sm: "2.5rem", md: "4rem" },
+                  fontWeight: 800,
+                  fontSize: { xs: "2rem", sm: "2.5rem", md: "6rem" },
+                  fontFamily: "'Poppins', sans-serif",
+                  color: "#f5f5f5",
+                  textShadow: `
+      0 0 6px rgba(245, 245, 245, 0.25),
+      0 0 12px rgba(245, 245, 245, 0.2)
+    `
                 }}
               >
                 Guilherme Vieira
@@ -93,7 +98,11 @@ export const Home: React.FC = () => {
                   justifyContent: "center",
                   alignItems: "center",
                   gap: 1,
-                  fontSize: { xs: "1.125rem", sm: "1.25rem", md: "1.5rem" },
+                  fontSize: { xs: "1.125rem", sm: "1.25rem", md: "2rem" },
+                  textShadow: `
+      0 0 4px rgba(245, 245, 245, 0.2),
+      0 0 8px rgba(245, 245, 245, 0.15)
+    `
                 }}
                 aria-live="polite"
                 aria-atomic="true"
@@ -103,20 +112,21 @@ export const Home: React.FC = () => {
                   component="span"
                   sx={{
                     display: "inline-block",
-                    minWidth: "8ch",
                     whiteSpace: "nowrap",
                     borderRight: "2px solid #F5F5F5",
-                    pr: 0.5,
-                    // cursor piscando
-                    animation: "blink 1s step-end infinite",
+                    textShadow: `
+      0 0 3px rgba(245, 245, 245, 0.25),
+      0 0 6px rgba(245, 245, 245, 0.2)
+    `,
+                    animation: "blink 1.2s ease-in-out infinite",
                     "@keyframes blink": {
-                      "0%": { borderColor: "transparent" },
-                      "50%": { borderColor: "#F5F5F5" },
-                      "100%": { borderColor: "transparent" },
+                      "0%": { borderColor: "rgba(245,245,245,0.8)" },
+                      "50%": { borderColor: "transparent" },
+                      "100%": { borderColor: "rgba(245,245,245,0.8)" },
                     },
                   }}
                 >
-                  {" "}{text}
+                  {text}
                 </Box>
               </Typography>
             </Container>
@@ -124,7 +134,7 @@ export const Home: React.FC = () => {
               display: 'flex',
               justifyContent: 'center',
               gap: '1rem',
-              mt: '1rem',
+              mt: '1.7rem',
               border: 'none'
             }}>
               <Button
@@ -141,8 +151,7 @@ export const Home: React.FC = () => {
                   fontSize: '0.9rem',
                   border: "none",
                   "&:hover": {
-                    color: "#fff",
-                    backgroundColor: "#2c2c2c",
+                    color: "#2c2c2c",
                     transform: "translateY(-2px) scale(1.08)",
                   },
                 }}
@@ -184,6 +193,8 @@ export const Home: React.FC = () => {
             </Container>
           </Box>
         </Box>
+
+        <HighLightsSection></HighLightsSection>
       </Box>
 
       <Footer

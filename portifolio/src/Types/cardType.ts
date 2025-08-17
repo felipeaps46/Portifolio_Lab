@@ -7,5 +7,6 @@ export interface CardType {
     languages: string[],
     type: ProjectType,
     image?: string,
+    highlight?: boolean
 }
 

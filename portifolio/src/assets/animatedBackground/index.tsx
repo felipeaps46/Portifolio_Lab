@@ -1,5 +1,5 @@
 import { useEffect, useRef } from "react";
-import { startAnimation } from './animation'
+import { startAnimation } from './animation03'
 
 const AnimatedCanvas = () => {
     const canvasRef = useRef<HTMLCanvasElement | null>(null);
