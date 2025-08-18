@@ -1,17 +1,21 @@
-from fastapi import APIRouter
-from container import emailController, chatController
-from pydantic import BaseModel
-
+from container import emailController
+from fastapi import APIRouter, HTTPException, status
+from pydantic import BaseModel, EmailStr
 
 apiRouter = APIRouter()
 
-class ChatAskRequest(BaseModel):
-    question: str
-    prompt: str | None = None
+class EmailRequest(BaseModel):
+    recipient: EmailStr
+    subject: str
+    body: str
 
-class ChatAnswer(BaseModel):
-    answer: str
+class EmailResponse(BaseModel):
+    message: str
 
-
-# @def send_email()
-apiRouter.post("/email/send")(emailController.sendEmail)
+@apiRouter.post("/email/send", response_model=EmailResponse)
+def send_email(body: EmailRequest):
+    try:
+        result = emailController.sendEmail(body)  
+        return result
+    except Exception as e:
+        raise HTTPException(status_code=status.HTTP_500_INTERNAL_SERVER_ERROR, detail=str(e))
