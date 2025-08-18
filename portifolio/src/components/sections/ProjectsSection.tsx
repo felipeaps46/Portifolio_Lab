@@ -9,6 +9,7 @@ import {
 import { ProjectCard } from "../../components/Card";
 import { projects } from "../../data/projects";
 import { Button } from "@mui/material";
+import { Title } from "../Title";
 
 // Lista de filtros (inclui "Todos")
 const FILTERS = [
@@ -30,17 +31,9 @@ export const ProjectsSection: React.FC = () => {
   }, [filter]);
 
   return (
-    <Box component="section" id="projects" sx={{ py: { xs: 8, md: 12 } }}>
+    <Box component="section" id="projects" sx={{ py: { xs: 8, md: 8 } }}>
       <Container maxWidth="lg">
-        <Typography
-          variant="h3"
-          component="h2"
-          fontWeight={700}
-          textAlign="center"
-          mb={3}
-        >
-          Projetos
-        </Typography>
+        <Title title='Meus Projetos' subtitle="Veja aqui um pouco dos meus projetos."></Title>
 
         {/* Filtro com botões arredondados */}
         <Box
@@ -65,12 +58,13 @@ export const ProjectsSection: React.FC = () => {
                   py: 1,
                   fontWeight: 600,
                   border: "1px solid",
-                  borderColor: selected ? "black" : "divider",
+                  borderColor: "#f5f5f5",
                   color: selected ? "primary.contrastText" : "text.primary",
                   bgcolor: selected ? "#2c2c2c" : "background.paper",
                   "&:hover": {
-                    bgcolor: selected ? "black" : "action.hover",
-                    borderColor: selected ? "black" : "divider",
+                    color: '#f5f5f5',
+                    bgcolor: selected ? "#1e1e1e" : "action.hover",
+                    borderColor: "#f5f5f5 ",
                   },
                 }}
               >

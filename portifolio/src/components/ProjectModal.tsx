@@ -4,6 +4,12 @@ import LanguageIcon from "@mui/icons-material/Language";
 import CalendarTodayIcon from "@mui/icons-material/CalendarToday";
 import GitHubIcon from '@mui/icons-material/GitHub';
 import type { ProjectModalType } from "../Types/ProjectModalType";
+import PublicIcon from '@mui/icons-material/Public';
+import AppsIcon from '@mui/icons-material/Apps';
+import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
+import WebAssetIcon from '@mui/icons-material/WebAsset';
+import HelpOutlineIcon from '@mui/icons-material/HelpOutline';
+import type { ProjectType } from "../Types/cardType";
 
 const modalStyle = {
     position: "absolute",
@@ -20,9 +26,20 @@ const modalStyle = {
 };
 
 export const ProjectModal: React.FC<ProjectModalType> = ({ open, handleClose, project }) => {
+
+    const getTypeIcon = (type: ProjectType) => {
+        switch (type) {
+            case 'Sites': return <PublicIcon />;
+            case 'Landing Pages': return <WebAssetIcon />;
+            case 'Aplicativos': return <AppsIcon />;
+            case 'E-Commerce': return <ShoppingCartIcon />;
+            default: return <HelpOutlineIcon />;
+        }
+    };
+
     return (
         <Modal open={open} onClose={handleClose} aria-labelledby="modal-title">
-            <Box sx={modalStyle}>
+            <Box sx={modalStyle} >
                 {/* Imagem ou Vídeo no topo */}
                 {project.video ? (
                     <Box
@@ -60,6 +77,7 @@ export const ProjectModal: React.FC<ProjectModalType> = ({ open, handleClose, pr
                     <Stack direction="row" spacing={2} alignItems="center" sx={{ mb: 3, color: "text.secondary" }}>
                         <Stack direction="row" spacing={1} alignItems="center" sx={{ bgcolor: '#2c2c2c', borderRadius: '50px', py: 0.5, px: 1 }}>
                             <LanguageIcon fontSize="small" sx={{ color: "#f5f5f5" }} />
+
                             <Typography variant="body2" sx={{ color: "#f5f5f5" }}>{project.type}</Typography>
                         </Stack>
                         <Stack direction="row" spacing={1} alignItems="center">

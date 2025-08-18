@@ -1,9 +1,10 @@
 import React, { useMemo, useState } from "react";
-import { Box, Container, Typography, Button } from "@mui/material";
+import { Box, Container, Button } from "@mui/material";
 import { useTheme, alpha } from "@mui/material/styles";
 import { TechSkills } from "../../components/TechSkills";
 import { skills } from "../../data/techData";
 import type { OrderedCategory, TechItem } from "../../Types/techItem";
+import { Title } from "../Title";
 
 const ORDERED_CATEGORIES: readonly OrderedCategory[] = [
   "Todos",
@@ -54,17 +55,9 @@ export const SkillsSection: React.FC = () => {
   }, [filter, normalizedItems]);
 
   return (
-    <Box component="section" id="skills" sx={{ py: { xs: 8, md: 12 } }}>
+    <Box component="section" id="skills" sx={{ pt: { xs: 4, md: 4 }, pb: { xs: 4, md: 10 }, bgcolor: 'rgba(74, 74, 74, 0.19)' }}>
       <Container maxWidth="lg">
-        <Typography
-          variant="h3"
-          component="h2"
-          fontWeight={700}
-          textAlign="center"
-          mb={3}
-        >
-          Skills
-        </Typography>
+        <Title title='Minhas Habilidades' subtitle="Veja aqui um pouco das minhas habilidades técnicas."></Title>
 
         {/* Filtros estilo pill, fundo paper e borda destacando o selecionado */}
         <Box
@@ -89,19 +82,14 @@ export const SkillsSection: React.FC = () => {
                   px: 3,
                   py: 1,
                   fontWeight: 600,
-                  border: "1px solid",
-                  borderColor: selected
-                    ? "primary.main"
-                    : theme.palette.divider,
-                  color: theme.palette.text.primary,
-                  bgcolor: theme.palette.background.paper,
-                  transition: "border-color 0.2s ease, background-color 0.2s ease, box-shadow 0.2s ease",
-                  boxShadow: selected
-                    ? `0 0 0 4px ${alpha(theme.palette.primary.main, 0.1)}`
-                    : "none",
+                  border: "2px solid",
+                  borderColor: "#f5f5f5",
+                  color: selected ? "primary.contrastText" : "text.primary",
+                  bgcolor: selected ? "#2c2c2c" : "background.paper",
                   "&:hover": {
-                    bgcolor: theme.palette.action.hover,
-                    borderColor: selected ? "primary.dark" : "divider",
+                    color: '#f5f5f5',
+                    bgcolor: selected ? "#1e1e1e" : "action.hover",
+                    borderColor: "#f5f5f5 ",
                   },
                 }}
               >
@@ -120,6 +108,7 @@ export const SkillsSection: React.FC = () => {
           rounded={2}
           elevation={1}
           showTooltip
+
         />
       </Container>
     </Box>

@@ -18,7 +18,7 @@ export const TechSkills: React.FC<TechSkillsProps> = ({
   showTooltip = false,
 }) => {
   return (
-    <Grid container spacing={gap}>
+    <Grid container spacing={gap} sx={{ justifyContent: 'center' }}>
       {items.map((item) => {
         const IconComp = item.icon;
 
@@ -60,7 +60,7 @@ export const TechSkills: React.FC<TechSkillsProps> = ({
               variant="subtitle2"
               component="div"
               noWrap
-              sx={{ width: "100%", fontWeight: 600 }}
+              sx={{ width: "100%", fontWeight: 600, color: '#f5f5f5' }}
               title={showTooltip ? undefined : item.name}
             >
               {item.name}
@@ -73,10 +73,16 @@ export const TechSkills: React.FC<TechSkillsProps> = ({
             elevation={elevation}
             sx={{
               borderRadius: rounded,
+              backgroundColor: 'transparent',
               height: "100%",
               display: "flex",
               flexDirection: "column",
-              // Removi justifyContent: "stretch" por não ser válido; o layout já fica correto sem isso.
+              transition: 'all 0.2s ease',
+              boxShadow: 'rgba(255, 255, 255, 0.19) 0px 1px 4px',
+              "&:hover": {
+                transform: "translateY(-2px) scale(1.08)",
+                transition: 'all 0.2s ease',
+              }
             }}
           >
             {content}
@@ -93,10 +99,10 @@ export const TechSkills: React.FC<TechSkillsProps> = ({
           <Grid
             key={item.name}
             item
-            xs={6}   // 2 colunas no xs
-            sm={4}   // 3 colunas no sm
-            md={3}   // 4 colunas no md
-            lg={2}   // 6 colunas no lg
+            sx={{
+              flex: "1 1 15%", // ocupa 20% do espaço → 5 por linha
+              maxWidth: "20%", // garante que não passe disso
+            }}
           >
             {wrapped}
           </Grid>

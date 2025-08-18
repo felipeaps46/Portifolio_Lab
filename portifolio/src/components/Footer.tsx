@@ -23,11 +23,11 @@ export interface FooterProps {
 
 export const Footer: React.FC<FooterProps> = ({
   navLinks = [
-    { text: "Sobre", href: "#sobre" },
-    { text: "Experiências", href: "#experiencias" },
-    { text: "Habilidades", href: "#habilidades" },
-    { text: "Projetos", href: "#projects" },
-    { text: "Contato", href: "#contato" },
+    { text: "Home", href: "/" },
+    { text: "Sobre", href: "/sobre" },
+    { text: "Habilidades", href: "/habilidades" },
+    { text: "Projetos", href: "/projetos" },
+    { text: "Contato", href: "/contato" },
   ]
 }) => {
   const currentYear = new Date().getFullYear();
