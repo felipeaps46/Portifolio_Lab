@@ -9,13 +9,14 @@ import {
   Stack,
   Alert,
 } from "@mui/material";
-import fundo from "../../assets/fundo.png";
-import { TbBackground } from "react-icons/tb";
-import EmailIcon from "@mui/icons-material/Email";
 import WhatsAppIcon from "@mui/icons-material/WhatsApp";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import EmailOutlinedIcon from "@mui/icons-material/EmailOutlined";
+import { GitHub } from "@mui/icons-material";
 import { userData } from "../../data/userData";
+import { Title } from "../Title"
+import AnimatedCanvas from "../../assets/animatedBackground";
+import { ContactCard } from "../ContactCard";
 
 export const ContactSection: React.FC = () => {
   const [status, setStatus] = useState<
@@ -43,9 +44,11 @@ export const ContactSection: React.FC = () => {
       id="contact"
       sx={{
         py: {
-          xs: 8,
-          md: 12,
-          backgroundImage: `url(${fundo})`,
+          xs: 4,
+          md: 4,
+          flex: 1,
+          position: "relative",
+          //backgroundImage: `url(${fundo})`,
           display: "flex",
           justifyContent: "center",
           gap: 4,
@@ -55,6 +58,7 @@ export const ContactSection: React.FC = () => {
         },
       }}
     >
+      <AnimatedCanvas></AnimatedCanvas>
       <Box
         sx={{
           display: "flex",
@@ -64,20 +68,8 @@ export const ContactSection: React.FC = () => {
           mb: 6,
         }}
       >
-        <Typography
-          variant="h2"
-          sx={{
-            color: "white",
-            fontFamily: "'Inter', sans-serif",
-          }}
-        >
-          Contatos
-        </Typography>
-        <Typography
-          sx={{ color: "#9CA3AF", fontFamily: "'Inter', sans-serif" }}
-        >
-          Gostou do que viu? Me chame por um desses canais.
-        </Typography>
+        <Title title='Contatos' subtitle="Gostou do que viu? Me chame por um desses canais."></Title>
+
       </Box>
 
       <Box sx={{ display: "flex", gap: 1 }}>
@@ -91,7 +83,7 @@ export const ContactSection: React.FC = () => {
             backgroundColor: "white",
           }}
         >
-          <Typography variant="h5" mb={3} fontWeight="bold">
+          <Typography variant="h5" mb={3} fontWeight="bold" sx={{}}>
             Envie sua mensagem
           </Typography>
 
@@ -177,8 +169,9 @@ export const ContactSection: React.FC = () => {
 
         <Box
           sx={{
-            maxWidth: 300,
+            maxWidth: 400,
             p: 5,
+            pt: 0,
             color: "white",
             fontFamily: "'Inter', sans-serif",
           }}
@@ -187,65 +180,37 @@ export const ContactSection: React.FC = () => {
             variant="h5"
             fontWeight="bold"
             mb={2}
-            sx={{ color: "white", fontFamily: "'Inter', sans-serif" }}
+            sx={{ color: "white", fontFamily: "'Inter', sans-serif", fontSize: '36px' }}
           >
             Conecte-se Por
           </Typography>
 
-          <Box
-            sx={{
-              display: "flex",
-              alignItems: "center",
-              mb: 5,
-              backgroundColor: "white",
-              p: 2,
-              borderRadius: 4,
-              color: "1E1E1E",
-            }}
-          >
-            <EmailOutlinedIcon
-              sx={{ mr: 1, color: "#1E1E1E", backgroundColor: "#E1E1E" }}
-            />
-            <Typography variant="body1" sx={{ color: "#2C2C2C" }}>
-              {user.links?.email}
-            </Typography>
-          </Box>
+          <ContactCard
+            icon={<EmailOutlinedIcon sx={{ color: "white" }} />}
+            title="Email"
+            text={user.emailName}
+            link={user.links?.email}
+          />
 
-          <Box
-            sx={{
-              display: "flex",
-              alignItems: "center",
-              mb: 5,
-              backgroundColor: "white",
-              p: 2,
-              borderRadius: 4,
-              color: "E1E1E",
-            }}
-          >
-            <WhatsAppIcon sx={{ mr: 1, color: "#1E1E1E" }} />
-            <Typography variant="body1" sx={{ color: "#2C2C2C" }}>
-              {user.telefone}
-            </Typography>
-          </Box>
+          <ContactCard
+            icon={<WhatsAppIcon sx={{ color: "white" }} />}
+            title="WhatsApp"
+            text={user.telefone}
+            link={user.links?.whatsapp}
+          />
 
-          <Box
-            sx={{
-              display: "flex",
-              alignItems: "center",
-              mb: 5,
-              backgroundColor: "white",
-              p: 2,
-              borderRadius: 4,
-              color: "E1E1E",
-            }}
-          >
-            <Button href={user.links?.linkedin} >
-            <LinkedInIcon sx={{ mr: 1, color: "#1E1E1E" }} />
-              {user.name}
-            </Button>
-            <Typography variant="body1" sx={{ color: "#2C2C2C" }}>
-            </Typography>
-          </Box>
+          <ContactCard
+            icon={<LinkedInIcon sx={{ color: "white" }} />}
+            title="LinkedIn"
+            text={user.linkedinName}
+            link={user.links?.linkedin}
+          />
+          <ContactCard
+            icon={<GitHub sx={{ color: "white" }} />}
+            title="Github"
+            text={user.githubName}
+            link={user.links?.github}
+          />
         </Box>
       </Box>
     </Box>
