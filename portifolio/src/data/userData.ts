@@ -6,8 +6,11 @@ export const userData: User = {
     name: "Guilherme Vieira",
     img: profileImg,
     desc: "Desenvolvedor Full Stack",
+    emailName: 'guilhermearv@gmail.com',
+    linkedinName: 'guilherme-arvieira',
+    githubName: 'GuilhermeVieira05',
     links:{
-        github: "https://github.com/GuilhermeVieira",
+        github: "https://github.com/GuilhermeVieira05",
         linkedin: "https://www.linkedin.com/in/guilherme-arvieira/",
         email: "guilhermearv3@gmail.com"
     },
