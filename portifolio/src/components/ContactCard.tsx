@@ -60,6 +60,7 @@ export const ContactCard: React.FC<ContactCardProps> = (props) => {
                             textDecoration: "none",
                             "&:hover": {
                                 textDecoration: "underline",
+                                color: "#666666",
                             },
                         }}
                     >
