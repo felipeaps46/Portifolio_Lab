@@ -10,7 +10,6 @@ import TimelineDot from '@mui/lab/TimelineDot';
 import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
 import { useMediaQuery, useTheme } from '@mui/material';
-import { alpha } from '@mui/material/styles';
 
 import SchoolIcon from '@mui/icons-material/School';
 import BusinessCenterIcon from '@mui/icons-material/BusinessCenter';

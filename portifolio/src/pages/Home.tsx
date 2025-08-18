@@ -13,16 +13,13 @@ import { HighLightsSection } from "../components/sections/HighLightsSection.tsx"
 
 // Se você colocou o hook em outro arquivo, importe:
 import { useTypewriter } from "../hooks/useTypewriter";
+import { userData } from "../data/userData.ts";
 
 export const Home: React.FC = () => {
-  // Palavras que entram depois de "Desenvolvedor "
-  const palavras = [
-    "Backend",
-    "de Software",
-    "de Inteligência Artificial",
-    "Front-end",
-    "Full Stack",
-  ];
+
+  const user = userData
+
+  const palavras = user.caracteristicas
 
   const { text } = useTypewriter(palavras, {
     typingSpeed: 90,
@@ -51,9 +48,6 @@ export const Home: React.FC = () => {
             flex: 1,
             position: "relative",
             py: { xs: 8, md: 12 },
-            //backgroundImage: `url(${fundo})`,
-            //backgroundSize: "cover",
-            //backgroundPosition: "center",
             backgroundColor: "#2c2c2c",
             width: "100vw",
             height: "70.5vh",
@@ -84,7 +78,7 @@ export const Home: React.FC = () => {
     `
                 }}
               >
-                Guilherme Vieira
+               {user.name}
               </Typography>
 
               {/* Linha 2: "Desenvolvedor " + palavra animada */}
@@ -140,7 +134,7 @@ export const Home: React.FC = () => {
               {/*Mudar aqui o caminho se necessario para o novo curriculo*/}
               <Button
                 component="a"
-                href="src/download/curriculo.pdf"
+                href={user.curriculo}
                 download
                 sx={{
                   color: "#2c2c2c",
@@ -200,11 +194,7 @@ export const Home: React.FC = () => {
         <HighLightsSection></HighLightsSection>
       </Box>
 
-      <Footer
-        name="Seu Nome"
-        description="Breve bio/descrição sobre você, missão e foco profissional."
-      // Você pode passar seus próprios arrays de links aqui, ou usar os defaults do componente
-      />
+      <Footer/>
 
       <PersonalChat
         avatarUrl={profileImg}

@@ -1,12 +1,11 @@
+// src/components/TechSkills.tsx
 import * as React from "react";
 import Grid from "@mui/material/Grid";
 import Card from "@mui/material/Card";
-import CardActionArea from "@mui/material/CardActionArea";
 import Typography from "@mui/material/Typography";
 import Box from "@mui/material/Box";
 import Tooltip from "@mui/material/Tooltip";
 import type { TechSkillsProps } from "../Types/techItem";
-
 
 export const TechSkills: React.FC<TechSkillsProps> = ({
   items,
@@ -14,11 +13,9 @@ export const TechSkills: React.FC<TechSkillsProps> = ({
   iconSize = 48,
   iconBoxHeight = 72,
   iconBoxWidth = 72,
-  rounded,
+  rounded = 2,
   elevation = 1,
-  clickable = false,
   showTooltip = false,
-  onItemClick,
 }) => {
   return (
     <Grid container spacing={gap}>
@@ -41,20 +38,21 @@ export const TechSkills: React.FC<TechSkillsProps> = ({
             <Box
               sx={{
                 width: iconBoxWidth,
-                Height: iconBoxHeight,
+                height: iconBoxHeight,
                 display: "flex",
                 alignItems: "center",
                 justifyContent: "center",
                 bgcolor: item.bg ?? "transparent",
                 borderRadius: 2,
                 overflow: "hidden",
+                color: item.color ?? "inherit",
+                fontSize: `${iconSize}px`,
               }}
             >
               <IconComp
-                size={iconSize}
-                color={item.color ?? "inherit"}
                 aria-label={item.ariaLabel ?? item.name}
                 role="img"
+                style={{ fontSize: `${iconSize}px` }}
               />
             </Box>
 
@@ -70,14 +68,6 @@ export const TechSkills: React.FC<TechSkillsProps> = ({
           </Box>
         );
 
-        const cardInner = clickable ? (
-          <CardActionArea onClick={() => onItemClick?.(item)}>
-            {content}
-          </CardActionArea>
-        ) : (
-          content
-        );
-
         const card = (
           <Card
             elevation={elevation}
@@ -86,23 +76,29 @@ export const TechSkills: React.FC<TechSkillsProps> = ({
               height: "100%",
               display: "flex",
               flexDirection: "column",
-              justifyContent: "stretch",
+              // Removi justifyContent: "stretch" por não ser válido; o layout já fica correto sem isso.
             }}
           >
-            {cardInner}
+            {content}
           </Card>
+        );
+
+        const wrapped = showTooltip ? (
+          <Tooltip title={item.name}>{card}</Tooltip>
+        ) : (
+          card
         );
 
         return (
           <Grid
             key={item.name}
             item
-            xs={6}  // 2 colunas no xs
-            sm={4}  // 3 colunas no sm
-            md={3}  // 4 colunas no md
-            lg={2}  // 6 colunas no lg
+            xs={6}   // 2 colunas no xs
+            sm={4}   // 3 colunas no sm
+            md={3}   // 4 colunas no md
+            lg={2}   // 6 colunas no lg
           >
-            {showTooltip ? <Tooltip title={item.name}>{card}</Tooltip> : card}
+            {wrapped}
           </Grid>
         );
       })}

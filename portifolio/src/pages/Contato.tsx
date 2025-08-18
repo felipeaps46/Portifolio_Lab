@@ -5,6 +5,7 @@ import Footer from "../components/Footer"
 import profileImg from "../assets/profile.jpeg";
 import { PersonalChat } from "../components/PersonalChat";
 import fundo from "../assets/fundo.png";
+import { userData } from "../data/userData";
 
 export const Contato: React.FC = () => {
     return (
@@ -24,10 +25,7 @@ export const Contato: React.FC = () => {
                 <Box component='main' sx={{ flex: 1 }}>
                     <ContactSection />
                 </Box>
-                <Footer
-                    name="Seu Nome"
-                    description="Breve bio/descrição sobre você, missão e foco profissional."
-                />
+                <Footer/>
                 <PersonalChat
                         avatarUrl={profileImg}
                         avatarAlt="Foto do meu perfil"

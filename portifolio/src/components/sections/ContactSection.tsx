@@ -15,6 +15,7 @@ import EmailIcon from "@mui/icons-material/Email";
 import WhatsAppIcon from "@mui/icons-material/WhatsApp";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import EmailOutlinedIcon from "@mui/icons-material/EmailOutlined";
+import { userData } from "../../data/userData";
 
 export const ContactSection: React.FC = () => {
   const [status, setStatus] = useState<
@@ -33,6 +34,8 @@ export const ContactSection: React.FC = () => {
       setStatus("error");
     }
   };
+
+  const user = userData
 
   return (
     <Box
@@ -204,7 +207,7 @@ export const ContactSection: React.FC = () => {
               sx={{ mr: 1, color: "#1E1E1E", backgroundColor: "#E1E1E" }}
             />
             <Typography variant="body1" sx={{ color: "#2C2C2C" }}>
-              exemplo@email.com
+              {user.links?.email}
             </Typography>
           </Box>
 
@@ -221,7 +224,7 @@ export const ContactSection: React.FC = () => {
           >
             <WhatsAppIcon sx={{ mr: 1, color: "#1E1E1E" }} />
             <Typography variant="body1" sx={{ color: "#2C2C2C" }}>
-              (11) 99999-9999
+              {user.telefone}
             </Typography>
           </Box>
 
@@ -236,9 +239,11 @@ export const ContactSection: React.FC = () => {
               color: "E1E1E",
             }}
           >
+            <Button href={user.links?.linkedin} >
             <LinkedInIcon sx={{ mr: 1, color: "#1E1E1E" }} />
+              {user.name}
+            </Button>
             <Typography variant="body1" sx={{ color: "#2C2C2C" }}>
-              linkedin.com/in/seu-perfil
             </Typography>
           </Box>
         </Box>

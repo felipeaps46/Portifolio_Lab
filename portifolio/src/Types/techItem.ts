@@ -1,22 +1,39 @@
-import type { IconType } from "react-icons";
+// src/Types/techItem.ts
+import type { ElementType } from "react";
 
-export type TechItem = {
+export type OrderedCategory =
+  | "Todos"
+  | "Frontend"
+  | "Backend"
+  | "Mobile"
+  | "Database"
+  | "DevOps"
+  | "Testing"
+  | "Design"
+  | "Tools"
+  | "Outros";
+
+// Item de skill
+export interface TechItem {
   name: string;
-  icon: IconType;        // componente do react-icons, ex.: SiNodedotjs
-  color?: string;        // cor do ícone (hex, rgb, nome CSS), default: 'inherit'
-  bg?: string;           // cor de fundo da caixinha do ícone
-  ariaLabel?: string;    // opcional para acessibilidade
-};
+  icon: ElementType;          // aceita tanto react-icons quanto MUI icons
+  category?: string;          // manter flexível e normalizar no uso
+  color?: string;             // cor do ícone (herdada por CSS)
+  bg?: string;                // fundo do quadrinho do ícone
+  ariaLabel?: string;
+  link?: string;              // para abrir no clique
+}
 
-export type TechSkillsProps = {
+// Props do componente de grade de skills
+export interface TechSkillsProps {
   items: TechItem[];
-  gap?: number;                // espaçamento entre cards (Grid spacing)
-  iconSize?: number;           // tamanho do ícone (px)
-  iconBoxHeight?: number | string; // default "100%"      // altura útil para a área do ícone (px)
-  iconBoxWidth?: number | string; // default "100%"      // altura útil para a área do ícone (px)
-  rounded?: number;            // borderRadius do Card
-  elevation?: number;          // elevação do Card
-  clickable?: boolean;         // se true, usa CardActionArea e dispara onItemClick
-  showTooltip?: boolean;       // exibe tooltip com o nome inteiro
+  gap?: number;               // Grid spacing
+  iconSize?: number;          // px
+  iconBoxHeight?: number;     // px
+  iconBoxWidth?: number;      // px
+  rounded?: number | string;  // borderRadius
+  elevation?: number;
+  clickable?: boolean;
+  showTooltip?: boolean;
   onItemClick?: (item: TechItem) => void;
-};
+}

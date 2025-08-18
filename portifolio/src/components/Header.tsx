@@ -5,12 +5,13 @@ import Button from "@mui/material/Button";
 import Box from "@mui/material/Box";
 import { TbCircleLetterGFilled } from "react-icons/tb"; //importacao do icone de letra
 import { useLocation } from "react-router-dom";
+import { userData } from "../data/userData";
 
 export const Header = () => {
 
   const location = useLocation();
   const currentPath = location.pathname;
-
+  const user = userData
   const menuItems = [
     { label: "Home", path: "/", key: "home" },
     { label: "Sobre", path: "/sobre", key: "sobre" },
@@ -67,7 +68,7 @@ export const Header = () => {
               fontSize: { xs: "1.2rem", sm: "1.7rem" },
             }}
           >
-            Guilherme Vieira
+            {user.name}
           </Typography>
         </Box>
         <Box>

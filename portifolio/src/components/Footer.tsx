@@ -9,68 +9,46 @@ import {
   IconButton,
   Container,
 } from "@mui/material";
-import InstagramIcon from "@mui/icons-material/Instagram";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import WhatsAppIcon from "@mui/icons-material/WhatsApp";
 import MailOutlineIcon from "@mui/icons-material/MailOutline";
+import { userData } from "../data/userData";
 
 type NavLink = { text: string; href: string };
-type ConnectLink = { Icon: React.ElementType; text: string; href: string };
-type SocialIcon = { Icon: React.ElementType; href: string; label: string };
 
 export interface FooterProps {
-  name?: string;
-  description?: string;
   navLinks?: NavLink[];
-  connectLinks?: ConnectLink[];
-  socialIcons?: SocialIcon[];
 }
 
 export const Footer: React.FC<FooterProps> = ({
-  name = "Felipe Pereira",
-  description = "Excepteur efficient emerging, minim veniam anim aute carefully curated Ginza conversation exquisite perfect nostrud nisi intricate Content. Qui international first-class nulla ut.",
   navLinks = [
     { text: "Sobre", href: "#sobre" },
     { text: "Experiências", href: "#experiencias" },
     { text: "Habilidades", href: "#habilidades" },
     { text: "Projetos", href: "#projects" },
     { text: "Contato", href: "#contato" },
-  ],
-  connectLinks = [
+  ]
+}) => {
+  const currentYear = new Date().getFullYear();
+
+  const user = userData
+
+  const connectLinks = [
     {
       Icon: LinkedInIcon,
       text: "LinkedIn",
-      href: "https://www.linkedin.com/in/seuperfil",
+      href: user.links?.linkedin
     },
-    { Icon: GitHubIcon, text: "GitHub", href: "https://github.com/seuperfil" },
+    { Icon: GitHubIcon, text: "GitHub", href: user.links?.github },
     {
       Icon: WhatsAppIcon,
       text: "WhatsApp",
-      href: "https://wa.me/seunumerodetelefone",
+      href: `wa.me/${user.telefone}?text=Ol%C3%A1%2C%20tudo%20bem%3F%20Gostaria%20de%20saber%20mais%20sobre%20voc%C3%AA.`
     },
-    { Icon: MailOutlineIcon, text: "Gmail", href: "mailto:seuemail@gmail.com" },
-  ],
-  socialIcons = [
-    {
-      Icon: InstagramIcon,
-      href: "https://www.instagram.com/seuperfil",
-      label: "Instagram",
-    },
-    {
-      Icon: LinkedInIcon,
-      href: "https://www.linkedin.com/in/seuperfil",
-      label: "LinkedIn",
-    },
-    { Icon: GitHubIcon, href: "https://github.com/seuperfil", label: "GitHub" },
-    {
-      Icon: WhatsAppIcon,
-      href: "https://wa.me/seunumerodetelefone",
-      label: "WhatsApp",
-    },
-  ],
-}) => {
-  const currentYear = new Date().getFullYear();
+    { Icon: MailOutlineIcon, text: "Gmail", href: `mailto:${user.links?.email}` },
+  ]
+
 
   return (
     <Box
@@ -91,7 +69,7 @@ export const Footer: React.FC<FooterProps> = ({
           <Grid xs={12} md={5} sx={{ minWidth: 0 }}>
             <Stack spacing={2}>
               <Typography variant="h4" component="h2" sx={{ fontWeight: 700 }}>
-                {name}
+                {user.name}
               </Typography>
 
               <Typography
@@ -106,14 +84,14 @@ export const Footer: React.FC<FooterProps> = ({
                   whiteSpace: "normal",
                 }}
               >
-                {description}
+                {user.desc}
               </Typography>
 
               <Stack direction="row" spacing={1.5} sx={{ pt: 1 }}>
-                {socialIcons.map(({ Icon, href, label }, idx) => (
+                {connectLinks.map(({ Icon, href, text }, idx) => (
                   <IconButton
                     key={idx}
-                    aria-label={label}
+                    aria-label={text}
                     component="a"
                     href={href}
                     rel="noopener noreferrer"
@@ -195,7 +173,7 @@ export const Footer: React.FC<FooterProps> = ({
 
         <Box sx={{ textAlign: { xs: "center", md: "left" } }}>
           <Typography variant="body2" color="#F5F5F5">
-            © {currentYear} {name}. Todos os direitos reservados.
+            © {currentYear} {user.name}. Todos os direitos reservados.
           </Typography>
         </Box>
       </Container>
