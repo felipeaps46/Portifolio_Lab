@@ -4,7 +4,7 @@ from model.Email import Email
 from repository.EmailRepository import EmailRepository
 
 class EmailRequest(BaseModel):
-    recipient: EmailStr
+    recispient: EmailStr
     subject: str
     body: str
 
