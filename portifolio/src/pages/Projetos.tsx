@@ -7,6 +7,7 @@ import profileImg from "../assets/profile.jpeg";
 import { PersonalChat } from "../components/PersonalChat";
 import { SkillsSection } from "../components/sections/SkillsSection";
 
+
 export const Projetos: React.FC = () => {
   return (
     <>
@@ -15,7 +16,7 @@ export const Projetos: React.FC = () => {
           display: "flex",
           flexDirection: "column",
           minHeight: "100vh",
-          bgcolor: "background.default",
+          bgcolor: "#2c2c2c",
           color: "text.primary",
           scrollBehavior: "smooth",
         }}
