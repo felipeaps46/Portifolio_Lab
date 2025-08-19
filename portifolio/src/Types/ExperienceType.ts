@@ -4,6 +4,6 @@ export interface ExperienceType {
     startDate: string,
     finalDate: string | null,
     description: string,
-    type: "Trabalho" | "Voluntariado" | "Estudo"
+    type: "Trabalho" | "Voluntariado" | "Estudo" | string
 }
 

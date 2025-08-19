@@ -35,6 +35,13 @@
             "all": "All"
         }
     },
+    "sobreSecao": {
+        "titulo": "About Me"
+    },
+    "experienciaSecao": {
+        "titulo": "Experiences",
+        "subtitulo": "See here a little about my journey."
+    },
     "habilidadesSecao": {
         "titulo": "My Skills",
         "subtitulo": "See some of my technical skills here.",
@@ -49,6 +56,72 @@
             "design": "Design",
             "tools": "Tools",
             "outros": "Others"
+        }
+    },
+    "estatisticasSecao": {
+        "titulo": "Statistics",
+        "estatisticas": {
+            "projetos": "Projects",
+            "anos": "Years",
+            "clientes": "Clients",
+            "dedicacao": "Dedication",
+            "satisfacao": "Customer Satisfaction"
+        }
+    },
+    "projetoModal": {
+        "sobre": "About the project",
+        "tecnologias": "Technologies Used",
+        "btnTexto01": "Watch online",
+        "btnTexto02": "See code"
+    },
+    "contatoSecao": {
+        "titulo": "Contacts",
+        "subtitulo": "Did you like what you saw? Reach out through one of these channels.",
+        "cardEmail": {
+            "titulo": "Send your message",
+            "labelNome": "Name",
+            "labelTelefone": "Phone",
+            "labelMensagem": "Message",
+            "btnTexto": "Send Message"
+        },
+        "titulo02": "Connect Through"
+    },
+    "experiencias": {
+        "experiencia01": {
+            "papel": "Fullstack Developer - Experimental Agency",
+            "empresa": "Puc Minas",
+            "descricao": "I work as a FullStack Developer at Puc Minas' Experimental Agency, actively participating in the Grade Inteligente and Landing Page projects, where I gained practical experience in non-profit initiatives. I develop using Java with SpringBoot, and TypeScript on the frontend.",
+            "tipo": "Work"
+        },
+        "experiencia02": {
+            "papel": "FullStack Development Intern",
+            "empresa": "4mti",
+            "descricao": "I work on the development of automated solutions and handling large volumes of data using PHP, Python, HTML, and PostgreSQL. I create bots and automations to optimize processes, as well as contribute to the front-end of applications and database management.",
+            "tipo": "Work"
+        },
+        "experiencia03": {
+            "papel": "Freelancer - Web Development",
+            "empresa": "Voogle",
+            "descricao": "I developed a personalized web page for a client, meeting their specific design and functionality needs. For the project, I used React, TypeScript, and Tailwind to build a responsive and intuitive interface. I delivered the project within the agreed timeframe, achieving high client satisfaction.",
+            "tipo": "Work"
+        },
+        "experiencia04": {
+            "papel": "Treasury Coordinator - Obra Jovem Santa Helena",
+            "empresa": "Santa Helena",
+            "descricao": "I was the Treasury Coordinator of Obra Jovem Santa Helena, responsible for managing the treasury and financing of the project.",
+            "tipo": "Volunteering"
+        },
+        "experiencia05": {
+            "papel": "Software Engineering",
+            "empresa": "PUC Minas",
+            "descricao": "Project-oriented education with a solid foundation in architecture, data structures, databases, and embedded systems. Emphasis on best practices (such as testing, version control, and CI/CD), agile methodologies, and AI fundamentals to build scalable, secure, and production-ready solutions.",
+            "tipo": "Study"
+        },
+        "experiencia06": {
+            "papel": "Perseverance Coordinator - Obra Jovem Santa Helena",
+            "empresa": "Santa Helena",
+            "descricao": "I was the Perseverance Coordinator of Obra Jovem Santa Helena, responsible for catechism and the formation of young Catholics.",
+            "tipo": "Volunteering"
         }
     },
     "projects": {

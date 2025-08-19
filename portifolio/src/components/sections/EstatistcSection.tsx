@@ -2,8 +2,10 @@
 import React from "react";
 import { Box, Container, Typography } from "@mui/material";
 import { StatsPanel } from "../../components/EstatisticComponent";
+import { useTranslation } from "react-i18next";
 
 export const EstatitcSection: React.FC = () => {
+  const { t } = useTranslation()
   return (
     <Box component="section" id="statistics" sx={{ py: { xs: 8, md: 12 } }}>
       <Container maxWidth="lg">
@@ -15,19 +17,19 @@ export const EstatitcSection: React.FC = () => {
           mb={4}
           sx={{ color: "#fff" }}
         >
-          Estatísticas
+          {t("estatisticasSecao.titulo")}
         </Typography>
 
         <StatsPanel
-          title="ESTATÍSTICAS"
+          title={t("estatisticasSecao.titulo").toUpperCase()}
           items={[
-            { label: "Projetos", value: 50, plus: true },
-            { label: "Anos", value: 3, plus: true },
-            { label: "Clientes", value: 25, plus: true },
-            { label: "Dedicação", value: 100, suffix: "%", decimals: 0 },
+            { label: t("estatisticasSecao.estatisticas.projetos"), value: 50, plus: true },
+            { label: t("estatisticasSecao.estatisticas.anos"), value: 3, plus: true },
+            { label: t("estatisticasSecao.estatisticas.clientes"), value: 25, plus: true },
+            { label: t("estatisticasSecao.estatisticas.dedicacao"), value: 100, suffix: "%", decimals: 0 },
           ]}
           satisfaction={98}
-          satisfactionLabel="Satisfação do Cliente"
+          satisfactionLabel={t("estatisticasSecao.estatisticas.satisfacao")}
         />
       </Container>
     </Box>
