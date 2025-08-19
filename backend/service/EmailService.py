@@ -19,7 +19,6 @@ class EmailService(EmailRepository):
     def send_email(self, recipient: str, subject: str, body: str):
         
         msg = self.createEmail(recipient, subject, body)
-
         try:
             with smtplib.SMTP(self.email_config.server, self.email_config.port) as server:
                 server.starttls()

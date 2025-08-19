@@ -185,7 +185,7 @@ export const ContactSection: React.FC = () => {
             Conecte-se Por
           </Typography>
 
-          <ContactCard
+          <ContactCard 
             icon={<EmailOutlinedIcon sx={{ color: "white" }} />}
             title="Email"
             text={user.emailName}
