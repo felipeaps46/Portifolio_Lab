@@ -3,20 +3,22 @@ import { Title } from "../Title"
 import { projects } from "../../data/projects"
 import { ProjectCard } from "../Card"
 import ArrowCircleRightIcon from '@mui/icons-material/ArrowCircleRight';
+import { useTranslation } from "react-i18next";
 
 export const HighLightsSection = () => {
+    const { t } = useTranslation()
 
     return (
         <>
             <Box component='main' sx={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', backgroundColor: '#2c2c2c', pb: '4rem' }}>
-                <Title title='Meus Destaques' subtitle="Veja aqui alguns dos meus principais trabalhos."></Title>
+                <Title title={t("destaquesSecao.titulo")} subtitle={t("destaquesSecao.subtitulo")}></Title>
                 <Box sx={{ display: 'flex', flexDirection: 'row', gap: '1rem', justifyContent: 'center' }}>
                     {projects
                         .filter((p) => p.highlight).map((p) => (
                             <ProjectCard project={p} />
                         ))}
                 </Box>
-                <Box sx={{display: "flex", justifyContent: 'center', mt: '2rem'}}>
+                <Box sx={{ display: "flex", justifyContent: 'center', mt: '2rem' }}>
                     <Button
                         href="/projetos"
                         sx={{
@@ -37,7 +39,7 @@ export const HighLightsSection = () => {
                         }}
                     >
 
-                        Ver Todos os Projetos
+                        {t("destaquesSecao.btnTexto")}
                         <ArrowCircleRightIcon />
                     </Button>
                 </Box>

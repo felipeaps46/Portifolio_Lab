@@ -1,0 +1,190 @@
+{
+    "header": {
+        "home": "Home",
+        "sobre": "About",
+        "habilidades": "Skills",
+        "projetos": "Projects",
+        "contato": "Contact"
+    },
+    "user": {
+        "desc": "Full Stack Developer",
+        "fullstack": "Fullstack",
+        "backend": "Backend",
+        "ai": "of AI",
+        "software": "of Software"
+    },
+    "home": {
+        "desenvolvedor": "Developer",
+        "btnTexto01": "Download CV",
+        "btnTexto02": "Get in Touch"
+    },
+    "destaquesSecao": {
+        "titulo": "My highlights",
+        "subtitulo": "See some of my main works here.",
+        "btnTexto": "See all Projects"
+    },
+    "footer": {
+        "navegacao": "Navigation",
+        "conecte": "Contact",
+        "direitos": "All rights reserved."
+    },
+    "projetosSecao": {
+        "titulo": "My Projects",
+        "subtitulo": "See some of my projects here.",
+        "filtros": {
+            "all": "All"
+        }
+    },
+    "sobreSecao": {
+        "titulo": "About Me"
+    },
+    "experienciaSecao": {
+        "titulo": "Experiences",
+        "subtitulo": "See here a little about my journey."
+    },
+    "habilidadesSecao": {
+        "titulo": "My Skills",
+        "subtitulo": "See some of my technical skills here.",
+        "filtros": {
+            "todos": "All",
+            "frontend": "Frontend",
+            "backend": "Backend",
+            "mobile": "Mobile",
+            "database": "Database",
+            "devops": "DevOps",
+            "testing": "Testing",
+            "design": "Design",
+            "tools": "Tools",
+            "outros": "Others"
+        }
+    },
+    "estatisticasSecao": {
+        "titulo": "Statistics",
+        "estatisticas": {
+            "projetos": "Projects",
+            "anos": "Years",
+            "clientes": "Clients",
+            "dedicacao": "Dedication",
+            "satisfacao": "Customer Satisfaction"
+        }
+    },
+    "projetoModal": {
+        "sobre": "About the project",
+        "tecnologias": "Technologies Used",
+        "btnTexto01": "Watch online",
+        "btnTexto02": "See code"
+    },
+    "contatoSecao": {
+        "titulo": "Contacts",
+        "subtitulo": "Did you like what you saw? Reach out through one of these channels.",
+        "cardEmail": {
+            "titulo": "Send your message",
+            "labelNome": "Name",
+            "labelTelefone": "Phone",
+            "labelMensagem": "Message",
+            "btnTexto": "Send Message"
+        },
+        "titulo02": "Connect Through"
+    },
+    "chat": {
+        "titulo": "Personal Assistant",
+        "placeholder": "Type your message...",
+        "mensagemInicial": "Hello! How can I help you today? Ask anything about Guilherme."
+    },
+    "experiencias": {
+        "experiencia01": {
+            "papel": "Fullstack Developer - Experimental Agency",
+            "empresa": "Puc Minas",
+            "descricao": "I work as a FullStack Developer at Puc Minas' Experimental Agency, actively participating in the Grade Inteligente and Landing Page projects, where I gained practical experience in non-profit initiatives. I develop using Java with SpringBoot, and TypeScript on the frontend.",
+            "tipo": "Work"
+        },
+        "experiencia02": {
+            "papel": "FullStack Development Intern",
+            "empresa": "4mti",
+            "descricao": "I work on the development of automated solutions and handling large volumes of data using PHP, Python, HTML, and PostgreSQL. I create bots and automations to optimize processes, as well as contribute to the front-end of applications and database management.",
+            "tipo": "Work"
+        },
+        "experiencia03": {
+            "papel": "Freelancer - Web Development",
+            "empresa": "Voogle",
+            "descricao": "I developed a personalized web page for a client, meeting their specific design and functionality needs. For the project, I used React, TypeScript, and Tailwind to build a responsive and intuitive interface. I delivered the project within the agreed timeframe, achieving high client satisfaction.",
+            "tipo": "Work"
+        },
+        "experiencia04": {
+            "papel": "Treasury Coordinator - Obra Jovem Santa Helena",
+            "empresa": "Santa Helena",
+            "descricao": "I was the Treasury Coordinator of Obra Jovem Santa Helena, responsible for managing the treasury and financing of the project.",
+            "tipo": "Volunteering"
+        },
+        "experiencia05": {
+            "papel": "Software Engineering",
+            "empresa": "PUC Minas",
+            "descricao": "Project-oriented education with a solid foundation in architecture, data structures, databases, and embedded systems. Emphasis on best practices (such as testing, version control, and CI/CD), agile methodologies, and AI fundamentals to build scalable, secure, and production-ready solutions.",
+            "tipo": "Study"
+        },
+        "experiencia06": {
+            "papel": "Perseverance Coordinator - Obra Jovem Santa Helena",
+            "empresa": "Santa Helena",
+            "descricao": "I was the Perseverance Coordinator of Obra Jovem Santa Helena, responsible for catechism and the formation of young Catholics.",
+            "tipo": "Volunteering"
+        }
+    },
+    "projects": {
+        "btnTexto": "See Details",
+        "types": {
+            "sites": "Websites",
+            "landing": "Landing Pages",
+            "apps": "Apps",
+            "ecommerce": "E-Commerce",
+            "others": "Others"
+        },
+        "portfolioMinimal": {
+            "title": "Minimalist Portfolio",
+            "description": "Personal website with a minimalist theme, animated sections, and dark mode support."
+        },
+        "landingSaas": {
+            "title": "SaaS Campaign Landing",
+            "description": "Conversion-optimized landing page with CTA A/B testing and analytics."
+        },
+        "habitsApp": {
+            "title": "Habits App",
+            "description": "Mobile app to track daily habits, notifications, and gamification."
+        },
+        "streetwearShop": {
+            "title": "Streetwear Shop",
+            "description": "E-commerce with catalog, persistent cart, and Stripe checkout."
+        },
+        "metricsDashboard": {
+            "title": "Metrics Dashboard",
+            "description": "Dashboard with KPIs, dynamic filters, and data export."
+        },
+        "techConference": {
+            "title": "Tech Conference Landing",
+            "description": "Event landing page with agenda, speakers, and integrated registration."
+        },
+        "recipesApp": {
+            "title": "Offline Recipes App",
+            "description": "App with local storage, ingredient search, and favorites."
+        },
+        "handmadeMarket": {
+            "title": "Handmade Marketplace",
+            "description": "Sales platform for artisans, seller panel, and split payments."
+        },
+        "moviesCatalog": {
+            "title": "Movies Catalog",
+            "description": "Website to explore movies and series, with filters and responsive cards."
+        },
+        "cliBoilerplate": {
+            "title": "Boilerplate Generator CLI",
+            "description": "Command-line tool to generate project structures."
+        },
+        "tasksApi": {
+            "title": "Tasks API",
+            "description": "REST API to manage tasks with JWT authentication and automated tests."
+        },
+        "personalFinanceApp": {
+            "title": "Personal Finance App",
+            "description": "App for financial control with categories, goals, and charts."
+        }
+    }
+}

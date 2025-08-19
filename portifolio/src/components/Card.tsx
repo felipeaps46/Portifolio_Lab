@@ -17,13 +17,13 @@ import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 
 import type { CardType, ProjectType } from '../Types/cardType';
 import { ProjectModal } from './ProjectModal';
-
+import { useTranslation } from 'react-i18next';
 // Helper para ícone do tipo
 const getTypeIcon = (type: ProjectType) => {
   switch (type) {
-    case 'Sites': return <PublicIcon />;
+    case 'Sites': case "Websites": return <PublicIcon />;
     case 'Landing Pages': return <WebAssetIcon />;
-    case 'Aplicativos': return <AppsIcon />;
+    case 'Aplicativos': case "Apps": return <AppsIcon />;
     case 'E-Commerce': return <ShoppingCartIcon />;
     default: return <HelpOutlineIcon />;
   }
@@ -34,6 +34,7 @@ interface ProjectCardProps {
 }
 
 export const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
+  const { t } = useTranslation()
   const [open, setOpen] = useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
@@ -61,12 +62,12 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
             backgroundColor: 'rgba(30, 30, 30, .8)'
           }}
           image={project.image || "https://via.placeholder.com/400x180/303030/FFFFFF?text=No+Image"}
-          title={project.title}
+          title={t(project.title)}
         />
         <CardContent sx={{ flexGrow: 1 }}>
           <Chip
-            icon={getTypeIcon(project.type)}
-            label={project.type}
+            icon={getTypeIcon(t(project.type))}
+            label={t(project.type)}
             size="small"
             sx={{
               mb: 2, bgcolor: 'primary.main',
@@ -75,7 +76,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
             }}
           />
           <Typography gutterBottom variant="h5" fontWeight="bold">
-            {project.title}
+            {t(project.title)}
           </Typography>
           <Typography
             variant="body2"
@@ -83,12 +84,12 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
               color: '#93A3AF',
               mb: 2,
               display: '-webkit-box',
-              lineHeight: "1.5rem",     
-              maxHeight: "3.75rem",    
+              lineHeight: "1.5rem",
+              maxHeight: "3.75rem",
               overflow: "hidden",
             }}
           >
-            {project.description}
+            {t(project.description)}
           </Typography>
           <Stack direction="row" spacing={1} flexWrap="wrap" useFlexGap sx={{ mt: 2 }}>
             {showLanguages.map((lang, i) => (
@@ -125,7 +126,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
               '&:hover': { bgcolor: 'grey.800' }
             }}
           >
-            Ver Detalhes
+           {t("projects.btnTexto")}
           </Button>
         </CardActions>
       </Card>

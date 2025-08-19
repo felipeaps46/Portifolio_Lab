@@ -27,6 +27,7 @@ import {
 
 import { experienceData } from '../data/experienceData.ts';
 import { type ExperienceType } from "../Types/ExperienceType.js";
+import { useTranslation } from 'react-i18next';
 
 const growY = keyframes`
   0% { transform: scaleY(0); }
@@ -68,6 +69,9 @@ const TiltCard: React.FC<TiltCardProps> = ({
   initialDelay = 0,
   entrance = true
 }) => {
+
+
+
   const rx = useMotionValue(0);
   const ry = useMotionValue(0);
   const springRx = useSpring(rx, { stiffness: 200, damping: 20, mass: 0.5 });
@@ -142,8 +146,8 @@ const TiltCard: React.FC<TiltCardProps> = ({
             background: "#2c2c2c",
             border: "1px solid rgba(255, 255, 255, 0.4)",
             borderRadius: 5,
-            overflow: "hidden",           
-            backgroundClip: "padding-box", 
+            overflow: "hidden",
+            backgroundClip: "padding-box",
             color: "#fff",
             p: 2,
             transition: "background .25s ease, border-color .25s ease",
@@ -180,6 +184,8 @@ export const ExperienceTimeline = () => {
     return f.charAt(0).toUpperCase() + f.slice(1);
   }
 
+  const { t } = useTranslation()
+  
   return (
     <div>
       <Timeline position={isSm ? 'right' : 'alternate'} sx={{ px: { xs: 0, sm: 1 }, py: 1 }}>
@@ -210,9 +216,9 @@ export const ExperienceTimeline = () => {
                     }
                   }}
                 >
-                  {item.type === "Trabalho" && <BusinessCenterIcon fontSize="small" />}
-                  {item.type === "Estudo" && <SchoolIcon fontSize="small" />}
-                  {item.type === "Voluntariado" && <HandshakeIcon fontSize="small" />}
+                  {(t(item.type) === "Trabalho" || t(item.type) === "Work")  && <BusinessCenterIcon fontSize="small" />}
+                  {(t(item.type) === "Estudo" || t(item.type) === "Study") && <SchoolIcon fontSize="small" />}
+                  {(t(item.type) === "Voluntariado" || t(item.type) === "Volunteering") && <HandshakeIcon fontSize="small" />}
                 </TimelineDot>
 
                 {idx !== experienceData.length - 1 && (
@@ -257,16 +263,16 @@ export const ExperienceTimeline = () => {
                     }}
                   >
                     <Typography variant="h6" component="span" fontWeight={700} sx={{ color: "#fff", textShadow: "0 1px 2px rgba(0,0,0,0.4)" }}>
-                      {item.role}
+                      {t(item.role)}
                     </Typography>
                     <Typography variant="subtitle2" sx={{ color: "rgba(255,255,255,0.75)" }}>
-                      {item.company}
+                      {t(item.company)}
                     </Typography>
                     <Typography variant="body2" sx={{ color: "rgba(255,255,255,0.6)", fontStyle: "italic" }}>
                       {formatDate(item.startDate)} — {item.finalDate ? formatDate(item.finalDate) : "Atual"}
                     </Typography>
                     <Typography variant="body2" mt={1} sx={{ color: "rgba(255,255,255,0.85)", lineHeight: 1.5 }}>
-                      {item.description}
+                      {t(item.description)}
                     </Typography>
                     <Box
                       mt={1}
@@ -285,10 +291,10 @@ export const ExperienceTimeline = () => {
                         letterSpacing: 0.3
                       }}
                     >
-                      {item.type === "Trabalho" && <BusinessCenterIcon fontSize="inherit" />}
-                      {item.type === "Estudo" && <SchoolIcon fontSize="inherit" />}
-                      {item.type === "Voluntariado" && <HandshakeIcon fontSize="inherit" />}
-                      {item.type}
+                      {(t(item.type) === "Trabalho" || t(item.type) === "Work")  && <BusinessCenterIcon fontSize="inherit" />}
+                      {(t(item.type) === "Estudo" || t(item.type) === "Study") && <SchoolIcon fontSize="inherit" />}
+                      {(t(item.type) === "Voluntariado" || t(item.type) === "Volunteering") && <HandshakeIcon fontSize="inherit" />}
+                      {t(item.type)}
                     </Box>
                   </TiltCard>
                 </TimelineContent>

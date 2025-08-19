@@ -1,0 +1,190 @@
+{
+    "header": {
+        "home": "Home",
+        "sobre": "Sobre",
+        "habilidades": "Habilidades",
+        "projetos": "Projetos",
+        "contato": "Contato"
+    },
+    "user": {
+        "desc": "Desenvolvedor Full Stack",
+        "fullstack": "Fullstack",
+        "backend": "Backend",
+        "ai": "de IA",
+        "software": "de Software"
+    },
+    "home": {
+        "desenvolvedor": "Desenvolvedor",
+        "btnTexto01": "Baixar Currículo",
+        "btnTexto02": "Entrar em Contato"
+    },
+    "destaquesSecao": {
+        "titulo": "Meus Destaques",
+        "subtitulo": "Veja aqui alguns dos meus principais trabalhos.",
+        "btnTexto": "Ver Todos os Projetos"
+    },
+    "footer": {
+        "navegacao": "Navegação",
+        "conecte": "Conecte-se",
+        "direitos": "Todos os direitos reservados."
+    },
+    "projetosSecao": {
+        "titulo": "Meus Projetos",
+        "subtitulo": "Veja aqui um pouco dos meus projetos.",
+        "filtros": {
+            "all": "Todos"
+        }
+    },
+    "sobreSecao": {
+        "titulo": "Sobre Mim"
+    },
+    "experienciaSecao": {
+        "titulo": "Experiências",
+        "subtitulo": "Veja aqui um pouco sobre a minha jornada."
+    },
+    "habilidadesSecao": {
+        "titulo": "Minhas Habilidades",
+        "subtitulo": "Veja aqui um pouco das minhas habilidades técnicas.",
+        "filtros": {
+            "todos": "Todos",
+            "frontend": "Frontend",
+            "backend": "Backend",
+            "mobile": "Mobile",
+            "database": "Database",
+            "devops": "DevOps",
+            "testing": "Testing",
+            "design": "Design",
+            "tools": "Tools",
+            "outros": "Outros"
+        }
+    },
+    "estatisticasSecao": {
+        "titulo": "Estatísticas",
+        "estatisticas": {
+            "projetos": "Projetos",
+            "anos": "Anos",
+            "clientes": "Clientes",
+            "dedicacao": "Dedicação",
+            "satisfacao": "Satisfação do Cliente"
+        }
+    },
+    "projetoModal": {
+        "sobre": "Sobre o Projeto",
+        "tecnologias": "Tecnologias Utilizadas",
+        "btnTexto01": "Ver Online",
+        "btnTexto02": "Ver Código"
+    },
+    "contatoSecao": {
+        "titulo": "Contatos",
+        "subtitulo": "Gostou do que viu? Me chame por um desses canais.",
+        "cardEmail": {
+            "titulo": "Envie sua mensagem",
+            "labelNome": "Nome",
+            "labelTelefone": "Telefone",
+            "labelMensagem": "Mensagem",
+            "btnTexto": "Enviar Mensagem"
+        },
+        "titulo02": "Conecte-se Por"
+    },
+    "chat": {
+        "titulo": "Assistente Pessoal",
+        "placeholder": "Digite sua mensagem...",
+        "mensagemInicial": "Olá! Como posso ajudar hoje? Pergunte qualquer coisa sobre o Guilherme."
+    },
+    "experiencias": {
+        "experiencia01": {
+            "papel": "Desenvolvedor Fullstack - Agência Experimental",
+            "empresa": "Puc Minas",
+            "descricao": "Sou desenvolvedor FullStack Na Agência Experimental da Puc Minas, participando ativamente dos projetos da Grade Inteligente e Landing Page, onde pude adquirir experiência prática em projetos sem fins lucrativos. Desenvolvo utilizando Java com SpringBoot, e TypeScript no frontend.",
+            "tipo": "Trabalho"
+        },
+        "experiencia02": {
+            "papel": "Estagiário de Desenvolvimento FullStack",
+            "empresa": "4mti",
+            "descricao": "Atuo no desenvolvimento de soluções automatizadas e manipulação de grandes volumes de dados, utilizando PHP, Python, HTML e PostgreSQL. Trabalho na criação de robôs e automações para otimizar processos, além de contribuir para o front-end de aplicações e a gestão de banco de dados.",
+            "tipo": "Trabalho"
+        },
+        "experiencia03": {
+            "papel": "Freelancer - Desenvolvimento Web",
+            "empresa": "Voogle",
+            "descricao": "Desenvolvi uma página web personalizada para um cliente, atendendo às suas necessidades específicas de design e funcionalidade. Para o desenvolvimento do projeto, utilizei React, TypeScript, Tailwind para criar uma interface responsiva e intuitiva. Entreguei o projeto dentro do prazo estipulado, com alta satisfação do cliente.",
+            "tipo": "Trabalho"
+        },
+        "experiencia04": {
+            "papel": "Coordenador da Tesouraria da Obra Jovem Santa Helena",
+            "empresa": "Santa Helena",
+            "descricao": "Fui o coordenador da Tesouraria da Obra Jovem Santa Helena, responsável pela gestão da tesouraria e financiamento da obra.",
+            "tipo": "Voluntariado"
+        },
+        "experiencia05": {
+            "papel": "Engenharia de Software",
+            "empresa": "PUC Minas",
+            "descricao": "Formação orientada a projetos com base sólida em arquitetura, estruturas de dados, bancos de dados e sistemas embarcados. Ênfase em boas práticas (como testes, versionamento e CI/CD), métodos ágeis e fundamentos de IA para construir soluções escaláveis, seguras e prontas para produção.",
+            "tipo": "Estudo"
+        },
+        "experiencia06": {
+            "papel": "Coordenador da Perseverança da Obra Jovem Santa Helena",
+            "empresa": "Santa Helena",
+            "descricao": "Fui o coordenador da Perseverança da Obra Jovem Santa Helena, responsável pela catequização e formação de jovens católicos.",
+            "tipo": "Voluntariado"
+        }
+    },
+    "projects": {
+        "btnTexto": "Ver Detalhes",
+        "types": {
+            "sites": "Sites",
+            "landing": "Landing Pages",
+            "apps": "Aplicativos",
+            "ecommerce": "E-Commerce",
+            "others": "Outros"
+        },
+        "portfolioMinimal": {
+            "title": "Portfólio Minimalista",
+            "description": "Site pessoal com tema minimalista, seções animadas e suporte a dark mode."
+        },
+        "landingSaas": {
+            "title": "Landing Campanha SaaS",
+            "description": "Landing page otimizada para conversão, com A/B testing de CTA e analytics."
+        },
+        "habitsApp": {
+            "title": "Aplicativo de Hábitos",
+            "description": "App mobile para rastrear hábitos diários, notificações e gamificação."
+        },
+        "streetwearShop": {
+            "title": "Loja de Streetwear",
+            "description": "E-commerce com catálogo, carrinho persistente e checkout com Stripe."
+        },
+        "metricsDashboard": {
+            "title": "Dashboard de Métricas",
+            "description": "Dashboard com KPIs, filtros dinâmicos e exportação de dados."
+        },
+        "techConference": {
+            "title": "Landing Conferência Tech",
+            "description": "Landing de evento com agenda, palestrantes e inscrição integrada."
+        },
+        "recipesApp": {
+            "title": "App de Receitas Offline",
+            "description": "Aplicativo com armazenamento local, busca por ingredientes e favoritos."
+        },
+        "handmadeMarket": {
+            "title": "Marketplace Artesanal",
+            "description": "Plataforma de venda para artesãos, painel do vendedor e split de pagamentos."
+        },
+        "moviesCatalog": {
+            "title": "Catálogo de Filmes",
+            "description": "Site para explorar filmes e séries, com filtros e cards responsivos."
+        },
+        "cliBoilerplate": {
+            "title": "CLI de Gerador de Boilerplate",
+            "description": "Ferramenta de linha de comando para gerar estruturas de projetos."
+        },
+        "tasksApi": {
+            "title": "API de Tarefas",
+            "description": "API REST para gerenciar tarefas com autenticação JWT e testes automatizados."
+        },
+        "personalFinanceApp": {
+            "title": "App de Finanças Pessoais",
+            "description": "Aplicativo para controle financeiro com categorias, metas e gráficos."
+        }
+    }
+}

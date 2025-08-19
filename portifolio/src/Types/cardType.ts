@@ -1,4 +1,4 @@
-export type ProjectType = 'Sites' | 'Landing Pages' | 'Aplicativos' | 'E-Commerce' | 'Outros';
+export type ProjectType = 'Sites' | 'Landing Pages' | 'Aplicativos' | 'E-Commerce' | 'Outros' | string;
 
 export interface CardType {
     id: string,
