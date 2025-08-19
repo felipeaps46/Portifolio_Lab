@@ -86,6 +86,11 @@
         },
         "titulo02": "Connect Through"
     },
+    "chat": {
+        "titulo": "Personal Assistant",
+        "placeholder": "Type your message...",
+        "mensagemInicial": "Hello! How can I help you today? Ask anything about Guilherme."
+    },
     "experiencias": {
         "experiencia01": {
             "papel": "Fullstack Developer - Experimental Agency",

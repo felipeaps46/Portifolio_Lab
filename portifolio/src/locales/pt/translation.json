@@ -86,6 +86,11 @@
         },
         "titulo02": "Conecte-se Por"
     },
+    "chat": {
+        "titulo": "Assistente Pessoal",
+        "placeholder": "Digite sua mensagem...",
+        "mensagemInicial": "Olá! Como posso ajudar hoje? Pergunte qualquer coisa sobre o Guilherme."
+    },
     "experiencias": {
         "experiencia01": {
             "papel": "Desenvolvedor Fullstack - Agência Experimental",

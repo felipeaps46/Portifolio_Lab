@@ -15,6 +15,7 @@ import CloseIcon from "@mui/icons-material/Close";
 import SendIcon from "@mui/icons-material/Send";
 import { ask } from "./../api/chatApi";
 import assistantAvatar from "../assets/profile.jpeg"; // <-- importe a imagem
+import { useTranslation } from "react-i18next";
 
 type Message = {
   id: string;
@@ -30,11 +31,12 @@ type ChatWindowProps = {
 };
 
 export const ChatWindow: React.FC<ChatWindowProps> = ({ open, onClose }) => {
+  const { t } = useTranslation()
   const [messages, setMessages] = useState<Message[]>([
     {
       id: crypto.randomUUID(),
       role: "assistant",
-      text: "Olá! Como posso ajudar hoje? Pergunte qualquer coisa sobre o Guilherme.",
+      text: t("chat.mensagemInicial"),
       timestamp: Date.now(),
     },
   ]);
@@ -78,11 +80,11 @@ export const ChatWindow: React.FC<ChatWindowProps> = ({ open, onClose }) => {
         prev.map((m) =>
           m.id === botPlaceholderId
             ? {
-                ...m,
-                text: answer || "Sem conteúdo na resposta.",
-                pending: false,
-                timestamp: Date.now(),
-              }
+              ...m,
+              text: answer || "Sem conteúdo na resposta.",
+              pending: false,
+              timestamp: Date.now(),
+            }
             : m
         )
       );
@@ -91,12 +93,12 @@ export const ChatWindow: React.FC<ChatWindowProps> = ({ open, onClose }) => {
         prev.map((m) =>
           m.id === botPlaceholderId
             ? {
-                ...m,
-                text:
-                  "Desculpe, ocorreu um erro ao buscar a resposta. Tente novamente.",
-                pending: false,
-                timestamp: Date.now(),
-              }
+              ...m,
+              text:
+                "Desculpe, ocorreu um erro ao buscar a resposta. Tente novamente.",
+              pending: false,
+              timestamp: Date.now(),
+            }
             : m
         )
       );
@@ -136,7 +138,7 @@ export const ChatWindow: React.FC<ChatWindowProps> = ({ open, onClose }) => {
         }}
       >
         <Typography variant="subtitle1" fontWeight={700}>
-          Assistente Pessoal
+          {t("chat.titulo")}
         </Typography>
         <IconButton
           aria-label="Fechar chat"
@@ -210,7 +212,7 @@ export const ChatWindow: React.FC<ChatWindowProps> = ({ open, onClose }) => {
         <TextField
           fullWidth
           size="small"
-          placeholder="Digite sua mensagem..."
+          placeholder={t("chat.placeholder")}
           value={input}
           onChange={(e) => setInput(e.target.value)}
           disabled={isPending}
