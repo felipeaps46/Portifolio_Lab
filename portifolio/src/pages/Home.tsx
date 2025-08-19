@@ -10,6 +10,7 @@ import DownloadIcon from '@mui/icons-material/Download';
 import ArrowCircleRightIcon from '@mui/icons-material/ArrowCircleRight';
 import AnimatedCanvas from "../assets/animatedBackground/index.tsx";
 import { HighLightsSection } from "../components/sections/HighLightsSection.tsx";
+import { useTranslation } from "react-i18next";
 
 // Se você colocou o hook em outro arquivo, importe:
 import { useTypewriter } from "../hooks/useTypewriter";
@@ -17,11 +18,13 @@ import { userData } from "../data/userData.ts";
 
 export const Home: React.FC = () => {
 
+  const { t } = useTranslation();
+
   const user = userData
 
-  const palavras = user.caracteristicas
+  const palavrasTraduzidas = user.caracteristicas.map((c) => t(c));
 
-  const { text } = useTypewriter(palavras, {
+  const { text } = useTypewriter(palavrasTraduzidas, {
     typingSpeed: 90,
     deletingSpeed: 50,
     pauseTime: 1000,
@@ -101,7 +104,7 @@ export const Home: React.FC = () => {
                 aria-live="polite"
                 aria-atomic="true"
               >
-                <Box component="span">Desenvolvedor</Box>
+                <Box component="span">{t("home.desenvolvedor")}</Box>
                 <Box
                   component="span"
                   sx={{
@@ -154,7 +157,7 @@ export const Home: React.FC = () => {
                 }}
               >
                 <DownloadIcon />
-                Gerar Currículo
+                {t("home.btnTexto01")}
               </Button>
               <Button
                 href="/contato"
@@ -183,7 +186,7 @@ export const Home: React.FC = () => {
                 }}
               >
                 <span style={{ display: "flex", alignItems: "center" }}>
-                  Entrar em Contato
+                  {t("home.btnTexto02")}
                 </span>
                 <ArrowCircleRightIcon sx={{ fontSize: "1.4rem" }} />
               </Button>

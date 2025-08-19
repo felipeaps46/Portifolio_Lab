@@ -5,42 +5,44 @@ import { TechSkills } from "../../components/TechSkills";
 import { skills } from "../../data/techData";
 import type { OrderedCategory, TechItem } from "../../Types/techItem";
 import { Title } from "../Title";
+import { useTranslation } from "react-i18next";
 
 const ORDERED_CATEGORIES: readonly OrderedCategory[] = [
-  "Todos",
-  "Frontend",
-  "Backend",
-  "Mobile",
-  "Database",
-  "DevOps",
-  "Testing",
-  "Design",
-  "Tools",
-  "Outros",
+  "habilidadesSecao.filtros.todos",
+  "habilidadesSecao.filtros.frontend",
+  "habilidadesSecao.filtros.backend",
+  "habilidadesSecao.filtros.mobile",
+  "habilidadesSecao.filtros.database",
+  "habilidadesSecao.filtros.devops",
+  "habilidadesSecao.filtros.testing",
+  "habilidadesSecao.filtros.design",
+  "habilidadesSecao.filtros.tools",
+  "habilidadesSecao.filtros.outros",
 ] as const;
 
 type FilterType = (typeof ORDERED_CATEGORIES)[number];
 
 function normalizeCategory(raw?: string): FilterType | undefined {
-  if (!raw) return undefined;
+ if (!raw) return "habilidadesSecao.filtros.outros";
   const s = raw.trim().toLowerCase();
 
-  if (s === "frontend") return "Frontend";
-  if (s === "backend") return "Backend";
-  if (s === "mobile") return "Mobile";
-  if (s === "database" || s === "db") return "Database";
-  if (s === "devops") return "DevOps";
-  if (s === "testing" || s === "tests") return "Testing";
-  if (s === "design" || s === "ui" || s === "ux") return "Design";
-  if (s === "tools" || s === "tooling") return "Tools";
-  if (s === "outros" || s === "others" || s === "misc") return "Outros";
-  if (s === "all" || s === "todos") return "Todos";
-  return "Outros";
+  if (s === "frontend") return "habilidadesSecao.filtros.frontend";
+  if (s === "backend") return "habilidadesSecao.filtros.backend";
+  if (s === "mobile") return "habilidadesSecao.filtros.mobile";
+  if (s === "database" || s === "db") return "habilidadesSecao.filtros.database";
+  if (s === "devops") return "habilidadesSecao.filtros.devops";
+  if (s === "testing" || s === "tests") return "habilidadesSecao.filtros.testing";
+  if (s === "design" || s === "ui" || s === "ux") return "habilidadesSecao.filtros.design";
+  if (s === "tools" || s === "tooling") return "habilidadesSecao.filtros.tools";
+  if (s === "outros" || s === "others" || s === "misc") return "habilidadesSecao.filtros.outros";
+  if (s === "all" || s === "todos") return "habilidadesSecao.filtros.todos";
+  return "habilidadesSecao.filtros.outros";
 }
 
 export const SkillsSection: React.FC = () => {
+  const { t } = useTranslation()
   const theme = useTheme();
-  const [filter, setFilter] = useState<FilterType>("Todos");
+  const [filter, setFilter] = useState<FilterType>("habilidadesSecao.filtros.todos");
 
   const normalizedItems: TechItem[] = useMemo(() => {
     return skills.map((s: TechItem) => ({
@@ -50,14 +52,14 @@ export const SkillsSection: React.FC = () => {
   }, []);
 
   const filteredItems = useMemo(() => {
-    if (filter === "Todos") return normalizedItems;
-    return normalizedItems.filter((s) => s.category === filter);
-  }, [filter, normalizedItems]);
+  if (filter === "habilidadesSecao.filtros.todos") return normalizedItems;
+  return normalizedItems.filter((s) => s.category === filter);
+}, [filter, normalizedItems]);
 
   return (
     <Box component="section" id="skills" sx={{ pt: { xs: 4, md: 4 }, pb: { xs: 4, md: 10 }, bgcolor: 'rgba(74, 74, 74, 0.19)' }}>
       <Container maxWidth="lg">
-        <Title title='Minhas Habilidades' subtitle="Veja aqui um pouco das minhas habilidades técnicas."></Title>
+        <Title title={t("habilidadesSecao.titulo")} subtitle={t("habilidadesSecao.subtitulo")}></Title>
 
         {/* Filtros estilo pill, fundo paper e borda destacando o selecionado */}
         <Box
@@ -93,7 +95,7 @@ export const SkillsSection: React.FC = () => {
                   },
                 }}
               >
-                {cat}
+                {t(cat)}
               </Button>
             );
           })}

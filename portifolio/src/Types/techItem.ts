@@ -2,16 +2,16 @@
 import type { ElementType } from "react";
 
 export type OrderedCategory =
-  | "Todos"
-  | "Frontend"
-  | "Backend"
-  | "Mobile"
-  | "Database"
-  | "DevOps"
-  | "Testing"
-  | "Design"
-  | "Tools"
-  | "Outros";
+  | "habilidadesSecao.filtros.todos"
+  | "habilidadesSecao.filtros.frontend"
+  | "habilidadesSecao.filtros.backend"
+  | "habilidadesSecao.filtros.mobile"
+  | "habilidadesSecao.filtros.database"
+  | "habilidadesSecao.filtros.devops"
+  | "habilidadesSecao.filtros.testing"
+  | "habilidadesSecao.filtros.design"
+  | "habilidadesSecao.filtros.tools"
+  | "habilidadesSecao.filtros.outros";
 
 // Item de skill
 export interface TechItem {

@@ -1,0 +1,115 @@
+{
+    "header": {
+        "home": "Home",
+        "sobre": "Sobre",
+        "habilidades": "Habilidades",
+        "projetos": "Projetos",
+        "contato": "Contato"
+    },
+    "user": {
+        "desc": "Desenvolvedor Full Stack",
+        "fullstack": "Fullstack",
+        "backend": "Backend",
+        "ai": "de IA",
+        "software": "de Software"
+    },
+    "home": {
+        "desenvolvedor": "Desenvolvedor",
+        "btnTexto01": "Gerar Currículo",
+        "btnTexto02": "Entrar em Contato"
+    },
+    "destaquesSecao": {
+        "titulo": "Meus Destaques",
+        "subtitulo": "Veja aqui alguns dos meus principais trabalhos.",
+        "btnTexto": "Ver Todos os Projetos"
+    },
+    "footer": {
+        "navegacao": "Navegação",
+        "conecte": "Conecte-se",
+        "direitos": "Todos os direitos reservados."
+    },
+    "projetosSecao": {
+        "titulo": "Meus Projetos",
+        "subtitulo": "Veja aqui um pouco dos meus projetos.",
+        "filtros": {
+            "all": "Todos"
+        }
+    },
+    "sobreSecao": {
+        
+    },
+    "habilidadesSecao": {
+        "titulo": "Minhas Habilidades",
+        "subtitulo": "Veja aqui um pouco das minhas habilidades técnicas.",
+        "filtros": {
+            "todos": "Todos",
+            "frontend": "Frontend",
+            "backend": "Backend",
+            "mobile": "Mobile",
+            "database": "Database",
+            "devops": "DevOps",
+            "testing": "Testing",
+            "design": "Design",
+            "tools": "Tools",
+            "outros": "Outros"
+        }
+    },
+    "projects": {
+        "btnTexto": "Ver Detalhes",
+        "types": {
+            "sites": "Sites",
+            "landing": "Landing Pages",
+            "apps": "Aplicativos",
+            "ecommerce": "E-Commerce",
+            "others": "Outros"
+        },
+        "portfolioMinimal": {
+            "title": "Portfólio Minimalista",
+            "description": "Site pessoal com tema minimalista, seções animadas e suporte a dark mode."
+        },
+        "landingSaas": {
+            "title": "Landing Campanha SaaS",
+            "description": "Landing page otimizada para conversão, com A/B testing de CTA e analytics."
+        },
+        "habitsApp": {
+            "title": "Aplicativo de Hábitos",
+            "description": "App mobile para rastrear hábitos diários, notificações e gamificação."
+        },
+        "streetwearShop": {
+            "title": "Loja de Streetwear",
+            "description": "E-commerce com catálogo, carrinho persistente e checkout com Stripe."
+        },
+        "metricsDashboard": {
+            "title": "Dashboard de Métricas",
+            "description": "Dashboard com KPIs, filtros dinâmicos e exportação de dados."
+        },
+        "techConference": {
+            "title": "Landing Conferência Tech",
+            "description": "Landing de evento com agenda, palestrantes e inscrição integrada."
+        },
+        "recipesApp": {
+            "title": "App de Receitas Offline",
+            "description": "Aplicativo com armazenamento local, busca por ingredientes e favoritos."
+        },
+        "handmadeMarket": {
+            "title": "Marketplace Artesanal",
+            "description": "Plataforma de venda para artesãos, painel do vendedor e split de pagamentos."
+        },
+        "moviesCatalog": {
+            "title": "Catálogo de Filmes",
+            "description": "Site para explorar filmes e séries, com filtros e cards responsivos."
+        },
+        "cliBoilerplate": {
+            "title": "CLI de Gerador de Boilerplate",
+            "description": "Ferramenta de linha de comando para gerar estruturas de projetos."
+        },
+        "tasksApi": {
+            "title": "API de Tarefas",
+            "description": "API REST para gerenciar tarefas com autenticação JWT e testes automatizados."
+        },
+        "personalFinanceApp": {
+            "title": "App de Finanças Pessoais",
+            "description": "Aplicativo para controle financeiro com categorias, metas e gráficos."
+        }
+    }
+}
