@@ -17,8 +17,12 @@ import { userData } from "../../data/userData";
 import { Title } from "../Title"
 import AnimatedCanvas from "../../assets/animatedBackground";
 import { ContactCard } from "../ContactCard";
+import { useTranslation } from "react-i18next";
 
 export const ContactSection: React.FC = () => {
+
+  const { t } = useTranslation()
+
   const [status, setStatus] = useState<
     "idle" | "sending" | "success" | "error"
   >("idle");
@@ -68,7 +72,7 @@ export const ContactSection: React.FC = () => {
           mb: 6,
         }}
       >
-        <Title title='Contatos' subtitle="Gostou do que viu? Me chame por um desses canais."></Title>
+        <Title title={t("contatoSecao.titulo")} subtitle={t("contatoSecao.subtitulo")}></Title>
 
       </Box>
 
@@ -89,7 +93,7 @@ export const ContactSection: React.FC = () => {
 
           <Box sx={{ display: "flex", gap: 2, mb: 2 }}>
             <TextField
-              label="Nome"
+              label={t("contatoSecao.cardEmail.labelNome")}
               fullWidth
               sx={{
                 "& label.Mui-focused": {
@@ -120,7 +124,7 @@ export const ContactSection: React.FC = () => {
 
           <Box sx={{ mb: 2 }}>
             <TextField
-              label="Telefone"
+              label={t("contatoSecao.cardEmail.labelTelefone")}
               fullWidth
               sx={{
                 "& label.Mui-focused": {
@@ -137,7 +141,7 @@ export const ContactSection: React.FC = () => {
 
           <Box sx={{ mb: 2 }}>
             <TextField
-              label="Mensagem"
+              label={t("contatoSecao.cardEmail.labelMensagem")}
               multiline
               rows={8}
               fullWidth
@@ -163,7 +167,7 @@ export const ContactSection: React.FC = () => {
               fontFamily: "'Segoe UI', Arial, sans-serif",
             }}
           >
-            Enviar Mensagem
+            {t("contatoSecao.cardEmail.btnTexto")}
           </Button>
         </Box>
 
@@ -182,10 +186,10 @@ export const ContactSection: React.FC = () => {
             mb={2}
             sx={{ color: "white", fontFamily: "'Inter', sans-serif", fontSize: '36px' }}
           >
-            Conecte-se Por
+            {t("contatoSecao.titulo02")}
           </Typography>
 
-          <ContactCard 
+          <ContactCard
             icon={<EmailOutlinedIcon sx={{ color: "white" }} />}
             title="Email"
             text={user.emailName}

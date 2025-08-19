@@ -10,6 +10,7 @@ import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import WebAssetIcon from '@mui/icons-material/WebAsset';
 import HelpOutlineIcon from '@mui/icons-material/HelpOutline';
 import type { ProjectType } from "../Types/cardType";
+import { useTranslation } from "react-i18next";
 
 const modalStyle = {
     position: "absolute",
@@ -26,12 +27,12 @@ const modalStyle = {
 };
 
 export const ProjectModal: React.FC<ProjectModalType> = ({ open, handleClose, project }) => {
-
+    const { t } = useTranslation()
     const getTypeIcon = (type: ProjectType) => {
         switch (type) {
-            case 'Sites': return <PublicIcon />;
+            case 'Sites': case "Websites": return <PublicIcon />;
             case 'Landing Pages': return <WebAssetIcon />;
-            case 'Aplicativos': return <AppsIcon />;
+            case 'Aplicativos': case "Apps": return <AppsIcon />;
             case 'E-Commerce': return <ShoppingCartIcon />;
             default: return <HelpOutlineIcon />;
         }
@@ -69,7 +70,7 @@ export const ProjectModal: React.FC<ProjectModalType> = ({ open, handleClose, pr
                 <Box sx={{ p: 4 }}>
                     <Box sx={{ display: "flex", justifyContent: "space-between", alignItems: "center", mb: 2 }}>
                         <Typography id="modal-title" variant="h5" sx={{ color: '#2c2c2c', fontWeight: "bold", fontSize: "2rem" }}>
-                            {project.title}
+                            {t(project.title)}
                         </Typography>
                         <IconButton onClick={handleClose}><CloseIcon /></IconButton>
                     </Box>
@@ -78,7 +79,7 @@ export const ProjectModal: React.FC<ProjectModalType> = ({ open, handleClose, pr
                         <Stack direction="row" spacing={1} alignItems="center" sx={{ bgcolor: '#2c2c2c', borderRadius: '50px', py: 0.5, px: 1 }}>
                             <LanguageIcon fontSize="small" sx={{ color: "#f5f5f5" }} />
 
-                            <Typography variant="body2" sx={{ color: "#f5f5f5" }}>{project.type}</Typography>
+                            <Typography variant="body2" sx={{ color: "#f5f5f5" }}>{t(project.type)}</Typography>
                         </Stack>
                         <Stack direction="row" spacing={1} alignItems="center">
                             <CalendarTodayIcon fontSize="small" />
@@ -87,14 +88,14 @@ export const ProjectModal: React.FC<ProjectModalType> = ({ open, handleClose, pr
                     </Stack>
 
                     <Typography variant="h6" sx={{ color: '#2c2c2c', fontWeight: "bold" }} gutterBottom>
-                        Sobre o Projeto
+                        {t("projetoModal.sobre")}
                     </Typography>
                     <Typography color="text.secondary" sx={{ mb: 3 }}>
-                        {project.description}
+                        {t(project.description)}
                     </Typography>
 
                     <Typography variant="h6" sx={{ color: '#2c2c2c', fontWeight: "bold" }} gutterBottom>
-                        Tecnologias Utilizadas
+                        {t("projetoModal.tecnologias")}
                     </Typography>
                     <Stack direction="row" spacing={1} flexWrap="wrap" sx={{ mb: 3 }}>
                         {project.languages.map((lang, i) => (
@@ -113,7 +114,7 @@ export const ProjectModal: React.FC<ProjectModalType> = ({ open, handleClose, pr
                                 href={project.siteLink}
                                 target="_blank"
                             >
-                                Ver Online
+                                {t("projetoModal.btnTexto01")}
                             </Button>
                         )}
                         <Button
@@ -130,7 +131,7 @@ export const ProjectModal: React.FC<ProjectModalType> = ({ open, handleClose, pr
                             target="_blank"
                             endIcon={<GitHubIcon sx={{ fontSize: "1.5rem", color: "#2c2c2c" }} />}
                         >
-                            Ver Código
+                            {t("projetoModal.btnTexto02")}
                         </Button>
                     </Stack>
                 </Box>
