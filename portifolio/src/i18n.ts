@@ -9,7 +9,7 @@ i18n
   .use(LanguageDetector)
   .use(initReactI18next)
   .init({
-    fallbackLng: "pt", // se não encontrar, usa português
+    fallbackLng: "pt", 
     interpolation: {
       escapeValue: false
     },
