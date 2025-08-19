@@ -10,30 +10,32 @@ import { ProjectCard } from "../../components/Card";
 import { projects } from "../../data/projects";
 import { Button } from "@mui/material";
 import { Title } from "../Title";
+import { useTranslation } from "react-i18next";
 
 // Lista de filtros (inclui "Todos")
 const FILTERS = [
-  "Todos",
-  "Sites",
-  "Landing Pages",
-  "Aplicativos",
-  "E-Commerce",
-  "Outros",
+  "projetosSecao.filtros.all",
+  "projects.types.sites",
+  "projects.types.landing",
+  "projects.types.apps",
+  "projects.types.ecommerce",
+  "projects.types.others",
 ] as const;
+
 type FilterType = (typeof FILTERS)[number];
 
 export const ProjectsSection: React.FC = () => {
-  const [filter, setFilter] = useState<FilterType>("Todos");
-
+  const { t } = useTranslation()
+  const [filter, setFilter] = useState<FilterType>("projetosSecao.filtros.all");
   const filteredProjects = useMemo(() => {
-    if (filter === "Todos") return projects;
-    return projects.filter((p) => p.type === filter);
+    if (filter === "projetosSecao.filtros.all") return projects; 
+    return projects.filter((p) => p.type === filter); 
   }, [filter]);
 
   return (
     <Box component="section" id="projects" sx={{ py: { xs: 8, md: 8 } }}>
       <Container maxWidth="lg">
-        <Title title='Meus Projetos' subtitle="Veja aqui um pouco dos meus projetos."></Title>
+        <Title title={t("projetosSecao.titulo")} subtitle={t("projetosSecao.subtitulo")} ></Title>
 
         {/* Filtro com botões arredondados */}
         <Box
@@ -68,7 +70,7 @@ export const ProjectsSection: React.FC = () => {
                   },
                 }}
               >
-                {f}
+                {t(f)}
               </Button>
             );
           })}

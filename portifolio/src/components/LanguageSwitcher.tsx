@@ -1,16 +1,16 @@
-const changeLanguage = (lang: string) => {
-    const select = document.querySelector(".goog-te-combo") as HTMLSelectElement;
-    if (select) {
-        select.value = lang;
-        select.dispatchEvent(new Event("change"));
-    }
-};
+import { useTranslation } from "react-i18next";
 
 export default function LanguageSwitcher() {
-    return (
-        <div>
-            <button onClick={() => changeLanguage("pt")}>🇧🇷 Português</button>
-            <button onClick={() => changeLanguage("en")}>🇺🇸 Inglês</button>
-        </div>
-    );
+  const { i18n } = useTranslation();
+
+  const changeLanguage = (lng: string) => {
+    i18n.changeLanguage(lng);
+  };
+
+  return (
+    <div style={{ display: "flex", gap: "8px" }}>
+      <button onClick={() => changeLanguage("pt")}>🇧🇷 PT</button>
+      <button onClick={() => changeLanguage("en")}>🇺🇸 EN</button>
+    </div>
+  );
 }

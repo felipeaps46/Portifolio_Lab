@@ -6,18 +6,21 @@ import Box from "@mui/material/Box";
 import { TbCircleLetterGFilled } from "react-icons/tb"; //importacao do icone de letra
 import { useLocation } from "react-router-dom";
 import { userData } from "../data/userData";
+import LanguageSwitcher from "./LanguageSwitcher";
+import { useTranslation } from "react-i18next";
 
 export const Header = () => {
 
+  const { t } = useTranslation();
   const location = useLocation();
   const currentPath = location.pathname;
   const user = userData
   const menuItems = [
-    { label: "Home", path: "/", key: "home" },
-    { label: "Sobre", path: "/sobre", key: "sobre" },
-    { label: "Habilidades", path: "/habilidades", key: "habilidades" },
-    { label: "Projetos", path: "/projetos", key: "projetos" },
-    { label: "Contato", path: "/contato", key: "contato" },
+    { label: t("header.home"), path: "/", key: "home" },
+    { label: t("header.sobre"), path: "/sobre", key: "about" },
+    { label: t("header.habilidades"), path: "/habilidades", key: "skills" },
+    { label: t("header.projetos"), path: "/projetos", key: "projects" },
+    { label: t("header.contato"), path: "/contato", key: "contact" },
   ];
 
   return (
@@ -71,7 +74,7 @@ export const Header = () => {
             {user.name}
           </Typography>
         </Box>
-        <Box>
+        <Box sx={{display: 'flex', flexDirection: 'row'}}>
           {menuItems.map((item) => {
             const isActive = currentPath === item.path;
             return (
@@ -98,6 +101,7 @@ export const Header = () => {
               </Button>
             );
           })}
+          <LanguageSwitcher></LanguageSwitcher>
         </Box>
       </Toolbar>
     </AppBar>

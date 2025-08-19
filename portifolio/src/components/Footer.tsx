@@ -14,6 +14,7 @@ import GitHubIcon from "@mui/icons-material/GitHub";
 import WhatsAppIcon from "@mui/icons-material/WhatsApp";
 import MailOutlineIcon from "@mui/icons-material/MailOutline";
 import { userData } from "../data/userData";
+import { useTranslation } from "react-i18next";
 
 type NavLink = { text: string; href: string };
 
@@ -22,17 +23,19 @@ export interface FooterProps {
 }
 
 export const Footer: React.FC<FooterProps> = ({
-  navLinks = [
-    { text: "Home", href: "/" },
-    { text: "Sobre", href: "/sobre" },
-    { text: "Habilidades", href: "/habilidades" },
-    { text: "Projetos", href: "/projetos" },
-    { text: "Contato", href: "/contato" },
-  ]
 }) => {
+  const { t } = useTranslation();
+  const links = [
+    { text: t("header.home"), href: "/" },
+    { text: t("header.sobre"), href: "/sobre" },
+    { text: t("header.habilidades"), href: "/habilidades" },
+    { text: t("header.projetos"), href: "/projetos" },
+    { text: t("header.contato"), href: "/contato" },
+  ];
   const currentYear = new Date().getFullYear();
 
   const user = userData
+  const descTraduzida = t(user.desc)
 
   const connectLinks = [
     {
@@ -84,7 +87,7 @@ export const Footer: React.FC<FooterProps> = ({
                   whiteSpace: "normal",
                 }}
               >
-                {user.desc}
+                {descTraduzida}
               </Typography>
 
               <Stack direction="row" spacing={1.5} sx={{ pt: 1 }}>
@@ -118,9 +121,9 @@ export const Footer: React.FC<FooterProps> = ({
           <Grid xs={6} md={2} sx={{ minWidth: 0 }}>
             <Stack spacing={1.5}>
               <Typography variant="h6" component="h3" sx={{ fontWeight: 600 }}>
-                Navegação
+                {t("footer.navegacao")}
               </Typography>
-              {navLinks.map(({ text, href }, idx) => (
+              {links.map(({ text, href }, idx) => (
                 <Link
                   key={idx}
                   href={href}
@@ -143,7 +146,7 @@ export const Footer: React.FC<FooterProps> = ({
           <Grid xs={6} md={2} sx={{ minWidth: 0 }}>
             <Stack spacing={1.5}>
               <Typography variant="h6" component="h3" sx={{ fontWeight: 600 }}>
-                Conecte-se
+                {t("footer.conecte")}
               </Typography>
               {connectLinks.map(({ Icon, text, href }, idx) => (
                 <Link
@@ -173,7 +176,7 @@ export const Footer: React.FC<FooterProps> = ({
 
         <Box sx={{ textAlign: { xs: "center", md: "left" } }}>
           <Typography variant="body2" color="#F5F5F5">
-            © {currentYear} {user.name}. Todos os direitos reservados.
+            © {currentYear} {user.name}. {t("footer.direitos")}
           </Typography>
         </Box>
       </Container>

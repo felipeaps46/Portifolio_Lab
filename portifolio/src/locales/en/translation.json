@@ -1,0 +1,112 @@
+{
+    "header": {
+        "home": "Home",
+        "sobre": "About",
+        "habilidades": "Skills",
+        "projetos": "Projects",
+        "contato": "Contact"
+    },
+    "user": {
+        "desc": "Full Stack Developer",
+        "fullstack": "Fullstack",
+        "backend": "Backend",
+        "ai": "of AI",
+        "software": "of Software"
+    },
+    "home": {
+        "desenvolvedor": "Developer",
+        "btnTexto01": "Generate Resume",
+        "btnTexto02": "Get in Touch"
+    },
+    "destaquesSecao": {
+        "titulo": "My highlights",
+        "subtitulo": "See some of my main works here.",
+        "btnTexto": "See all Projects"
+    },
+    "footer": {
+        "navegacao": "Navigation",
+        "conecte": "Contact",
+        "direitos": "All rights reserved."
+    },
+    "projetosSecao": {
+        "titulo": "My Projects",
+        "subtitulo": "See some of my projects here.",
+        "filtros": {
+            "all": "All"
+        }
+    },
+    "habilidadesSecao": {
+        "titulo": "My Skills",
+        "subtitulo": "See some of my technical skills here.",
+        "filtros": {
+            "todos": "All",
+            "frontend": "Frontend",
+            "backend": "Backend",
+            "mobile": "Mobile",
+            "database": "Database",
+            "devops": "DevOps",
+            "testing": "Testing",
+            "design": "Design",
+            "tools": "Tools",
+            "outros": "Others"
+        }
+    },
+    "projects": {
+        "btnTexto": "See Details",
+        "types": {
+            "sites": "Websites",
+            "landing": "Landing Pages",
+            "apps": "Apps",
+            "ecommerce": "E-Commerce",
+            "others": "Others"
+        },
+        "portfolioMinimal": {
+            "title": "Minimalist Portfolio",
+            "description": "Personal website with a minimalist theme, animated sections, and dark mode support."
+        },
+        "landingSaas": {
+            "title": "SaaS Campaign Landing",
+            "description": "Conversion-optimized landing page with CTA A/B testing and analytics."
+        },
+        "habitsApp": {
+            "title": "Habits App",
+            "description": "Mobile app to track daily habits, notifications, and gamification."
+        },
+        "streetwearShop": {
+            "title": "Streetwear Shop",
+            "description": "E-commerce with catalog, persistent cart, and Stripe checkout."
+        },
+        "metricsDashboard": {
+            "title": "Metrics Dashboard",
+            "description": "Dashboard with KPIs, dynamic filters, and data export."
+        },
+        "techConference": {
+            "title": "Tech Conference Landing",
+            "description": "Event landing page with agenda, speakers, and integrated registration."
+        },
+        "recipesApp": {
+            "title": "Offline Recipes App",
+            "description": "App with local storage, ingredient search, and favorites."
+        },
+        "handmadeMarket": {
+            "title": "Handmade Marketplace",
+            "description": "Sales platform for artisans, seller panel, and split payments."
+        },
+        "moviesCatalog": {
+            "title": "Movies Catalog",
+            "description": "Website to explore movies and series, with filters and responsive cards."
+        },
+        "cliBoilerplate": {
+            "title": "Boilerplate Generator CLI",
+            "description": "Command-line tool to generate project structures."
+        },
+        "tasksApi": {
+            "title": "Tasks API",
+            "description": "REST API to manage tasks with JWT authentication and automated tests."
+        },
+        "personalFinanceApp": {
+            "title": "Personal Finance App",
+            "description": "App for financial control with categories, goals, and charts."
+        }
+    }
+}
