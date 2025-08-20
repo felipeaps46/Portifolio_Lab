@@ -84,7 +84,8 @@
             "labelMensagem": "Mensagem",
             "btnTexto": "Enviar Mensagem"
         },
-        "titulo02": "Conecte-se Por"
+        "titulo02": "Conecte-se Por",
+        "alert" : "Por Favor preencha todas os campos para enviar a mensagem"
     },
     "chat": {
         "titulo": "Assistente Pessoal",
