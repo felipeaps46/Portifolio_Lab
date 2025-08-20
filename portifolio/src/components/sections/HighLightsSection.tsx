@@ -10,9 +10,9 @@ export const HighLightsSection = () => {
 
     return (
         <>
-            <Box component='main' sx={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', backgroundColor: '#2c2c2c', pb: '4rem' }}>
+            <Box component='main' sx={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', backgroundColor: '#2c2c2c', pb: '4rem', px: {xs: 2, sm: 0} }}>
                 <Title title={t("destaquesSecao.titulo")} subtitle={t("destaquesSecao.subtitulo")}></Title>
-                <Box sx={{ display: 'flex', flexDirection: 'row', gap: '1rem', justifyContent: 'center' }}>
+                <Box sx={{ display: 'flex', width: '100%', flexDirection: { xs: "column", sm: "row", md: 'row' }, flexWrap: "wrap", gap: '1rem', justifyContent: 'center', alignItems: "center" }}>
                     {projects
                         .filter((p) => p.highlight).map((p) => (
                             <ProjectCard project={p} />
