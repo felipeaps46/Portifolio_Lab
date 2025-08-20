@@ -84,7 +84,8 @@
             "labelMensagem": "Message",
             "btnTexto": "Send Message"
         },
-        "titulo02": "Connect Through"
+        "titulo02": "Connect Through",
+        "alert" : "Please fill in all fields to send the message"
     },
     "chat": {
         "titulo": "Personal Assistant",

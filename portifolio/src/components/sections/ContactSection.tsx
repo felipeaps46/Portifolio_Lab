@@ -14,33 +14,50 @@ import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import EmailOutlinedIcon from "@mui/icons-material/EmailOutlined";
 import { GitHub } from "@mui/icons-material";
 import { userData } from "../../data/userData";
-import { Title } from "../Title"
+import { Title } from "../Title";
 import AnimatedCanvas from "../../assets/animatedBackground";
 import { ContactCard } from "../ContactCard";
 import { useTranslation } from "react-i18next";
 
 export const ContactSection: React.FC = () => {
+  const { t } = useTranslation();
 
-  const { t } = useTranslation()
+  const [nome, setNome] = useState("");
+  const [email, setEmail] = useState("");
+  const [telefone, setTelefone] = useState("");
+  const [mensagem, setMensagem] = useState("");
+  const [status, setStatus] = useState<"idle" | "sending" | "success" | "error">("idle");
 
-  const [status, setStatus] = useState<
-    "idle" | "sending" | "success" | "error"
-  >("idle");
-
-  const handleSubmit: React.FormEventHandler<HTMLFormElement> = async (e) => {
+  const handleSubmit: React.MouseEventHandler<HTMLButtonElement> = async (
+    e
+  ) => {
     e.preventDefault();
+
+    if(!nome || !email || !telefone || !mensagem){
+      alert(t("contatoSecao.alert"))
+      return;
+    }
+
     setStatus("sending");
     try {
-      // Implementar envio (EmailJS, Formspree, API própria, etc.)
-      // await enviarMensagem(formData)
-      await new Promise((r) => setTimeout(r, 1000));
+      const response = await fetch("http://127.0.0.1:8000/email/send", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          recipient: "diogocaribebrunoro@gmail.com",
+          subject: `Olá, sou ${nome} de email: ${email} com telefone: ${telefone}`,
+          body: `${mensagem}`,
+        }),
+      });
+
+      if (!response.ok) throw new Error("Erro ao enviar o email");
       setStatus("success");
     } catch (err) {
       setStatus("error");
     }
   };
 
-  const user = userData
+  const user = userData;
 
   return (
     <Box
@@ -72,8 +89,10 @@ export const ContactSection: React.FC = () => {
           mb: 6,
         }}
       >
-        <Title title={t("contatoSecao.titulo")} subtitle={t("contatoSecao.subtitulo")}></Title>
-
+        <Title
+          title={t("contatoSecao.titulo")}
+          subtitle={t("contatoSecao.subtitulo")}
+        ></Title>
       </Box>
 
       <Box sx={{ display: "flex", gap: 1 }}>
@@ -94,6 +113,8 @@ export const ContactSection: React.FC = () => {
           <Box sx={{ display: "flex", gap: 2, mb: 2 }}>
             <TextField
               label={t("contatoSecao.cardEmail.labelNome")}
+              value = {nome}
+              onChange={(e) => setNome(e.target.value)}
               fullWidth
               sx={{
                 "& label.Mui-focused": {
@@ -108,6 +129,8 @@ export const ContactSection: React.FC = () => {
             />
             <TextField
               label="Email"
+              value = {email}
+              onChange={(e) => setEmail(e.target.value)}
               fullWidth
               sx={{
                 "& label.Mui-focused": {
@@ -125,6 +148,8 @@ export const ContactSection: React.FC = () => {
           <Box sx={{ mb: 2 }}>
             <TextField
               label={t("contatoSecao.cardEmail.labelTelefone")}
+              value = {telefone}
+              onChange={(e) => setTelefone(e.target.value)}
               fullWidth
               sx={{
                 "& label.Mui-focused": {
@@ -142,6 +167,8 @@ export const ContactSection: React.FC = () => {
           <Box sx={{ mb: 2 }}>
             <TextField
               label={t("contatoSecao.cardEmail.labelMensagem")}
+              value = {mensagem}
+              onChange={(e) => setMensagem(e.target.value)}
               multiline
               rows={8}
               fullWidth
@@ -166,9 +193,13 @@ export const ContactSection: React.FC = () => {
               borderRadius: 3,
               fontFamily: "'Segoe UI', Arial, sans-serif",
             }}
+            onClick={handleSubmit}
           >
             {t("contatoSecao.cardEmail.btnTexto")}
           </Button>
+          {status === "sending" && <Alert severity="info">Enviando...</Alert>}
+          {status === "success" && <Alert severity="success">Email enviado com sucesso!</Alert>}
+          {status === "error" && <Alert severity="error">Erro ao enviar email.</Alert>}
         </Box>
 
         <Box
@@ -184,7 +215,11 @@ export const ContactSection: React.FC = () => {
             variant="h5"
             fontWeight="bold"
             mb={2}
-            sx={{ color: "white", fontFamily: "'Inter', sans-serif", fontSize: '36px' }}
+            sx={{
+              color: "white",
+              fontFamily: "'Inter', sans-serif",
+              fontSize: "36px",
+            }}
           >
             {t("contatoSecao.titulo02")}
           </Typography>
