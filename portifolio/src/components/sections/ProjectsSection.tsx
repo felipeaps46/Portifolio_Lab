@@ -28,12 +28,12 @@ export const ProjectsSection: React.FC = () => {
   const { t } = useTranslation()
   const [filter, setFilter] = useState<FilterType>("projetosSecao.filtros.all");
   const filteredProjects = useMemo(() => {
-    if (filter === "projetosSecao.filtros.all") return projects; 
-    return projects.filter((p) => p.type === filter); 
+    if (filter === "projetosSecao.filtros.all") return projects;
+    return projects.filter((p) => p.type === filter);
   }, [filter]);
 
   return (
-    <Box component="section" id="projects" sx={{ py: { xs: 8, md: 8 } }}>
+    <Box component="section" id="projects" sx={{ py: { xs: 8, md: 8 }, pt: { xs: 0 } }}>
       <Container maxWidth="lg">
         <Title title={t("projetosSecao.titulo")} subtitle={t("projetosSecao.subtitulo")} ></Title>
 
@@ -56,9 +56,10 @@ export const ProjectsSection: React.FC = () => {
                 sx={{
                   borderRadius: 9999,
                   textTransform: "none",
-                  px: 3,
+                  px: { xs: 1, sm: 3 },
                   py: 1,
                   fontWeight: 600,
+                  fontSize: { xs: "12px", sm: "14px" },
                   border: "1px solid",
                   borderColor: "#f5f5f5",
                   color: selected ? "primary.contrastText" : "text.primary",
@@ -83,7 +84,7 @@ export const ProjectsSection: React.FC = () => {
             </Typography>
           </Box>
         ) : (
-          <Grid container spacing={3}>
+          <Grid container spacing={3} sx={{ justifyContent: "center" }}>
             {filteredProjects.map((p) => (
               <Grid item xs={12} sm={6} md={4} key={p.id}>
                 <ProjectCard project={p} />
