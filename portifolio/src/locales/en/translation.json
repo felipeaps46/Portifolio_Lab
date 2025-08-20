@@ -19,7 +19,7 @@
         "btnTexto02": "Get in Touch"
     },
     "destaquesSecao": {
-        "titulo": "My highlights",
+        "titulo": "My Highlights",
         "subtitulo": "See some of my main works here.",
         "btnTexto": "See all Projects"
     },
@@ -85,12 +85,42 @@
             "btnTexto": "Send Message"
         },
         "titulo02": "Connect Through",
-        "alert" : "Please fill in all fields to send the message"
+        "alert": "Please fill in all fields to send the message"
     },
     "chat": {
         "titulo": "Personal Assistant",
         "placeholder": "Type your message...",
         "mensagemInicial": "Hello! How can I help you today? Ask anything about Guilherme."
+    },
+    "servicosSecao": {
+        "titulo": "My Services",
+        "subtitulo": "Complete solutions to transform your ideas into digital reality."
+    },
+    "servicos": {
+        "sites": {
+            "titulo": "Website Creation",
+            "descricao": "Modern, responsive, and optimized institutional websites for your company"
+        },
+        "landing": {
+            "titulo": "Landing Pages",
+            "descricao": "Conversion-optimized pages to increase your sales and leads"
+        },
+        "ecommerce": {
+            "titulo": "E-commerce",
+            "descricao": "Complete online stores with payment system and product management"
+        },
+        "linkBio": {
+            "titulo": "Link in Bio",
+            "descricao": "Custom pages to centralize all your links and social media"
+        },
+        "manutencao": {
+            "titulo": "Maintenance",
+            "descricao": "Technical support, updates, and continuous improvements for your website"
+        },
+        "personalizado": {
+            "titulo": "Custom Project",
+            "descricao": "Tailor-made solutions for your business’s specific needs"
+        }
     },
     "experiencias": {
         "experiencia01": {

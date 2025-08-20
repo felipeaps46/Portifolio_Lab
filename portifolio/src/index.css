@@ -13,23 +13,6 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* esconde o banner azul (iframe) */
-.goog-te-banner-frame.skiptranslate {
-  display: none !important;
-}
-
-/* remove o deslocamento que o banner aplica no body */
-body {
-  top: 0px !important;
-}
-
-/* esconde a tooltip que aparece em cima das palavras */
-#goog-gt-tt,
-.goog-tooltip,
-.goog-tooltip div {
-  display: none !important;
-}
-
 a {
   font-weight: 500;
   color: #646cff;

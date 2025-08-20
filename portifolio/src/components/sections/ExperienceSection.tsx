@@ -10,7 +10,7 @@ export const ExperienceSection: React.FC = () => {
   const { t } = useTranslation()
   return (
     <Box component="section" id="experience" sx={{
-      background: "linear-gradient(135deg, #3a3a3a 0%, #4a4a4a 100%)"
+      background: "#2a2a2a"
       , py: { xs: 8, md: 12 }
     }}>
       <Container maxWidth="lg">

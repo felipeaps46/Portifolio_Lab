@@ -4,23 +4,31 @@ import { Sobre } from "./pages/Sobre";
 import { Habilidades } from "./pages/Habilidades";
 import { Projetos } from "./pages/Projetos";
 import { Contato } from "./pages/Contato";
+import { createTheme, ThemeProvider } from "@mui/material/styles";
 
 function App() {
 
+  const theme = createTheme({
+    typography: {
+      fontFamily: "'Poppins', sans-serif",
+    },
+  });
+
   return (
     <>
+      <ThemeProvider theme={theme}>
+        <BrowserRouter>
 
-      <BrowserRouter>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/sobre" element={<Sobre />} />
+            <Route path="/habilidades" element={<Habilidades />} />
+            <Route path="/projetos" element={<Projetos />} />
+            <Route path="/contato" element={<Contato />} />
+          </Routes>
 
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/sobre" element={<Sobre />} />
-          <Route path="/habilidades" element={<Habilidades />} />
-          <Route path="/projetos" element={<Projetos />} />
-          <Route path="/contato" element={<Contato />} />
-        </Routes>
-
-      </BrowserRouter>
+        </BrowserRouter>
+      </ThemeProvider>
     </>
   );
 

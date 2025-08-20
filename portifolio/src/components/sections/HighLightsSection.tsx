@@ -24,12 +24,13 @@ export const HighLightsSection = () => {
                         sx={{
                             color: "#2c2c2c",
                             backgroundColor: "#fff",
-                            fontWeight: 500,
+                            fontWeight: 600,
                             px: 2,
                             py: 1,
                             gap: '6px',
                             borderRadius: "8px",
                             transition: "all 0.2s ease",
+                            lineHeight: "0.9rem",
                             fontSize: '0.9rem',
                             border: "none",
                             "&:hover": {

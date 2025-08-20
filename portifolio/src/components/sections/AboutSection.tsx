@@ -9,7 +9,7 @@ export const AboutSection: React.FC = () => {
   const user = userData
   const descTraduzida = t(user.desc)
   return (
-    <Box component="section" id="about" sx={{ py: { xs: 8, md: 12 } }}>
+    <Box component="section" id="about" sx={{ py: { xs: 8, md: 12 }, bgcolor: "#2c2c2c" }}>
       <Container maxWidth="md">
         <Stack spacing={3} alignItems="center" textAlign="center">
           <Avatar

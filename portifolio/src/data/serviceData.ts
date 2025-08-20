@@ -4,32 +4,32 @@ import { Language, RocketLaunch, ShoppingCart, Link as LinkIcon, Build, Extensio
 export const services: ServiceItem[] = [
   {
     icon: Language,
-    title: "Criação de Sites",
-    description: "Sites institucionais modernos, responsivos e otimizados para sua empresa",
+    title: "servicos.sites.titulo",
+    description: "servicos.sites.descricao",
   },
   {
     icon: RocketLaunch,
-    title: "Landing Pages",
-    description: "Páginas de conversão otimizadas para aumentar suas vendas e leads",
+    title: "servicos.landing.titulo",
+    description: "servicos.landing.descricao",
   },
   {
     icon: ShoppingCart,
-    title: "E-commerces",
-    description: "Lojas virtuais completas com sistema de pagamentos e gestão de produtos",
+    title: "servicos.ecommerce.titulo",
+    description: "servicos.ecommerce.descricao",
   },
   {
     icon: LinkIcon,
-    title: "Link na Bio",
-    description: "Páginas personalizadas para centralizar todos seus links e redes sociais",
+    title: "servicos.linkBio.titulo",
+    description: "servicos.linkBio.descricao",
   },
   {
     icon: Build,
-    title: "Manutenção",
-    description: "Suporte técnico, atualizações e melhorias contínuas para seu site",
+    title: "servicos.manutencao.titulo",
+    description: "servicos.manutencao.descricao",
   },
   {
     icon: Extension,
-    title: "Projeto Personalizado",
-    description: "Soluções sob medida para necessidades específicas do seu negócio",
+    title: "servicos.personalizado.titulo",
+    description: "servicos.personalizado.descricao",
   },
 ]
