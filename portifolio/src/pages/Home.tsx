@@ -74,7 +74,7 @@ export const Home: React.FC = () => {
                 gutterBottom
                 sx={{
                   fontWeight: 800,
-                  fontSize: { xs: "2rem", sm: "2.5rem", md: "6rem" },
+                  fontSize: { xs: "clamp(2rem, 10vw, 4rem)", md: "6rem" },
                   fontFamily: "'Poppins', sans-serif",
                   whiteSpace: "nowrap",
                   color: "#f5f5f5",
@@ -100,7 +100,7 @@ export const Home: React.FC = () => {
                       justifyContent: "center",
                       alignItems: "center",
                       gap: 1,
-                      fontSize: { xs: "1.125rem", sm: "1.25rem", md: "2rem" },
+                      fontSize: { xs:"clamp(1.125rem, 5vw, 2rem)", md: "2rem" },
                       textShadow: `
       0 0 4px rgba(245, 245, 245, 0.2),
       0 0 8px rgba(245, 245, 245, 0.15)
@@ -147,7 +147,7 @@ export const Home: React.FC = () => {
                       justifyContent: "center",
                       alignItems: "center",
                       gap: 1,
-                      fontSize: { xs: "1.125rem", sm: "1.25rem", md: "2rem" },
+                      fontSize: { xs:"clamp(1.125rem, 5vw, 2rem)", md: "2rem" },
                       textShadow: `
       0 0 4px rgba(245, 245, 245, 0.2),
       0 0 8px rgba(245, 245, 245, 0.15)
@@ -189,7 +189,9 @@ export const Home: React.FC = () => {
             <Container maxWidth='sm' sx={{
               display: 'flex',
               justifyContent: 'center',
-              gap: '1rem',
+              flexDirection: { xs: "column", sm: "row" },
+              width: { xs: "68%", sm: "100%" },
+              gap: { xs: "0.8rem", sm: '1rem' },
               mt: '1.7rem',
               border: 'none'
             }}>
@@ -202,12 +204,13 @@ export const Home: React.FC = () => {
                   color: "#2c2c2c",
                   backgroundColor: "#fff",
                   fontWeight: 600,
-                  px: 2,
-                  py: 1,
+                  px: { xs: 1, sm: 2 },
+                  py: { xs: 1, sm: 1 },
                   gap: '6px',
                   borderRadius: "8px",
                   transition: "all 0.2s ease",
-                  fontSize: '0.9rem',
+                  fontSize: { xs: "0.8rem", sm: '0.9rem' },
+                  lineHeight: 1,
                   border: "none",
                   "&:hover": {
                     color: "#2c2c2c",
@@ -215,7 +218,9 @@ export const Home: React.FC = () => {
                   },
                 }}
               >
-                <DownloadIcon />
+
+                <DownloadIcon sx={{ fontSize: { xs: "1.1rem", sm: "1.4rem" } }} />
+
                 {t("home.btnTexto01")}
               </Button>
               <Button
@@ -227,10 +232,10 @@ export const Home: React.FC = () => {
                   backgroundColor: "transparent",
                   fontWeight: 600,
                   gap: '10px',
-                  px: 2,
+                  px: { xs: 1, sm: 2 },
                   py: 1,
                   borderRadius: "8px",
-                  fontSize: '0.9rem',
+                  fontSize: { xs: "0.8rem", sm: '0.9rem' },
                   transition: "all 0.2s ease",
                   border: "2px solid #f5f5f5",
                   justifyContent: "center",
@@ -247,7 +252,7 @@ export const Home: React.FC = () => {
                 <span style={{ display: "flex", alignItems: "center" }}>
                   {t("home.btnTexto02")}
                 </span>
-                <ArrowCircleRightIcon sx={{ fontSize: "1.4rem" }} />
+                <ArrowCircleRightIcon sx={{ fontSize: { xs: "1.1rem", sm: "1.4rem" } }} />
               </Button>
             </Container>
           </Box>

@@ -9,13 +9,13 @@ export default function ServicesSection() {
   const { t } = useTranslation()
 
   return (
-    <Box sx={{ backgroundColor: "#2a2a2a", py: 8, pb: 14, px: 2, width: "100%" }}>
+    <Box sx={{ backgroundColor: "#2a2a2a", py: { xs: 0, md: 8 }, pb: { xs: 14 }, px: 0, width: "100%" }}>
       <Container sx={{ width: "100%" }}>
-        <Box textAlign="center" mb={6} sx={{ display: 'flex', flexDirection: 'column', justifyContent: "center" }}>
+        <Box textAlign="center" mb={{ xs: 0, md: 6 }} sx={{ display: 'flex', flexDirection: 'column', justifyContent: "center" }}>
           <Title title={t("servicosSecao.titulo")} subtitle={t("servicosSecao.subtitulo")}></Title>
         </Box>
 
-        <Grid container spacing={4} justifyContent="center" sx={{ width: "100%", display: 'grid', gridTemplateColumns: "repeat(3, 1fr)" }}>
+        <Grid container spacing={4} justifyContent="center" sx={{ width: "100%", display: 'grid', gridTemplateColumns: { xs: "repeat(1, 1fr)", sm: "repeat(2, 1fr)", md: "repeat(3, 1fr)" } }}>
           {services.map((service) => {
             const Icon = service.icon as React.ElementType<SvgIconProps>;
             return (
