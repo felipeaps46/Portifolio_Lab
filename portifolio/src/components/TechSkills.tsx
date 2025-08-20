@@ -100,8 +100,8 @@ export const TechSkills: React.FC<TechSkillsProps> = ({
             key={item.name}
             item
             sx={{
-              flex: "1 1 15%", // ocupa 20% do espaço → 5 por linha
-              maxWidth: "20%", // garante que não passe disso
+              flex: { xs: "1 1 25%",md: "1 1 15%" }, 
+              maxWidth: { xs: "33%", md: "20%" }, 
             }}
           >
             {wrapped}

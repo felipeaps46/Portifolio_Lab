@@ -33,7 +33,7 @@ export const ContactSection: React.FC = () => {
   ) => {
     e.preventDefault();
 
-    if(!nome || !email || !telefone || !mensagem){
+    if (!nome || !email || !telefone || !mensagem) {
       alert(t("contatoSecao.alert"))
       return;
     }
@@ -95,25 +95,26 @@ export const ContactSection: React.FC = () => {
         ></Title>
       </Box>
 
-      <Box sx={{ display: "flex", gap: 1 }}>
+      <Box sx={{ display: "flex", gap: 1, flexDirection: { xs: "column", md: "row" }, justifyContent: "center", alignItems: "center", px: { xs: 2, md: 0 }, }}>
         <Box
           sx={{
-            maxWidth: 500,
+            maxWidth: { xs: "100%", md: 500 },
             p: 3,
             border: "1px solid #ccc",
             borderRadius: 2,
             boxShadow: 2,
             backgroundColor: "white",
+            mx: "auto",
           }}
         >
           <Typography variant="h5" mb={3} fontWeight="bold" sx={{}}>
-            Envie sua mensagem
+           {t("contatoSecao.cardEmail.titulo")}
           </Typography>
 
           <Box sx={{ display: "flex", gap: 2, mb: 2 }}>
             <TextField
               label={t("contatoSecao.cardEmail.labelNome")}
-              value = {nome}
+              value={nome}
               onChange={(e) => setNome(e.target.value)}
               fullWidth
               sx={{
@@ -129,7 +130,7 @@ export const ContactSection: React.FC = () => {
             />
             <TextField
               label="Email"
-              value = {email}
+              value={email}
               onChange={(e) => setEmail(e.target.value)}
               fullWidth
               sx={{
@@ -148,7 +149,7 @@ export const ContactSection: React.FC = () => {
           <Box sx={{ mb: 2 }}>
             <TextField
               label={t("contatoSecao.cardEmail.labelTelefone")}
-              value = {telefone}
+              value={telefone}
               onChange={(e) => setTelefone(e.target.value)}
               fullWidth
               sx={{
@@ -167,7 +168,7 @@ export const ContactSection: React.FC = () => {
           <Box sx={{ mb: 2 }}>
             <TextField
               label={t("contatoSecao.cardEmail.labelMensagem")}
-              value = {mensagem}
+              value={mensagem}
               onChange={(e) => setMensagem(e.target.value)}
               multiline
               rows={8}
@@ -204,11 +205,12 @@ export const ContactSection: React.FC = () => {
 
         <Box
           sx={{
-            maxWidth: 400,
+            maxWidth: { xs: "100%", md: 400 },
             p: 5,
             pt: 0,
             color: "white",
             fontFamily: "'Inter', sans-serif",
+            mx: "auto",
           }}
         >
           <Typography

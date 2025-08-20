@@ -23,7 +23,7 @@ const ORDERED_CATEGORIES: readonly OrderedCategory[] = [
 type FilterType = (typeof ORDERED_CATEGORIES)[number];
 
 function normalizeCategory(raw?: string): FilterType | undefined {
- if (!raw) return "habilidadesSecao.filtros.outros";
+  if (!raw) return "habilidadesSecao.filtros.outros";
   const s = raw.trim().toLowerCase();
 
   if (s === "frontend") return "habilidadesSecao.filtros.frontend";
@@ -52,13 +52,13 @@ export const SkillsSection: React.FC = () => {
   }, []);
 
   const filteredItems = useMemo(() => {
-  if (filter === "habilidadesSecao.filtros.todos") return normalizedItems;
-  return normalizedItems.filter((s) => s.category === filter);
-}, [filter, normalizedItems]);
+    if (filter === "habilidadesSecao.filtros.todos") return normalizedItems;
+    return normalizedItems.filter((s) => s.category === filter);
+  }, [filter, normalizedItems]);
 
   return (
     <Box component="section" id="skills" sx={{ pt: { xs: 4, md: 4 }, pb: { xs: 4, md: 10 }, bgcolor: '#2a2a2a' }}>
-      <Container maxWidth="lg">
+      <Container maxWidth="lg" sx={{justifyContent: "center", display: "flex", flexDirection: "column"}}>
         <Title title={t("habilidadesSecao.titulo")} subtitle={t("habilidadesSecao.subtitulo")}></Title>
 
         {/* Filtros estilo pill, fundo paper e borda destacando o selecionado */}
@@ -81,9 +81,10 @@ export const SkillsSection: React.FC = () => {
                 sx={{
                   borderRadius: 9999,
                   textTransform: "none",
-                  px: 3,
+                  px: { xs: 1, sm: 3 },
                   py: 1,
                   fontWeight: 600,
+                  fontSize: { xs: "12px", sm: "14px" },
                   border: "2px solid",
                   borderColor: "#f5f5f5",
                   color: selected ? "primary.contrastText" : "text.primary",
@@ -110,7 +111,6 @@ export const SkillsSection: React.FC = () => {
           rounded={2}
           elevation={1}
           showTooltip
-
         />
       </Container>
     </Box>
