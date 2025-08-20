@@ -15,6 +15,7 @@ import { useTranslation } from "react-i18next";
 // Se você colocou o hook em outro arquivo, importe:
 import { useTypewriter } from "../hooks/useTypewriter";
 import { userData } from "../data/userData.ts";
+import ServicesSection from "../components/sections/ServicesSection.tsx";
 
 export const Home: React.FC = () => {
 
@@ -74,6 +75,7 @@ export const Home: React.FC = () => {
                   fontWeight: 800,
                   fontSize: { xs: "2rem", sm: "2.5rem", md: "6rem" },
                   fontFamily: "'Poppins', sans-serif",
+                  whiteSpace: "nowrap",
                   color: "#f5f5f5",
                   textShadow: `
       0 0 6px rgba(245, 245, 245, 0.25),
@@ -81,7 +83,7 @@ export const Home: React.FC = () => {
     `
                 }}
               >
-               {user.name}
+                {user.name}
               </Typography>
 
               {/* Linha 2: "Desenvolvedor " + palavra animada */}
@@ -110,16 +112,21 @@ export const Home: React.FC = () => {
                   sx={{
                     display: "inline-block",
                     whiteSpace: "nowrap",
-                    borderRight: "2px solid #F5F5F5",
+                    fontFamily: "Cascadia Code, sans-serif",
+                    fontWeight: 700,
+                    color: "#1976d2",
+                    borderRight: "2px solid #1976d2",
                     textShadow: `
-      0 0 3px rgba(245, 245, 245, 0.25),
-      0 0 6px rgba(245, 245, 245, 0.2)
+      0 0 5px rgba(25,118,210, 0.7),
+      0 0 10px rgba(25,118,210, 0.6),
+      0 0 20px rgba(25,118,210, 0.5),
+      0 0 40px rgba(25,118,210, 0.4)
     `,
                     animation: "blink 1.2s ease-in-out infinite",
                     "@keyframes blink": {
-                      "0%": { borderColor: "rgba(245,245,245,0.8)" },
+                      "0%": { borderColor: "rgba(25,118,210,0.8)" },
                       "50%": { borderColor: "transparent" },
-                      "100%": { borderColor: "rgba(245,245,245,0.8)" },
+                      "100%": { borderColor: "rgba(25,118,210,0.8)" },
                     },
                   }}
                 >
@@ -142,7 +149,7 @@ export const Home: React.FC = () => {
                 sx={{
                   color: "#2c2c2c",
                   backgroundColor: "#fff",
-                  fontWeight: 500,
+                  fontWeight: 600,
                   px: 2,
                   py: 1,
                   gap: '6px',
@@ -166,7 +173,7 @@ export const Home: React.FC = () => {
                   flexDirection: 'row',
                   color: "#f5f5f5",
                   backgroundColor: "transparent",
-                  fontWeight: 500,
+                  fontWeight: 600,
                   gap: '10px',
                   px: 2,
                   py: 1,
@@ -195,9 +202,10 @@ export const Home: React.FC = () => {
         </Box>
 
         <HighLightsSection></HighLightsSection>
+        <ServicesSection></ServicesSection>
       </Box>
 
-      <Footer/>
+      <Footer />
 
       <PersonalChat
         avatarUrl={profileImg}

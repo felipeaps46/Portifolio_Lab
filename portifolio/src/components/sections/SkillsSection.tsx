@@ -57,7 +57,7 @@ export const SkillsSection: React.FC = () => {
 }, [filter, normalizedItems]);
 
   return (
-    <Box component="section" id="skills" sx={{ pt: { xs: 4, md: 4 }, pb: { xs: 4, md: 10 }, bgcolor: 'rgba(74, 74, 74, 0.19)' }}>
+    <Box component="section" id="skills" sx={{ pt: { xs: 4, md: 4 }, pb: { xs: 4, md: 10 }, bgcolor: '#2a2a2a' }}>
       <Container maxWidth="lg">
         <Title title={t("habilidadesSecao.titulo")} subtitle={t("habilidadesSecao.subtitulo")}></Title>
 

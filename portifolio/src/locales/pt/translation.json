@@ -85,12 +85,42 @@
             "btnTexto": "Enviar Mensagem"
         },
         "titulo02": "Conecte-se Por",
-        "alert" : "Por Favor preencha todas os campos para enviar a mensagem"
+        "alert": "Por Favor preencha todas os campos para enviar a mensagem"
     },
     "chat": {
         "titulo": "Assistente Pessoal",
         "placeholder": "Digite sua mensagem...",
         "mensagemInicial": "Olá! Como posso ajudar hoje? Pergunte qualquer coisa sobre o Guilherme."
+    },
+    "servicosSecao": {
+        "titulo": "Meus Serviços",
+        "subtitulo": "Soluções completas para transformar suas ideias em realidade digital."
+    },
+    "servicos": {
+        "sites": {
+            "titulo": "Criação de Sites",
+            "descricao": "Sites institucionais modernos, responsivos e otimizados para sua empresa"
+        },
+        "landing": {
+            "titulo": "Landing Pages",
+            "descricao": "Páginas de conversão otimizadas para aumentar suas vendas e leads"
+        },
+        "ecommerce": {
+            "titulo": "E-commerces",
+            "descricao": "Lojas virtuais completas com sistema de pagamentos e gestão de produtos"
+        },
+        "linkBio": {
+            "titulo": "Link na Bio",
+            "descricao": "Páginas personalizadas para centralizar todos seus links e redes sociais"
+        },
+        "manutencao": {
+            "titulo": "Manutenção",
+            "descricao": "Suporte técnico, atualizações e melhorias contínuas para seu site"
+        },
+        "personalizado": {
+            "titulo": "Projeto Personalizado",
+            "descricao": "Soluções sob medida para necessidades específicas do seu negócio"
+        }
     },
     "experiencias": {
         "experiencia01": {

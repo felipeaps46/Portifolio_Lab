@@ -1,5 +1,5 @@
 import type { ElementType } from "react";
-import { SiReact, SiNextdotjs, SiTypescript, SiJavascript, SiNodedotjs, SiExpress, SiPrisma, SiPostgresql, SiMongodb, SiDocker, SiGit, SiGithub, SiTailwindcss, SiMui, SiFigma, SiJest, SiVite, SiExpo, SiLinux, SiVercel, SiLangchain, SiPython, SiOpenai, SiGooglegemini, SiPhp, SiDjango, SiSpringboot, SiChromatic } from "react-icons/si";
+import { SiReact, SiNextdotjs, SiTypescript, SiJavascript, SiNodedotjs, SiExpress, SiPrisma, SiPostgresql, SiMongodb, SiDocker, SiGit, SiGithub, SiTailwindcss, SiMui, SiFigma, SiJest, SiVite, SiExpo, SiLinux, SiVercel, SiLangchain, SiPython, SiOpenai, SiGooglegemini, SiPhp, SiDjango, SiSpringboot } from "react-icons/si";
 import { FaGolang, FaJava } from "react-icons/fa6";
 import { BiVector } from "react-icons/bi";
 

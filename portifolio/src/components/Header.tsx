@@ -83,7 +83,7 @@ export const Header = () => {
                 href={item.path}
                 sx={{
                   color: isActive ? "#2c2c2c" : "#f5f5f5",
-                  fontWeight: 500,
+                  fontWeight: 600,
                   mx: 1,
                   px: 2,
                   py: 0.5,

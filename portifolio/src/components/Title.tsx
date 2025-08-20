@@ -12,7 +12,7 @@ export const Title: React.FC<TitleType> = ({ title, subtitle }) => {
     `}}>
                 {title}
             </Typography>
-            <Typography variant="subtitle1" sx={{ color: '#9CA3AF', fontSize: '30px' }}>
+            <Typography variant="subtitle1" sx={{ color: '#b0b0b0', fontSize: '28px', pt: 1 }}>
                 {subtitle}
             </Typography>
         </Box>
