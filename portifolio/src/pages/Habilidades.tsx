@@ -13,7 +13,7 @@ export const Habilidades: React.FC = () => {
                     display: 'flex',
                     flexDirection: 'column',
                     minHeight: "100vh",
-                    bgcolor: "#2c2c2c",
+                    bgcolor: "#2a2a2a",
                     color: "text.primary",
                     scrollBehavior: "smooth",
                 }}
