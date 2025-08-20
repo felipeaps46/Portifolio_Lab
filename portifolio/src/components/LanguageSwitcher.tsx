@@ -14,10 +14,12 @@ export default function LanguageSwitcher() {
       variant="contained"
       onClick={toggleLanguage}
       sx={{
-        borderRadius: "20px",
+        borderRadius: "8px",
         fontWeight: 700,
+        minWidth: "auto",
         textTransform: "none",
-        px: 2.5,
+        fontSize: { xs: "10px", sm: "14px" },
+        px: { xs: 1.5, sm: 2.5 },
         color: isPT ? "#f5f5f5" : "#fff",
         borderColor: "#f5f5f5",
         backgroundColor: isPT ? "transparent" : "transparent", // azul padrão MUI

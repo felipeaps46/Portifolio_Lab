@@ -89,13 +89,15 @@ export const Header = () => {
             {user.name}
           </Typography>
         </Box>
-            {/*Menu para mobile e tablets*/}
+        {/*Menu para mobile e tablets*/}
         {isMobile ? (
           <>
-            <IconButton onClick={() => setOpenDrawer(true)} sx={{ color: "#f5f5f5" }}>
-              <MenuIcon />
-            </IconButton>
-
+            <Box sx={{ display: "flex", flexDirection: "row", gap: "0.2rem" }}>
+              <LanguageSwitcher></LanguageSwitcher>
+              <IconButton onClick={() => setOpenDrawer(true)} sx={{ color: "#f5f5f5"}}>
+                <MenuIcon />
+              </IconButton>
+            </Box>
             <Drawer
               anchor="top"
               open={openDrawer}
@@ -148,6 +150,7 @@ export const Header = () => {
                 })}
               </List>
             </Drawer>
+
           </>
         ) : (
           <Box sx={{ display: 'flex', flexDirection: 'row' }}>
