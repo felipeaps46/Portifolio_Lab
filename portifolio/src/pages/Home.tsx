@@ -16,6 +16,7 @@ import { useTranslation } from "react-i18next";
 import { useTypewriter } from "../hooks/useTypewriter";
 import { userData } from "../data/userData.ts";
 import ServicesSection from "../components/sections/ServicesSection.tsx";
+import i18n from "../i18n.ts";
 
 export const Home: React.FC = () => {
 
@@ -87,52 +88,103 @@ export const Home: React.FC = () => {
               </Typography>
 
               {/* Linha 2: "Desenvolvedor " + palavra animada */}
-              <Typography
-                variant="h5"
-                component="h2"
-                color="#F5F5F5"
-                sx={{
-                  fontWeight: 600,
-                  display: "flex",
-                  justifyContent: "center",
-                  alignItems: "center",
-                  gap: 1,
-                  fontSize: { xs: "1.125rem", sm: "1.25rem", md: "2rem" },
-                  textShadow: `
+              {i18n.language === "pt"
+                ? (
+                  <Typography
+                    variant="h5"
+                    component="h2"
+                    color="#F5F5F5"
+                    sx={{
+                      fontWeight: 600,
+                      display: "flex",
+                      justifyContent: "center",
+                      alignItems: "center",
+                      gap: 1,
+                      fontSize: { xs: "1.125rem", sm: "1.25rem", md: "2rem" },
+                      textShadow: `
       0 0 4px rgba(245, 245, 245, 0.2),
       0 0 8px rgba(245, 245, 245, 0.15)
     `
-                }}
-                aria-live="polite"
-                aria-atomic="true"
-              >
-                <Box component="span">{t("home.desenvolvedor")}</Box>
-                <Box
-                  component="span"
-                  sx={{
-                    display: "inline-block",
-                    whiteSpace: "nowrap",
-                    fontFamily: "Cascadia Code, sans-serif",
-                    fontWeight: 700,
-                    color: "#1976d2",
-                    borderRight: "2px solid #1976d2",
-                    textShadow: `
+                    }}
+                    aria-live="polite"
+                    aria-atomic="true"
+                  >
+                    <Box component="span">{t("home.desenvolvedor")}</Box>
+                    <Box
+                      component="span"
+                      sx={{
+                        display: "inline-block",
+                        whiteSpace: "nowrap",
+                        fontFamily: "Cascadia Code, sans-serif",
+                        fontWeight: 700,
+                        color: "#1976d2",
+                        borderRight: "2px solid #1976d2",
+                        textShadow: `
       0 0 5px rgba(25,118,210, 0.7),
       0 0 10px rgba(25,118,210, 0.6),
       0 0 20px rgba(25,118,210, 0.5),
       0 0 40px rgba(25,118,210, 0.4)
     `,
-                    animation: "blink 1.2s ease-in-out infinite",
-                    "@keyframes blink": {
-                      "0%": { borderColor: "rgba(25,118,210,0.8)" },
-                      "50%": { borderColor: "transparent" },
-                      "100%": { borderColor: "rgba(25,118,210,0.8)" },
-                    },
-                  }}
-                >
-                  {text}
-                </Box>
-              </Typography>
+                        animation: "blink 1.2s ease-in-out infinite",
+                        "@keyframes blink": {
+                          "0%": { borderColor: "rgba(25,118,210,0.8)" },
+                          "50%": { borderColor: "transparent" },
+                          "100%": { borderColor: "rgba(25,118,210,0.8)" },
+                        },
+                      }}
+                    >
+                      {text}
+                    </Box>
+                  </Typography>
+                ) : (
+                  <Typography
+                    variant="h5"
+                    component="h2"
+                    color="#F5F5F5"
+                    sx={{
+                      fontWeight: 600,
+                      display: "flex",
+                      justifyContent: "center",
+                      alignItems: "center",
+                      gap: 1,
+                      fontSize: { xs: "1.125rem", sm: "1.25rem", md: "2rem" },
+                      textShadow: `
+      0 0 4px rgba(245, 245, 245, 0.2),
+      0 0 8px rgba(245, 245, 245, 0.15)
+    `
+                    }}
+                    aria-live="polite"
+                    aria-atomic="true"
+                  >
+                    <Box
+                      component="span"
+                      sx={{
+                        display: "inline-block",
+                        whiteSpace: "nowrap",
+                        fontFamily: "Cascadia Code, sans-serif",
+                        fontWeight: 700,
+                        color: "#1976d2",
+                        borderRight: "2px solid #1976d2",
+                        textShadow: `
+      0 0 5px rgba(25,118,210, 0.7),
+      0 0 10px rgba(25,118,210, 0.6),
+      0 0 20px rgba(25,118,210, 0.5),
+      0 0 40px rgba(25,118,210, 0.4)
+    `,
+                        animation: "blink 1.2s ease-in-out infinite",
+                        "@keyframes blink": {
+                          "0%": { borderColor: "rgba(25,118,210,0.8)" },
+                          "50%": { borderColor: "transparent" },
+                          "100%": { borderColor: "rgba(25,118,210,0.8)" },
+                        },
+                      }}
+                    >
+                      {text}
+                    </Box>
+                    <Box component="span">{t("home.desenvolvedor")}</Box>
+                  </Typography>
+                )}
+
             </Container>
             <Container maxWidth='sm' sx={{
               display: 'flex',

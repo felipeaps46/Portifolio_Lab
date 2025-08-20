@@ -90,7 +90,7 @@ export const Footer: React.FC<FooterProps> = ({
                 {descTraduzida}
               </Typography>
 
-              <Stack direction="row" spacing={1.5} sx={{ pt: 1 }}>
+              <Stack direction="row" spacing={2} sx={{ pt: 1 }}>
                 {connectLinks.map(({ Icon, href, text }, idx) => (
                   <IconButton
                     key={idx}
@@ -100,8 +100,7 @@ export const Footer: React.FC<FooterProps> = ({
                     rel="noopener noreferrer"
                     sx={{
                       color: "#F5F5F5",
-                      width: 40,
-                      height: 40,
+                      p: 0,
                       transition:
                         "transform .2s ease-in-out, color .2s ease-in-out",
                       "&:hover": {
