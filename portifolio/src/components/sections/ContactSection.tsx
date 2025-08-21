@@ -71,16 +71,19 @@ export const ContactSection: React.FC = () => {
         py: {
           xs: 4,
           md: 4,
-          flex: 1,
-          position: "relative",
-          //backgroundImage: `url(${fundo})`,
-          display: "flex",
-          justifyContent: "center",
-          gap: 4,
-          flexWrap: "wrap",
-          flexDirection: "column",
-          alignItems: "center",
+
+
         },
+        flex: 1,
+        position: "relative",
+        //backgroundImage: `url(${fundo})`,
+        display: "flex",
+        justifyContent: "center",
+        gap: { xs: 0, sm: 4 },
+        flexWrap: "wrap",
+        flexDirection: "column",
+        alignItems: "center",
+        maxWidth: "100vw",
       }}
     >
       <AnimatedCanvas></AnimatedCanvas>
@@ -88,9 +91,12 @@ export const ContactSection: React.FC = () => {
         sx={{
           display: "flex",
           flexDirection: "column",
+          position: "relative",
           alignItems: "center",
           gap: 1,
-          mb: 6,
+          px: { xs: 2, sm: 4, md: 0 },
+          mb: { xs: 0, sm: 0, md: 6 },
+          maxWidth: "100vw",
         }}
       >
         <Title
@@ -99,23 +105,23 @@ export const ContactSection: React.FC = () => {
         ></Title>
       </Box>
 
-      <Box sx={{ display: "flex", gap: 1, flexDirection: { xs: "column", md: "row" }, justifyContent: "center", alignItems: "center", px: { xs: 2, md: 0 }, }}>
+      <Box sx={{ display: "flex", position: "relative", gap: 1, flexDirection: { xs: "column", md: "row" }, justifyContent: "center", alignItems: "center", px: { xs: 0, md: 0 }, }}>
         <Box
           sx={{
-            maxWidth: { xs: "100%", md: 500 },
-            p: 3,
+            maxWidth: { xs: "100vw", md: 500 },
+            width: { xs: "80vw", md: "auto" },
+            p: { xs: 2.5, sm: 3 },
             border: "1px solid #ccc",
             borderRadius: 2,
             boxShadow: 2,
             backgroundColor: "white",
-            mx: "auto",
           }}
         >
-          <Typography variant="h5" mb={3} fontWeight="bold" sx={{}}>
-           {t("contatoSecao.cardEmail.titulo")}
+          <Typography variant="h5" mb={3} fontWeight="bold" sx={{ fontSize: { xs: "20px", sm: "24px" }, textAlign: { xs: "center", sm: "start" } }}>
+            {t("contatoSecao.cardEmail.titulo")}
           </Typography>
 
-          <Box sx={{ display: "flex", gap: 2, mb: 2 }}>
+          <Box sx={{ display: "flex", flexDirection: { xs: "column", sm: "row" }, gap: 2, mb: 2 }}>
             <TextField
               label={t("contatoSecao.cardEmail.labelNome")}
               value={nome}
@@ -210,11 +216,9 @@ export const ContactSection: React.FC = () => {
         <Box
           sx={{
             maxWidth: { xs: "100%", md: 400 },
-            p: 5,
-            pt: 0,
+            p: { xs: 0, md: 5 },
+            pt: { xs: 5, md: 0 },
             color: "white",
-            fontFamily: "'Inter', sans-serif",
-            mx: "auto",
           }}
         >
           <Typography
@@ -223,39 +227,40 @@ export const ContactSection: React.FC = () => {
             mb={2}
             sx={{
               color: "white",
-              fontFamily: "'Inter', sans-serif",
-              fontSize: "36px",
+              fontSize: { xs: "30px", sm: "39px" },
+              textAlign: { xs: "center", md: "start" },
             }}
           >
             {t("contatoSecao.titulo02")}
           </Typography>
+          <Box sx={{ display: "grid", gridTemplateColumns: { sm: "repeat(2, 1fr)", md: "auto" }, gap: { sm: 2, md: 0 } }}>
+            <ContactCard
+              icon={<EmailOutlinedIcon sx={{ color: "white" }} />}
+              title="Email"
+              text={user.emailName}
+              link={user.links?.email}
+            />
 
-          <ContactCard
-            icon={<EmailOutlinedIcon sx={{ color: "white" }} />}
-            title="Email"
-            text={user.emailName}
-            link={user.links?.email}
-          />
+            <ContactCard
+              icon={<WhatsAppIcon sx={{ color: "white" }} />}
+              title="WhatsApp"
+              text={user.telefone}
+              link={user.links?.whatsapp}
+            />
 
-          <ContactCard
-            icon={<WhatsAppIcon sx={{ color: "white" }} />}
-            title="WhatsApp"
-            text={user.telefone}
-            link={user.links?.whatsapp}
-          />
-
-          <ContactCard
-            icon={<LinkedInIcon sx={{ color: "white" }} />}
-            title="LinkedIn"
-            text={user.linkedinName}
-            link={user.links?.linkedin}
-          />
-          <ContactCard
-            icon={<GitHub sx={{ color: "white" }} />}
-            title="Github"
-            text={user.githubName}
-            link={user.links?.github}
-          />
+            <ContactCard
+              icon={<LinkedInIcon sx={{ color: "white" }} />}
+              title="LinkedIn"
+              text={user.linkedinName}
+              link={user.links?.linkedin}
+            />
+            <ContactCard
+              icon={<GitHub sx={{ color: "white" }} />}
+              title="Github"
+              text={user.githubName}
+              link={user.links?.github}
+            />
+          </Box>
         </Box>
       </Box>
     </Box>
