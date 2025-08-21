@@ -185,7 +185,7 @@ export const ExperienceTimeline = () => {
   }
 
   const { t } = useTranslation()
-  
+
   return (
     <div>
       <Timeline position={isSm ? 'right' : 'alternate'} sx={{ px: { xs: 0, sm: 1 }, py: 1 }}>
@@ -194,7 +194,11 @@ export const ExperienceTimeline = () => {
           const inView = useInView(ref, { once: true, amount: 0.3, margin: '0px 0px -10% 0px' });
 
           return (
-            <TimelineItem key={idx} sx={{ gap: 1 }} ref={ref}>
+            <TimelineItem key={idx} sx={{
+              gap: 1, "&::before": {
+                display: isSm ? "none" : "block",
+              },
+            }} ref={ref}>
               <TimelineSeparator>
                 <TimelineDot
                   color="primary"
@@ -216,7 +220,7 @@ export const ExperienceTimeline = () => {
                     }
                   }}
                 >
-                  {(t(item.type) === "Trabalho" || t(item.type) === "Work")  && <BusinessCenterIcon fontSize="small" />}
+                  {(t(item.type) === "Trabalho" || t(item.type) === "Work") && <BusinessCenterIcon fontSize="small" />}
                   {(t(item.type) === "Estudo" || t(item.type) === "Study") && <SchoolIcon fontSize="small" />}
                   {(t(item.type) === "Voluntariado" || t(item.type) === "Volunteering") && <HandshakeIcon fontSize="small" />}
                 </TimelineDot>
@@ -241,14 +245,14 @@ export const ExperienceTimeline = () => {
                 viewport={{ once: true, amount: 0.3, margin: '0px 0px -10% 0px' }}
                 sx={{ display: 'contents' }}
               >
-                <TimelineContent>
+                <TimelineContent sx={{ px: { xs: 0, sm: 2 }, mb: { xs: 2, sm: 0 } }}>
                   <TiltCard
                     entrance={false}
                     isDisabled={isSm}
                     maxTilt={8}
                     hoverScale={1.02}
                     sx={{
-                      background: "linear-gradient(135deg, rgb(30,30,30) 0%, rgb(80,120,160) 100%)",
+                      //background: "linear-gradient(135deg, rgb(30,30,30) 0%, rgb(80,120,160) 100%)",
                       border: "1px solid rgba(255, 255, 255, 0.4)",
                       borderRadius: 3,
                       boxShadow: "0 4px 12px rgba(194, 202, 211, 0.25)",
@@ -257,7 +261,7 @@ export const ExperienceTimeline = () => {
                       p: 2,
                       transition: "background .25s ease, border-color .25s ease",
                       "&:hover": {
-                        background: "linear-gradient(135deg, rgb(12,35,70) 0%, rgb(45,100,150) 100%)",
+                        //background: "linear-gradient(135deg, rgb(12,35,70) 0%, rgb(45,100,150) 100%)",
                         borderColor: "rgba(255, 255, 255, 0.3)",
                       }
                     }}
@@ -291,7 +295,7 @@ export const ExperienceTimeline = () => {
                         letterSpacing: 0.3
                       }}
                     >
-                      {(t(item.type) === "Trabalho" || t(item.type) === "Work")  && <BusinessCenterIcon fontSize="inherit" />}
+                      {(t(item.type) === "Trabalho" || t(item.type) === "Work") && <BusinessCenterIcon fontSize="inherit" />}
                       {(t(item.type) === "Estudo" || t(item.type) === "Study") && <SchoolIcon fontSize="inherit" />}
                       {(t(item.type) === "Voluntariado" || t(item.type) === "Volunteering") && <HandshakeIcon fontSize="inherit" />}
                       {t(item.type)}

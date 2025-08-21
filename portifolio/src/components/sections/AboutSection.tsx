@@ -17,7 +17,7 @@ export const AboutSection: React.FC = () => {
             src={user.img}
             sx={{ width: 120, height: 120 }}
           />
-          <Typography variant="h3" component="h2" fontWeight={700} sx={{ color: "#fff" }}>
+          <Typography variant="h3" component="h2" fontWeight={700} sx={{ color: "#fff", fontSize: { xs: "30px", sm: "39px", md: '48px' } }}>
             {t("sobreSecao.titulo")}
           </Typography>
           <Typography variant="body1" color="text.secondary" sx={{ color: "#fff" }}>
