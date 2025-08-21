@@ -90,6 +90,7 @@ A seguir estão os Protótipos do portfólio que está em desenvolvimento, ilust
 | Seção de Habilidades e Estatísticas| <img src="./images/DarkMode/Habilidades.png" width="400"> |
 | Seção de Projetos                  | <img src="./images/DarkMode/Projetos.png" width="400"> |
 | Seção de Contato                   | <img src="./images/DarkMode/Contato.png" width="400"> |
+| Tela de Chatbot| <img src="./images/PaginaChatBot.png" width="400">|
 
 A seguir, segue o link do Figma, para melhor visualização: 
 
