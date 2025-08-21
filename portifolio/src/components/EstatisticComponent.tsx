@@ -40,7 +40,7 @@ type StatItemProps = {
   plus?: boolean;
   decimals?: number;
   duration?: number;
-  start?: boolean; 
+  start?: boolean;
 };
 
 const StatItem: React.FC<StatItemProps> = ({
@@ -57,7 +57,7 @@ const StatItem: React.FC<StatItemProps> = ({
   return (
     <Box sx={{ textAlign: 'center' }}>
       {icon && <Box sx={{ mb: 1 }}>{icon}</Box>}
-      <Typography variant="h4" sx={{ fontWeight: 700 }}>
+      <Typography variant="h4" sx={{ fontWeight: 700, fontSize: { xs: "24px", sm: "34px" } }}>
         {prefix}
         {start ? (
           <CountUpNumber value={value} duration={duration} decimals={decimals} />
@@ -77,7 +77,7 @@ const StatItem: React.FC<StatItemProps> = ({
 type StatsPanelProps = {
   title?: string;
   items: Array<StatItemProps>;
-  satisfaction?: number; 
+  satisfaction?: number;
   satisfactionLabel?: string;
 };
 
@@ -103,15 +103,15 @@ export const StatsPanel: React.FC<StatsPanelProps> = ({
   return (
     <Card
       ref={ref}
-  elevation={0}
-  sx={{
-    p: { xs: 2, sm: 3 },
-    borderRadius: 4,
-background: 'linear-gradient(135deg, #1a1a1a 0%, #2c2c2c 100%)',
-    border: "1px solid rgba(255, 255, 255, 0.4)",
-    boxShadow: "0 4px 12px rgba(25,118,210,0.25)",
-    color: "#fff",
-  }}
+      elevation={0}
+      sx={{
+        p: { xs: 2, sm: 3 },
+        borderRadius: 4,
+        background: 'linear-gradient(135deg, #1a1a1a 0%, #2c2c2c 100%)',
+        border: "1px solid rgba(255, 255, 255, 0.4)",
+        boxShadow: "0 4px 12px rgba(25,118,210,0.25)",
+        color: "#fff",
+      }}
     >
       <Box sx={{ display: 'flex', alignItems: 'center', gap: 1.5, mb: 2.5 }}>
         <Box
@@ -136,13 +136,13 @@ background: 'linear-gradient(135deg, #1a1a1a 0%, #2c2c2c 100%)',
         animate={inView ? 'show' : 'hidden'}
         variants={{ show: { transition: { staggerChildren: 0.12 } } }}
       >
-        <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 2.5 }}>
+        <Box sx={{ display: 'flex', flexWrap: 'wrap', justifyContent: "center", gap: 2.5 }}>
           {items.map((it, i) => (
             <Box
               key={i}
               sx={{
                 width: { xs: 'calc(50% - 10px)', sm: 'calc(25% - 15px)' },
-                minWidth: 140,
+                minWidth: { xs: 100, sm: 140 },
               }}
             >
               <motion.div

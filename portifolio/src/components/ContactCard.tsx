@@ -16,12 +16,12 @@ export const ContactCard: React.FC<ContactCardProps> = (props) => {
                 alignItems: "center",
                 backgroundColor: "white",
                 p: 2,
-                pr: 12,
+                pr: { xs: 2, md: 12 },
                 borderRadius: 3,
                 boxShadow: 2,
                 transition: "transform 0.2s ease, box-shadow 0.2s ease",
                 willChange: "transform",
-                mb: 2,
+                mb: { xs: 2, sm: 0, md: 2 },
                 cursor: "pointer",
                 "&:hover": {
                     transform: "translateY(-2px) scale(1.05)",
@@ -46,7 +46,7 @@ export const ContactCard: React.FC<ContactCardProps> = (props) => {
             <Box>
                 <Typography
                     variant="subtitle1"
-                    sx={{ fontWeight: "bold", color: "#1E1E1E" }}
+                    sx={{ fontWeight: "bold", fontSize: { xs: "15px", sm: "16px" }, color: "#1E1E1E" }}
                 >
                     {props.title}
                 </Typography>
@@ -58,6 +58,7 @@ export const ContactCard: React.FC<ContactCardProps> = (props) => {
                         sx={{
                             color: "#666666",
                             textDecoration: "none",
+                            fontSize: { xs: "14px", sm: "16px" },
                             "&:hover": {
                                 textDecoration: "underline",
                                 color: "#666666",
@@ -68,7 +69,7 @@ export const ContactCard: React.FC<ContactCardProps> = (props) => {
                     </Typography>
                 ) : (
                     <Typography variant="body2" sx={{
-                        color: "#666666", bgcolor: 'none', "&:hover": {
+                        color: "#666666", bgcolor: 'none', fontSize: { xs: "14px", sm: "16px" }, "&:hover": {
                             bgcolor: 'none',
                         },
                     }}>

@@ -11,7 +11,7 @@ export const ExperienceSection: React.FC = () => {
   return (
     <Box component="section" id="experience" sx={{
       background: "#2a2a2a"
-      , py: { xs: 8, md: 12 }
+      , py: { xs: 0, sm: 3, md: 12 }
     }}>
       <Container maxWidth="lg">
         <Title title={t("experienciaSecao.titulo")} subtitle={t("experienciaSecao.subtitulo")}></Title>
