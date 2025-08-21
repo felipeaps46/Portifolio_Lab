@@ -52,6 +52,10 @@ export const ContactSection: React.FC = () => {
 
       if (!response.ok) throw new Error("Erro ao enviar o email");
       setStatus("success");
+      setNome("");
+      setEmail("");
+      setTelefone("");
+      setMensagem("");
     } catch (err) {
       setStatus("error");
     }
