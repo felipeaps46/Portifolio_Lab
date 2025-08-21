@@ -32,21 +32,29 @@ Seu objetivo é disponibilizar exemplos práticos e organizados que evidenciem a
 PORTIFOLIO_LAB
 ├── backend
 │   ├── controller
+│   ├── data
+│   ├── media
 │   ├── model
 │   ├── repository
 │   ├── routes
 │   ├── service
 │   │   ├── __init__.py
 │   │   └── container.py
-│   └── main.py
+│   ├── main.py
+│   └── container.py
 ├── portfolio
 │   └── src
-│       ├── assets
-│       ├── components
-│       ├── data
-│       ├── pages
-│       ├── Types
+│       ├── api/
+│       ├── assets/
+│       ├── components/
+│       │   ├── sections/
+│       ├── data/
+│       ├── hooks/
+│       ├── locales/
+│       ├── pages/
+│       ├── Types/
 │       ├── App.tsx
+│       ├── i18n.ts
 │       ├── index.css
 │       ├── main.tsx
 │       └── vite-env.d.ts
