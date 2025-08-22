@@ -4,7 +4,6 @@ import { ContactSection } from "../components/sections/ContactSection"
 import Footer from "../components/Footer"
 import profileImg from "../assets/profile.jpeg";
 import { PersonalChat } from "../components/PersonalChat";
-import fundo from "../assets/fundo.png";
 
 export const Contato: React.FC = () => {
     return (

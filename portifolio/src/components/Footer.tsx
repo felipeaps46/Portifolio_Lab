@@ -69,7 +69,7 @@ export const Footer: React.FC<FooterProps> = ({
           justifyContent="space-between" // distribui espaçamentos iguais entre as colunas
         >
           {/* Coluna 1 */}
-          <Grid xs={12} md={5} sx={{ minWidth: 0 }}>
+          <Grid sx={{ minWidth: 0 }}>
             <Stack spacing={2}>
               <Typography variant="h4" component="h2" sx={{ fontWeight: 700 }}>
                 {user.name}
@@ -117,7 +117,7 @@ export const Footer: React.FC<FooterProps> = ({
           </Grid>
 
           {/* Coluna 2 */}
-          <Grid xs={6} md={2} sx={{ minWidth: 0 }}>
+          <Grid sx={{ minWidth: 0 }}>
             <Stack spacing={1.5}>
               <Typography variant="h6" component="h3" sx={{ fontWeight: 600 }}>
                 {t("footer.navegacao")}
@@ -142,7 +142,7 @@ export const Footer: React.FC<FooterProps> = ({
           </Grid>
 
           {/* Coluna 3 */}
-          <Grid xs={6} md={2} sx={{ minWidth: 0 }}>
+          <Grid sx={{ minWidth: 0 }}>
             <Stack spacing={1.5}>
               <Typography variant="h6" component="h3" sx={{ fontWeight: 600 }}>
                 {t("footer.conecte")}

@@ -1,8 +1,7 @@
 // src/components/sections/ExperienceSection.tsx
 import React from "react";
-import { Box, Container, Typography } from "@mui/material";
+import { Box, Container } from "@mui/material";
 import { ExperienceTimeline } from "../../components/Experience";
-import { StatsPanel } from "../../components/EstatisticComponent";
 import { Title } from "../Title";
 import { useTranslation } from "react-i18next";
 

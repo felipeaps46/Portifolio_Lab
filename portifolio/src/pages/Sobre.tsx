@@ -29,10 +29,7 @@ export const Sobre: React.FC = () => {
                     <Divider />
                     <EstatitcSection />
                 </Box>
-                <Footer
-                    name="Seu Nome"
-                    description="Breve bio/descrição sobre você, missão e foco profissional."
-                />
+                <Footer                />
                 <PersonalChat
                     avatarUrl={profileImg}
                     avatarAlt="Foto do meu perfil"

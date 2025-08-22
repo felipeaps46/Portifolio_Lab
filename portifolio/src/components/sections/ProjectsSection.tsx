@@ -86,7 +86,7 @@ export const ProjectsSection: React.FC = () => {
         ) : (
           <Grid container spacing={3} sx={{ justifyContent: "center" }}>
             {filteredProjects.map((p) => (
-              <Grid item xs={12} sm={6} md={4} key={p.id}>
+              <Grid key={p.id} columns={{ xs: 12, sm: 6, md: 4 }}>
                 <ProjectCard project={p} />
               </Grid>
             ))}
