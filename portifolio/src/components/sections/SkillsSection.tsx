@@ -1,6 +1,5 @@
 import React, { useMemo, useState } from "react";
 import { Box, Container, Button } from "@mui/material";
-import { useTheme } from "@mui/material/styles";
 import { TechSkills } from "../../components/TechSkills";
 import { skills } from "../../data/techData";
 import type { OrderedCategory, TechItem } from "../../Types/techItem";
