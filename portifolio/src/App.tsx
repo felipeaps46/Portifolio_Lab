@@ -10,7 +10,7 @@ function App() {
 
   const theme = createTheme({
     typography: {
-      fontFamily: "'Poppins', sans-serif",
+      fontFamily: "'Ubuntu',sans-serif",
     },
   });
 

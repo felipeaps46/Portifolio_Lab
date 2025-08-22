@@ -99,6 +99,7 @@ export const Home: React.FC = () => {
                       display: "flex",
                       justifyContent: "center",
                       alignItems: "center",
+                      lineHeight: 1,
                       gap: 1,
                       fontSize: { xs:"clamp(1.125rem, 5vw, 2rem)", md: "2rem" },
                       textShadow: `
@@ -115,10 +116,11 @@ export const Home: React.FC = () => {
                       sx={{
                         display: "inline-block",
                         whiteSpace: "nowrap",
-                        fontFamily: "Cascadia Code, sans-serif",
+                        fontFamily: "Cascadia Code, monospace",
                         fontWeight: 700,
-                        color: "#1976d2",
-                        borderRight: "2px solid #1976d2",
+                        lineHeight: 1,
+                        color: "#36BCF7FF",
+                        borderRight: "2px solid #36BCF7FF",
                         textShadow: `
       0 0 5px rgba(25,118,210, 0.7),
       0 0 10px rgba(25,118,210, 0.6),
@@ -146,6 +148,7 @@ export const Home: React.FC = () => {
                       display: "flex",
                       justifyContent: "center",
                       alignItems: "center",
+                      lineHeight: 1,
                       gap: 1,
                       fontSize: { xs:"clamp(1.125rem, 5vw, 2rem)", md: "2rem" },
                       textShadow: `
@@ -161,10 +164,11 @@ export const Home: React.FC = () => {
                       sx={{
                         display: "inline-block",
                         whiteSpace: "nowrap",
-                        fontFamily: "Cascadia Code, sans-serif",
+                        fontFamily: "Cascadia Code, monospace",
                         fontWeight: 700,
-                        color: "#1976d2",
-                        borderRight: "2px solid #1976d2",
+                        color: "#36BCF7FF",
+                        borderRight: "2px solid #36BCF7FF",
+                        lineHeight: 1,
                         textShadow: `
       0 0 5px rgba(25,118,210, 0.7),
       0 0 10px rgba(25,118,210, 0.6),
