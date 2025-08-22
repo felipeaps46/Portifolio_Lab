@@ -98,7 +98,6 @@ export const TechSkills: React.FC<TechSkillsProps> = ({
         return (
           <Grid
             key={item.name}
-            item
             sx={{
               flex: { xs: "1 1 25%",md: "1 1 15%" }, 
               maxWidth: { xs: "33%", md: "20%" }, 

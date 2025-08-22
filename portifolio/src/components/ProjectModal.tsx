@@ -28,15 +28,6 @@ const modalStyle = {
 
 export const ProjectModal: React.FC<ProjectModalType> = ({ open, handleClose, project }) => {
     const { t } = useTranslation()
-    const getTypeIcon = (type: ProjectType) => {
-        switch (type) {
-            case 'Sites': case "Websites": return <PublicIcon />;
-            case 'Landing Pages': return <WebAssetIcon />;
-            case 'Aplicativos': case "Apps": return <AppsIcon />;
-            case 'E-Commerce': return <ShoppingCartIcon />;
-            default: return <HelpOutlineIcon />;
-        }
-    };
 
     return (
         <Modal open={open} onClose={handleClose} aria-labelledby="modal-title">

@@ -22,9 +22,6 @@ export const PersonalChat: React.FC<PersonalChatProps> = ({
 }) => {
   const [openChat, setOpenChat] = React.useState(false);
   let badgeValue = 1
-  if (window.onload) {
-    let badgeValue = 1
-  }
 
   const handleToggleChat = () => {
     badgeValue = 0

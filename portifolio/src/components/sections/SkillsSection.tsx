@@ -41,7 +41,6 @@ function normalizeCategory(raw?: string): FilterType | undefined {
 
 export const SkillsSection: React.FC = () => {
   const { t } = useTranslation()
-  const theme = useTheme();
   const [filter, setFilter] = useState<FilterType>("habilidadesSecao.filtros.todos");
 
   const normalizedItems: TechItem[] = useMemo(() => {

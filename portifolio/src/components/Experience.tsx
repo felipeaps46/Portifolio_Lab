@@ -77,15 +77,6 @@ const TiltCard: React.FC<TiltCardProps> = ({
   const springRx = useSpring(rx, { stiffness: 200, damping: 20, mass: 0.5 });
   const springRy = useSpring(ry, { stiffness: 200, damping: 20, mass: 0.5 });
 
-  const shadow = useTransform([springRx, springRy], ([x, y]) => {
-    const ix = Math.min(1, Math.abs((x as number) / maxTilt));
-    const iy = Math.min(1, Math.abs((y as number) / maxTilt));
-    const intensity = Math.min(1, (ix + iy) / 2);
-    const spread = Math.round(12 + intensity * 14);
-    const opacity = 0.25 + intensity * 0.15;
-    return `0 8px ${spread}px rgba(33,150,243,${opacity.toFixed(2)})`;
-  });
-
   const handleMouseMove: React.MouseEventHandler<HTMLDivElement> = (e) => {
     if (isDisabled) return;
     const rect = (e.currentTarget as HTMLElement).getBoundingClientRect();
@@ -111,10 +102,6 @@ const TiltCard: React.FC<TiltCardProps> = ({
       <Box sx={sx}>{children}</Box>
     );
   }
-
-  const baseProps = entrance
-    ? { initial: { opacity: 0, scale: 0.98 }, animate: { opacity: 1, scale: 1 }, transition: { delay: initialDelay, duration: 0.6 } }
-    : {};
 
   return (
     <motion.div
