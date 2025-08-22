@@ -243,7 +243,7 @@ export const ContactSection: React.FC = () => {
               icon={<WhatsAppIcon sx={{ color: "white" }} />}
               title="WhatsApp"
               text={user.telefone}
-              link={user.links?.whatsapp}
+              link={`https://wa.me/${user.telefone}`}
             />
 
             <ContactCard
