@@ -42,7 +42,7 @@ export const ContactSection: React.FC = () => {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
-          recipient: "diogocaribebrunoro@gmail.com",
+          recipient: "guilhermearv3@gmail.com",
           subject: `Olá, sou ${nome} de email: ${email} com telefone: ${telefone}`,
           body: `${mensagem}`,
         }),
@@ -236,7 +236,7 @@ export const ContactSection: React.FC = () => {
               icon={<EmailOutlinedIcon sx={{ color: "white" }} />}
               title="Email"
               text={user.emailName}
-              link={user.links?.email}
+              link={`mailto:${user.links?.email}`}
             />
 
             <ContactCard
