@@ -19,6 +19,7 @@ export function startAnimation(canvas: HTMLCanvasElement) {
   });
 
   function animate() {
+    if (!ctx) return;
     ctx.clearRect(0, 0, width, height);
 
     stars.forEach((star) => {
