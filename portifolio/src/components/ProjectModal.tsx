@@ -4,12 +4,6 @@ import LanguageIcon from "@mui/icons-material/Language";
 import CalendarTodayIcon from "@mui/icons-material/CalendarToday";
 import GitHubIcon from '@mui/icons-material/GitHub';
 import type { ProjectModalType } from "../Types/ProjectModalType";
-import PublicIcon from '@mui/icons-material/Public';
-import AppsIcon from '@mui/icons-material/Apps';
-import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
-import WebAssetIcon from '@mui/icons-material/WebAsset';
-import HelpOutlineIcon from '@mui/icons-material/HelpOutline';
-import type { ProjectType } from "../Types/cardType";
 import { useTranslation } from "react-i18next";
 
 const modalStyle = {

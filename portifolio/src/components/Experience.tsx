@@ -21,7 +21,6 @@ import {
   type Variants,
   useMotionValue,
   useSpring,
-  useTransform,
   useInView
 } from 'framer-motion';
 
