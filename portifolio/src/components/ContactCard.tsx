@@ -28,6 +28,11 @@ export const ContactCard: React.FC<ContactCardProps> = (props) => {
                     boxShadow: 4,
                 },
             }}
+            onClick={() => {
+                if (props.link) {
+                    window.open(props.link, "_blank");
+                }
+            }}
         >
             <Box
                 sx={{
