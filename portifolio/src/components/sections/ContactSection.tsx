@@ -16,6 +16,7 @@ import { Title } from "../Title";
 import AnimatedCanvas from "../../assets/animatedBackground";
 import { ContactCard } from "../ContactCard";
 import { useTranslation } from "react-i18next";
+import { sendEmail } from "../../api/email.Api";
 
 export const ContactSection: React.FC = () => {
   const { t } = useTranslation();
@@ -38,15 +39,7 @@ export const ContactSection: React.FC = () => {
 
     setStatus("sending");
     try {
-      const response = await fetch("http://127.0.0.1:8000/email/send", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          recipient: "guilhermearv3@gmail.com",
-          subject: `Olá, sou ${nome} de email: ${email} com telefone: ${telefone}`,
-          body: `${mensagem}`,
-        }),
-      });
+      const response = await sendEmail(nome, email, telefone, mensagem);
 
       if (!response.ok) throw new Error("Erro ao enviar o email");
       setStatus("success");
@@ -141,6 +134,7 @@ export const ContactSection: React.FC = () => {
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               fullWidth
+              type="email"
               sx={{
                 "& label.Mui-focused": {
                   color: "#1E1E1E",

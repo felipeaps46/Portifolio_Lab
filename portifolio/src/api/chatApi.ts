@@ -1,6 +1,6 @@
 // src/api/chat.ts
-export const API_URL = "http://localhost:8000";
-//   process.env.NEXT_PUBLIC_API_URL?.replace(/\/+$/, "") || 
+
+import  API_URL from "./apiURL";
 
 export async function ask(
   question: string,

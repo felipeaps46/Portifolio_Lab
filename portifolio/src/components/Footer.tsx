@@ -47,7 +47,7 @@ export const Footer: React.FC<FooterProps> = ({
     {
       Icon: WhatsAppIcon,
       text: "WhatsApp",
-      href: `wa.me/${user.telefone}?text=Ol%C3%A1%2C%20tudo%20bem%3F%20Gostaria%20de%20saber%20mais%20sobre%20voc%C3%AA.`
+      href: `https://wa.me/${user.telefone}?text=Ol%C3%A1%2C%20tudo%20bem%3F%20Gostaria%20de%20saber%20mais%20sobre%20voc%C3%AA.`
     },
     { Icon: MailOutlineIcon, text: "Gmail", href: `mailto:${user.links?.email}` },
   ]
