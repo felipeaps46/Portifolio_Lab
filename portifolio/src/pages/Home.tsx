@@ -12,11 +12,10 @@ import AnimatedCanvas from "../assets/animatedBackground/index.tsx";
 import { HighLightsSection } from "../components/sections/HighLightsSection.tsx";
 import { useTranslation } from "react-i18next";
 
-// Se você colocou o hook em outro arquivo, importe:
-import { useTypewriter } from "../hooks/useTypewriter";
 import { userData } from "../data/userData.ts";
 import ServicesSection from "../components/sections/ServicesSection.tsx";
 import i18n from "../i18n.ts";
+import TypingAnimation from "../components/TypingAnimation.tsx";
 
 export const Home: React.FC = () => {
 
@@ -26,13 +25,13 @@ export const Home: React.FC = () => {
 
   const palavrasTraduzidas = user.caracteristicas.map((c) => t(c));
 
-  const { text } = useTypewriter(palavrasTraduzidas, {
-    typingSpeed: 90,
-    deletingSpeed: 50,
-    pauseTime: 1000,
-    startDelay: 300,
-    loop: true,
-  });
+  // const { text } = useTypewriter(palavrasTraduzidas, {
+  //   typingSpeed: 90,
+  //   deletingSpeed: 50,
+  //   pauseTime: 1000,
+  //   startDelay: 300,
+  //   loop: true,
+  // });
 
   return (
     <Box
@@ -101,7 +100,7 @@ export const Home: React.FC = () => {
                       alignItems: "center",
                       lineHeight: 1,
                       gap: 1,
-                      fontSize: { xs:"clamp(1.125rem, 5vw, 2rem)", md: "2rem" },
+                      fontSize: { xs: "clamp(1.125rem, 5vw, 2rem)", md: "2rem" },
                       textShadow: `
       0 0 4px rgba(245, 245, 245, 0.2),
       0 0 8px rgba(245, 245, 245, 0.15)
@@ -111,7 +110,7 @@ export const Home: React.FC = () => {
                     aria-atomic="true"
                   >
                     <Box component="span">{t("home.desenvolvedor")}</Box>
-                    <Box
+                    {/* <Box
                       component="span"
                       sx={{
                         display: "inline-block",
@@ -136,7 +135,9 @@ export const Home: React.FC = () => {
                       }}
                     >
                       {text}
-                    </Box>
+                    </Box> */}
+                    <TypingAnimation texts={palavrasTraduzidas}></TypingAnimation>
+
                   </Typography>
                 ) : (
                   <Typography
@@ -150,7 +151,7 @@ export const Home: React.FC = () => {
                       alignItems: "center",
                       lineHeight: 1,
                       gap: 1,
-                      fontSize: { xs:"clamp(1.125rem, 5vw, 2rem)", md: "2rem" },
+                      fontSize: { xs: "clamp(1.125rem, 5vw, 2rem)", md: "2rem" },
                       textShadow: `
       0 0 4px rgba(245, 245, 245, 0.2),
       0 0 8px rgba(245, 245, 245, 0.15)
@@ -159,7 +160,8 @@ export const Home: React.FC = () => {
                     aria-live="polite"
                     aria-atomic="true"
                   >
-                    <Box
+                    <TypingAnimation texts={palavrasTraduzidas}></TypingAnimation>
+                    {/* <Box
                       component="span"
                       sx={{
                         display: "inline-block",
@@ -184,7 +186,7 @@ export const Home: React.FC = () => {
                       }}
                     >
                       {text}
-                    </Box>
+                    </Box> */}
                     <Box component="span">{t("home.desenvolvedor")}</Box>
                   </Typography>
                 )}
