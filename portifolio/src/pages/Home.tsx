@@ -1,5 +1,5 @@
 // src/pages/Home.tsx
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Box, Container, Typography } from "@mui/material";
 import { Header } from "../components/Header";
 import { PersonalChat } from "../components/PersonalChat";
@@ -16,10 +16,19 @@ import { userData } from "../data/userData.ts";
 import ServicesSection from "../components/sections/ServicesSection.tsx";
 import i18n from "../i18n.ts";
 import TypingAnimation from "../components/TypingAnimation.tsx";
+import { Typewriter } from "react-simple-typewriter"
 
 export const Home: React.FC = () => {
 
   const { t } = useTranslation();
+
+  const [isMac, setIsMac] = useState(false)
+
+  useEffect(() => {
+    if (typeof navigator !== "undefined") {
+      setIsMac(/Macintosh|Mac OS/i.test(navigator.userAgent))
+    }
+  }, [])
 
   const user = userData
 
@@ -110,33 +119,34 @@ export const Home: React.FC = () => {
                     aria-atomic="true"
                   >
                     <Box component="span">{t("home.desenvolvedor")}</Box>
-                    {/* <Box
-                      component="span"
-                      sx={{
-                        display: "inline-block",
-                        whiteSpace: "nowrap",
-                        fontFamily: "Cascadia Code, monospace",
-                        fontWeight: 700,
-                        lineHeight: 1,
-                        color: "#36BCF7FF",
-                        borderRight: "2px solid #36BCF7FF",
-                        textShadow: `
-      0 0 5px rgba(25,118,210, 0.7),
-      0 0 10px rgba(25,118,210, 0.6),
-      0 0 20px rgba(25,118,210, 0.5),
-      0 0 40px rgba(25,118,210, 0.4)
-    `,
-                        animation: "blink 1.2s ease-in-out infinite",
-                        "@keyframes blink": {
-                          "0%": { borderColor: "rgba(25,118,210,0.8)" },
-                          "50%": { borderColor: "transparent" },
-                          "100%": { borderColor: "rgba(25,118,210,0.8)" },
-                        },
-                      }}
-                    >
-                      {text}
-                    </Box> */}
-                    <TypingAnimation texts={palavrasTraduzidas}></TypingAnimation>
+                    {isMac ? (
+                      <Box
+                        component="span"
+                        sx={{
+                          fontFamily: "Ubuntu, monospace",
+                          fontWeight: 700,
+                          color: "#36BCF7FF",
+                          textShadow: `
+        0 0 5px rgba(54, 188, 247, 0.7),
+        0 0 10px rgba(54, 188, 247, 0.6),
+        0 0 20px rgba(54, 188, 247, 0.5),
+        0 0 40px rgba(54, 188, 247, 0.4)
+      `,
+                        }}
+                      >
+                        <Typewriter
+                          words={palavrasTraduzidas}
+                          loop
+                          cursor
+                          cursorStyle="|"
+                          typeSpeed={70}
+                          deleteSpeed={50}
+                          delaySpeed={1500}
+                        />
+                      </Box>
+                    ) : (
+                      <TypingAnimation texts={palavrasTraduzidas} />
+                    )}
 
                   </Typography>
                 ) : (
@@ -160,33 +170,34 @@ export const Home: React.FC = () => {
                     aria-live="polite"
                     aria-atomic="true"
                   >
-                    <TypingAnimation texts={palavrasTraduzidas}></TypingAnimation>
-                    {/* <Box
-                      component="span"
-                      sx={{
-                        display: "inline-block",
-                        whiteSpace: "nowrap",
-                        fontFamily: "Cascadia Code, monospace",
-                        fontWeight: 700,
-                        color: "#36BCF7FF",
-                        borderRight: "2px solid #36BCF7FF",
-                        lineHeight: 1,
-                        textShadow: `
-      0 0 5px rgba(25,118,210, 0.7),
-      0 0 10px rgba(25,118,210, 0.6),
-      0 0 20px rgba(25,118,210, 0.5),
-      0 0 40px rgba(25,118,210, 0.4)
-    `,
-                        animation: "blink 1.2s ease-in-out infinite",
-                        "@keyframes blink": {
-                          "0%": { borderColor: "rgba(25,118,210,0.8)" },
-                          "50%": { borderColor: "transparent" },
-                          "100%": { borderColor: "rgba(25,118,210,0.8)" },
-                        },
-                      }}
-                    >
-                      {text}
-                    </Box> */}
+                    {isMac ? (
+                      <Box
+                        component="span"
+                        sx={{
+                          fontFamily: "Ubuntu, monospace",
+                          fontWeight: 700,
+                          color: "#36BCF7FF",
+                          textShadow: `
+        0 0 5px rgba(54, 188, 247, 0.7),
+        0 0 10px rgba(54, 188, 247, 0.6),
+        0 0 20px rgba(54, 188, 247, 0.5),
+        0 0 40px rgba(54, 188, 247, 0.4)
+      `,
+                        }}
+                      >
+                        <Typewriter
+                          words={palavrasTraduzidas}
+                          loop
+                          cursor
+                          cursorStyle="|"
+                          typeSpeed={70}
+                          deleteSpeed={50}
+                          delaySpeed={1500}
+                        />
+                      </Box>
+                    ) : (
+                      <TypingAnimation texts={palavrasTraduzidas} />
+                    )}
                     <Box component="span">{t("home.desenvolvedor")}</Box>
                   </Typography>
                 )}
