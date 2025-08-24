@@ -169,53 +169,45 @@
             "ecommerce": "E-Commerce",
             "others": "Others"
         },
-        "portfolioMinimal": {
-            "title": "Minimalist Portfolio",
-            "description": "Personal website with a minimalist theme, animated sections, and dark mode support."
+        "status":{
+            "inProgress": "In Progress",
+            "done": "Finished"
         },
-        "landingSaas": {
-            "title": "SaaS Campaign Landing",
-            "description": "Conversion-optimized landing page with CTA A/B testing and analytics."
+        "tradutorIA": {
+            "title": "Tradutor com IA",
+            "description": "Este projeto é uma aplicação web para tradução de textos entre diferentes idiomas. Feito em React, ele conta com uma interface moderna, responsiva e fácil de usar — funcionando perfeitamente em computadores, tablets e celulares."
         },
-        "habitsApp": {
-            "title": "Habits App",
-            "description": "Mobile app to track daily habits, notifications, and gamification."
+        "ReadmeCreator": {
+            "title": "Criador de Readme",
+            "description": "O ReadmeCreator é uma ferramenta com IA que ajuda a escrever READMEs consistentes, completos e profissionais para qualquer repositório. Conecta-se ao GitHub para importar informações do projeto e agilizar a publicação. Sugere seções úteis (visão geral, instalação, uso, roadmap, licença), otimiza a legibilidade e incentiva boas práticas de documentação. Ideal para acelerar a criação de READMEs padronizados em equipes ou portfólios pessoais."
         },
-        "streetwearShop": {
-            "title": "Streetwear Shop",
-            "description": "E-commerce with catalog, persistent cart, and Stripe checkout."
+        "Portifolio": {
+            "title": "Portifolio",
+            "description": "Este portfólio foi pensado para ser dinâmico e conversacional. Além de apresentar meus projetos, experiências e contato, ele traz um assistente de IA que ajuda visitantes a navegar e entender rapidamente o que faço: explica tecnologias usadas, sugere projetos relevantes e responde dúvidas frequentes. A proposta é transformar o portfólio em uma experiência guiada, com descobertas contextualizadas e interação natural."
         },
-        "metricsDashboard": {
-            "title": "Metrics Dashboard",
-            "description": "Dashboard with KPIs, dynamic filters, and data export."
+        "G-agro": {
+            "title": "G-AGRO",
+            "description": "O G-Agro é um sistema voltado a produtores e gestores do agronegócio, oferecendo uma visão unificada das operações no campo. Permite organizar propriedades e áreas de produção, acompanhar insumos e atividades (plantio, tratos, colheita), registrar custos e visualizar desempenho por safra. Com painéis sintéticos, facilita a identificação de gargalos, o controle de estoque e a análise de rentabilidade."
         },
-        "techConference": {
-            "title": "Tech Conference Landing",
-            "description": "Event landing page with agenda, speakers, and integrated registration."
+        "BasicoBemFeito": {
+            "title": "Básico Bem Feito",
+            "description": "O Básico Bem Feito nasce da ideia de que simplicidade e capricho elevam a experiência do usuário. É um site estático para academia, construído com atenção a layout responsivo, tipografia legível e acessibilidade. Inclui uma funcionalidade simples de criação de fichas de treino e seções essenciais como planos, horários e contato. Um projeto que prioriza boas práticas de front-end desde o início da jornada."
         },
-        "recipesApp": {
-            "title": "Offline Recipes App",
-            "description": "App with local storage, ingredient search, and favorites."
+        "Optima": {
+            "title": "Optima",
+            "description": "O Optima é um sistema de gestão empresarial que integra os principais processos de uma empresa em um só lugar. Abrange módulos de vendas, compras, estoque e financeiro, permitindo controle do fluxo de ponta a ponta — da entrada de pedidos ao acompanhamento de margens e lucros. Com painéis e relatórios personalizáveis, apoia decisões rápidas e embasadas, reduzindo retrabalho e aumentando a visibilidade operacional."
         },
-        "handmadeMarket": {
-            "title": "Handmade Marketplace",
-            "description": "Sales platform for artisans, seller panel, and split payments."
+         "Ecommerce": {
+            "title": "E-commerce",
+            "description": "E-commerce full-feature, com catálogo de produtos (categorias, filtros e busca), páginas de produto com variações, carrinho persistente e checkout seguro integrado a um gateway de pagamento. Inclui cálculo de frete, gestão básica de estoque, área do cliente (pedidos e dados), e painel administrativo para CRUD de produtos. Projetado com boas práticas de SEO, acessibilidade e monitoramento de eventos para otimização de conversão."
         },
-        "moviesCatalog": {
-            "title": "Movies Catalog",
-            "description": "Website to explore movies and series, with filters and responsive cards."
+        "Ajunta": {
+            "title": "Ajunta",
+            "description": "A Ajunta é uma rede social criada para valorizar e integrar a cena artística de Contagem. Artistas podem criar perfis, publicar trabalhos, se conectar com outros criadores e descobrir oportunidades locais. O objetivo é fortalecer o ecossistema cultural, facilitar parcerias e dar visibilidade a talentos por meio de portfólios, eventos e interações em comunidade."
         },
-        "cliBoilerplate": {
-            "title": "Boilerplate Generator CLI",
-            "description": "Command-line tool to generate project structures."
-        },
-        "tasksApi": {
-            "title": "Tasks API",
-            "description": "REST API to manage tasks with JWT authentication and automated tests."
-        },
-        "personalFinanceApp": {
-            "title": "Personal Finance App",
-            "description": "App for financial control with categories, goals, and charts."
+        "Voogle": {
+            "title": "Voogle",
+            "description": "A Ajunta é uma rede social criada para valorizar e integrar a cena artística de Contagem. Artistas podem criar perfis, publicar trabalhos, se conectar com outros criadores e descobrir oportunidades locais. O objetivo é fortalecer o ecossistema cultural, facilitar parcerias e dar visibilidade a talentos por meio de portfólios, eventos e interações em comunidade."
         }
     }
 }
