@@ -5,7 +5,9 @@ Este repositório apresenta um portfólio profissional com projetos desenvolvido
 Seu objetivo é disponibilizar exemplos práticos e organizados que evidenciem a aplicação de tecnologias modernas e boas práticas no desenvolvimento de soluções funcionais, facilitando o acesso de recrutadores e interessados aos trabalhos realizados.
 
 
-**🌐 Acesse aqui:** Link do portifólio será inserido aqui.
+**🌐 Acesse aqui:** 
+
+- [Guilherme](https://guilherme-vieira.vercel.app)
 
 ---
 
@@ -63,6 +65,12 @@ PORTIFOLIO_LAB
 ```
 ---
 
+## 🔒 Variáveis de Ambiente ( Adicione um .env na raiz do projeto ) : 
+
+- GEMINI_API_KEY= É necessário gerar sua própria chave de api do gemini em: " [AIStudio](https://aistudio.google.com/apikey)
+- email= Seu email, cujo possível contato, irá enviar a mensagem.
+- password= Essa password **NÃO** corresponde à senha do email, mas a senha de app. Entre nas configurações do email e busque por **Senha de App** ( É necessário ter autenticação de 2 fatores ativada) 
+
 ## 📸 Protótipos do Portfólio
 
 A seguir estão os Protótipos do portfólio que está em desenvolvimento, ilustrando a proposta visual e estrutural da interface antes da implementação final.
@@ -95,3 +103,6 @@ A seguir estão os Protótipos do portfólio que está em desenvolvimento, ilust
 A seguir, segue o link do Figma, para melhor visualização: 
 
 [Figma](https://www.figma.com/design/LqHm5tfo3egT98sxfLxkWz/Projeto-Portifolio?node-id=0-1&t=6dl58xE7lbwZyT1c-1)
+
+
+
