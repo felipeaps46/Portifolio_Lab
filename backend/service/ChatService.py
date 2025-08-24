@@ -4,6 +4,7 @@ from langchain import hub
 from langchain_core.runnables import RunnablePassthrough
 from langchain_core.output_parsers import StrOutputParser
 from langchain_community.document_loaders import PyPDFLoader 
+from langchain.prompts import PromptTemplate
 from langchain_chroma import Chroma
 from langchain_google_genai import ChatGoogleGenerativeAI, GoogleGenerativeAIEmbeddings
 from langchain.text_splitter import RecursiveCharacterTextSplitter
@@ -47,9 +48,13 @@ class ChatService(ChatRepository):
 
     def _get_prompt(self, prompt=None):
         if prompt is None:
-            prompt = hub.pull('rlm/rag-prompt')
-
-        return prompt
+            returned_prompt = hub.pull('rlm/rag-prompt')
+        else:
+            returned_prompt = PromptTemplate(
+            input_variables=["question", "context"],
+            template=prompt
+        )
+        return returned_prompt
     
     async def get_response(self, question, prompt=None):
 
