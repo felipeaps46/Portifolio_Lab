@@ -14,10 +14,13 @@ import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import WebAssetIcon from '@mui/icons-material/WebAsset';
 import HelpOutlineIcon from '@mui/icons-material/HelpOutline';
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
+import { TbClock } from 'react-icons/tb';
+import { Check } from '@mui/icons-material';
 
 import type { CardType, ProjectType } from '../Types/cardType';
 import { ProjectModal } from './ProjectModal';
 import { useTranslation } from 'react-i18next';
+import { Box } from '@mui/material';
 // Helper para ícone do tipo
 const getTypeIcon = (type: ProjectType) => {
   switch (type) {
@@ -29,6 +32,22 @@ const getTypeIcon = (type: ProjectType) => {
   }
 };
 
+const getStatusIcon = (status: string) => {
+  switch (status) {
+    case 'Em Andamento': case "In Progress": return <TbClock />;
+    case 'Finalizado': case "Finished": return <Check />;
+    default: return <HelpOutlineIcon />;
+  }
+};
+
+const getColor = (status: string) => {
+  switch (status) {
+    case 'Em Andamento': case "In Progress": return '#fb8c00';
+    case 'Finalizado': case "Finished": return '#4db6ac';
+    default: return 'default';
+  }
+}
+
 interface ProjectCardProps {
   project: CardType;
 }
@@ -38,7 +57,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
   const [open, setOpen] = useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
-
+  console.log(project)
   const maxLanguages = 3;
   const showLanguages = project.languages.slice(0, maxLanguages);
   const moreCount = project.languages.length - maxLanguages;
@@ -65,6 +84,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
           title={t(project.title)}
         />
         <CardContent sx={{ flexGrow: 1 }}>
+          <Box sx={{ display: 'flex', justifyContent: 'space-between' }}>
           <Chip
             icon={getTypeIcon(t(project.type))}
             label={t(project.type)}
@@ -75,6 +95,17 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
               '.MuiChip-icon': { color: 'white' }
             }}
           />
+          <Chip
+            icon={getStatusIcon(t(project.status))}
+            label={t(project.status)}
+            size="small"
+            sx={{
+              mb: 2, bgcolor: getColor(t(project.status)),
+              color: 'white', fontWeight: 'bold',
+              '.MuiChip-icon': { color: 'white' }
+            }}
+          />
+          </Box>
           <Typography gutterBottom variant="h5" fontWeight="bold">
             {t(project.title)}
           </Typography>
