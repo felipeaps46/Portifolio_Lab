@@ -3,7 +3,6 @@ import React, { useMemo, useState } from "react";
 import {
   Box,
   Container,
-  Typography,
   Grid,
 } from "@mui/material";
 import { ProjectCard } from "../../components/Card";
@@ -11,6 +10,7 @@ import { projects } from "../../data/projects";
 import { Button } from "@mui/material";
 import { Title } from "../Title";
 import { useTranslation } from "react-i18next";
+import ReportProblemIcon from '@mui/icons-material/ReportProblem';
 
 // Lista de filtros (inclui "Todos")
 const FILTERS = [
@@ -78,10 +78,11 @@ export const ProjectsSection: React.FC = () => {
         </Box>
 
         {filteredProjects.length === 0 ? (
-          <Box sx={{ textAlign: "center", py: 6 }}>
-            <Typography variant="body1" color="text.secondary">
-              Nenhum projeto encontrado para o filtro “{filter}”.
-            </Typography>
+          <Box sx={{ display: "flex", justifyContent: "center", textAlign: {xs: "center", md: "start"}, py: 6 }}>
+            <Box sx={{display: "flex", justifyContent: "center", alignItems: "center", textAlign: {xs: "center", md: "start"}, flexDirection: {xs: "column", sm: "row"}, gap: 1, px: {xs: 2, sm:4}, py: 2, color: "#f5f5f5", border: "2px solid #f5f5f5", bgcolor: "transparent", borderRadius: "8px", width: {xs: "80%", md: "80%", lg:"40%"}}}>
+              <ReportProblemIcon sx={{}}/>
+              Nenhum projeto encontrado para o filtro “{t(filter)}”.
+            </Box>
           </Box>
         ) : (
           <Grid container spacing={3} sx={{ justifyContent: "center" }}>

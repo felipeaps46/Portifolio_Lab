@@ -6,6 +6,7 @@ export interface CardType {
     description: string,
     languages: string[],
     type: ProjectType,
+    status: string,
     image?: string,
     video?: string,
     highlight?: boolean
