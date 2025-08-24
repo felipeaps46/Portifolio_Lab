@@ -1,5 +1,5 @@
 // src/pages/Home.tsx
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Box, Container, Typography } from "@mui/material";
 import { Header } from "../components/Header";
 import { PersonalChat } from "../components/PersonalChat";
@@ -12,27 +12,35 @@ import AnimatedCanvas from "../assets/animatedBackground/index.tsx";
 import { HighLightsSection } from "../components/sections/HighLightsSection.tsx";
 import { useTranslation } from "react-i18next";
 
-// Se você colocou o hook em outro arquivo, importe:
-import { useTypewriter } from "../hooks/useTypewriter";
 import { userData } from "../data/userData.ts";
 import ServicesSection from "../components/sections/ServicesSection.tsx";
 import i18n from "../i18n.ts";
+import TypingAnimation from "../components/TypingAnimation.tsx";
+import { Typewriter } from "react-simple-typewriter"
 
 export const Home: React.FC = () => {
 
   const { t } = useTranslation();
 
+  const [isMac, setIsMac] = useState(false)
+
+  useEffect(() => {
+    if (typeof navigator !== "undefined") {
+      setIsMac(/Macintosh|Mac OS/i.test(navigator.userAgent))
+    }
+  }, [])
+
   const user = userData
 
   const palavrasTraduzidas = user.caracteristicas.map((c) => t(c));
 
-  const { text } = useTypewriter(palavrasTraduzidas, {
-    typingSpeed: 90,
-    deletingSpeed: 50,
-    pauseTime: 1000,
-    startDelay: 300,
-    loop: true,
-  });
+  // const { text } = useTypewriter(palavrasTraduzidas, {
+  //   typingSpeed: 90,
+  //   deletingSpeed: 50,
+  //   pauseTime: 1000,
+  //   startDelay: 300,
+  //   loop: true,
+  // });
 
   return (
     <Box
@@ -101,7 +109,7 @@ export const Home: React.FC = () => {
                       alignItems: "center",
                       lineHeight: 1,
                       gap: 1,
-                      fontSize: { xs:"clamp(1.125rem, 5vw, 2rem)", md: "2rem" },
+                      fontSize: { xs: "clamp(1.125rem, 5vw, 2rem)", md: "2rem" },
                       textShadow: `
       0 0 4px rgba(245, 245, 245, 0.2),
       0 0 8px rgba(245, 245, 245, 0.15)
@@ -111,32 +119,35 @@ export const Home: React.FC = () => {
                     aria-atomic="true"
                   >
                     <Box component="span">{t("home.desenvolvedor")}</Box>
-                    <Box
-                      component="span"
-                      sx={{
-                        display: "inline-block",
-                        whiteSpace: "nowrap",
-                        fontFamily: "Cascadia Code, monospace",
-                        fontWeight: 700,
-                        lineHeight: 1,
-                        color: "#36BCF7FF",
-                        borderRight: "2px solid #36BCF7FF",
-                        textShadow: `
-      0 0 5px rgba(25,118,210, 0.7),
-      0 0 10px rgba(25,118,210, 0.6),
-      0 0 20px rgba(25,118,210, 0.5),
-      0 0 40px rgba(25,118,210, 0.4)
-    `,
-                        animation: "blink 1.2s ease-in-out infinite",
-                        "@keyframes blink": {
-                          "0%": { borderColor: "rgba(25,118,210,0.8)" },
-                          "50%": { borderColor: "transparent" },
-                          "100%": { borderColor: "rgba(25,118,210,0.8)" },
-                        },
-                      }}
-                    >
-                      {text}
-                    </Box>
+                    {isMac ? (
+                      <Box
+                        component="span"
+                        sx={{
+                          fontFamily: "Ubuntu, monospace",
+                          fontWeight: 700,
+                          color: "#36BCF7FF",
+                          textShadow: `
+        0 0 5px rgba(54, 188, 247, 0.7),
+        0 0 10px rgba(54, 188, 247, 0.6),
+        0 0 20px rgba(54, 188, 247, 0.5),
+        0 0 40px rgba(54, 188, 247, 0.4)
+      `,
+                        }}
+                      >
+                        <Typewriter
+                          words={palavrasTraduzidas}
+                          loop
+                          cursor
+                          cursorStyle="|"
+                          typeSpeed={70}
+                          deleteSpeed={50}
+                          delaySpeed={1500}
+                        />
+                      </Box>
+                    ) : (
+                      <TypingAnimation texts={palavrasTraduzidas} />
+                    )}
+
                   </Typography>
                 ) : (
                   <Typography
@@ -150,7 +161,7 @@ export const Home: React.FC = () => {
                       alignItems: "center",
                       lineHeight: 1,
                       gap: 1,
-                      fontSize: { xs:"clamp(1.125rem, 5vw, 2rem)", md: "2rem" },
+                      fontSize: { xs: "clamp(1.125rem, 5vw, 2rem)", md: "2rem" },
                       textShadow: `
       0 0 4px rgba(245, 245, 245, 0.2),
       0 0 8px rgba(245, 245, 245, 0.15)
@@ -159,32 +170,34 @@ export const Home: React.FC = () => {
                     aria-live="polite"
                     aria-atomic="true"
                   >
-                    <Box
-                      component="span"
-                      sx={{
-                        display: "inline-block",
-                        whiteSpace: "nowrap",
-                        fontFamily: "Cascadia Code, monospace",
-                        fontWeight: 700,
-                        color: "#36BCF7FF",
-                        borderRight: "2px solid #36BCF7FF",
-                        lineHeight: 1,
-                        textShadow: `
-      0 0 5px rgba(25,118,210, 0.7),
-      0 0 10px rgba(25,118,210, 0.6),
-      0 0 20px rgba(25,118,210, 0.5),
-      0 0 40px rgba(25,118,210, 0.4)
-    `,
-                        animation: "blink 1.2s ease-in-out infinite",
-                        "@keyframes blink": {
-                          "0%": { borderColor: "rgba(25,118,210,0.8)" },
-                          "50%": { borderColor: "transparent" },
-                          "100%": { borderColor: "rgba(25,118,210,0.8)" },
-                        },
-                      }}
-                    >
-                      {text}
-                    </Box>
+                    {isMac ? (
+                      <Box
+                        component="span"
+                        sx={{
+                          fontFamily: "Ubuntu, monospace",
+                          fontWeight: 700,
+                          color: "#36BCF7FF",
+                          textShadow: `
+        0 0 5px rgba(54, 188, 247, 0.7),
+        0 0 10px rgba(54, 188, 247, 0.6),
+        0 0 20px rgba(54, 188, 247, 0.5),
+        0 0 40px rgba(54, 188, 247, 0.4)
+      `,
+                        }}
+                      >
+                        <Typewriter
+                          words={palavrasTraduzidas}
+                          loop
+                          cursor
+                          cursorStyle="|"
+                          typeSpeed={70}
+                          deleteSpeed={50}
+                          delaySpeed={1500}
+                        />
+                      </Box>
+                    ) : (
+                      <TypingAnimation texts={palavrasTraduzidas} />
+                    )}
                     <Box component="span">{t("home.desenvolvedor")}</Box>
                   </Typography>
                 )}
