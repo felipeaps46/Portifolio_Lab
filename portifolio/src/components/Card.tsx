@@ -57,7 +57,6 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
   const [open, setOpen] = useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
-  console.log(project)
   const maxLanguages = 3;
   const showLanguages = project.languages.slice(0, maxLanguages);
   const moreCount = project.languages.length - maxLanguages;
