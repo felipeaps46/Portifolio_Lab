@@ -15,7 +15,6 @@ export async function ask(
     signal,
     body: JSON.stringify({ question, prompt }),
   });
-  console.log(res)
   if (!res.ok) {
     const errText = await res.text().catch(() => "");
     throw new Error(`HTTP ${res.status} ${res.statusText} ${errText ? "- " + errText : ""}`);
