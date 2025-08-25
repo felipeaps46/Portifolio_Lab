@@ -11,12 +11,19 @@ import ArrowCircleRightIcon from '@mui/icons-material/ArrowCircleRight';
 import AnimatedCanvas from "../assets/animatedBackground/index.tsx";
 import { HighLightsSection } from "../components/sections/HighLightsSection.tsx";
 import { useTranslation } from "react-i18next";
-
+import { health } from "../api/healthApi.ts";
 import { userData } from "../data/userData.ts";
 import ServicesSection from "../components/sections/ServicesSection.tsx";
 import i18n from "../i18n.ts";
 import TypingAnimation from "../components/TypingAnimation.tsx";
 import { Typewriter } from "react-simple-typewriter"
+
+function isFirstVisitThisSession() {
+  return !sessionStorage.getItem('visited_session');
+}
+function markVisitedSession() {
+  sessionStorage.setItem('visited_session', '1');
+}
 
 export const Home: React.FC = () => {
 
@@ -34,13 +41,12 @@ export const Home: React.FC = () => {
 
   const palavrasTraduzidas = user.caracteristicas.map((c) => t(c));
 
-  // const { text } = useTypewriter(palavrasTraduzidas, {
-  //   typingSpeed: 90,
-  //   deletingSpeed: 50,
-  //   pauseTime: 1000,
-  //   startDelay: 300,
-  //   loop: true,
-  // });
+  document.addEventListener('DOMContentLoaded', () => {
+    if (isFirstVisitThisSession()) {
+      health();
+    }
+    markVisitedSession();
+  });
 
   return (
     <Box
