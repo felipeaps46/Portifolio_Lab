@@ -16,7 +16,7 @@ import { userData } from "../data/userData.ts";
 import ServicesSection from "../components/sections/ServicesSection.tsx";
 import i18n from "../i18n.ts";
 import TypingAnimation from "../components/TypingAnimation.tsx";
-import { Typewriter } from "react-simple-typewriter"
+import { ReactTyped } from "react-typed";
 
 function isFirstVisitThisSession() {
   return !sessionStorage.getItem('visited_session');
@@ -140,14 +140,14 @@ export const Home: React.FC = () => {
       `,
                         }}
                       >
-                        <Typewriter
-                          words={palavrasTraduzidas}
-                          loop
-                          cursor
-                          cursorStyle="|"
+                        <ReactTyped
+                          strings={palavrasTraduzidas}
                           typeSpeed={70}
-                          deleteSpeed={50}
-                          delaySpeed={1500}
+                          backSpeed={50}
+                          backDelay={1500}
+                          loop
+                          showCursor
+                          cursorChar="|"
                         />
                       </Box>
                     ) : (
@@ -191,14 +191,14 @@ export const Home: React.FC = () => {
       `,
                         }}
                       >
-                        <Typewriter
-                          words={palavrasTraduzidas}
-                          loop
-                          cursor
-                          cursorStyle="|"
+                        <ReactTyped
+                          strings={palavrasTraduzidas}
                           typeSpeed={70}
-                          deleteSpeed={50}
-                          delaySpeed={1500}
+                          backSpeed={50}
+                          backDelay={1500}
+                          loop
+                          showCursor
+                          cursorChar="|"
                         />
                       </Box>
                     ) : (
