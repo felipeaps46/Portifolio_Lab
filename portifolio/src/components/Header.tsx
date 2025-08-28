@@ -3,7 +3,7 @@ import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
 import Box from "@mui/material/Box";
-import { TbCircleLetterGFilled } from "react-icons/tb"; //importacao do icone de letra
+import { TbCircleLetterFFilled } from "react-icons/tb"; //importacao do icone de letra
 import { useLocation } from "react-router-dom";
 import { userData } from "../data/userData";
 import LanguageSwitcher from "./LanguageSwitcher";
@@ -73,7 +73,7 @@ export const Header = () => {
               alignItems: "center",
             }}
           >
-            <TbCircleLetterGFilled />
+            <TbCircleLetterFFilled />
           </Box>
           <Typography
             variant="h5"

@@ -1,31 +1,36 @@
 import type { CardType } from "../Types/cardType";
-import testeVideo from '../assets/testeVideo.mp4'
+import bbfVideo from '../assets/bbf.mp4'
+import gagroVideo from '../assets/gagro.mp4'
+import optimaVideo from '../assets/optima.mp4'
+import voogleVideo from '../assets/voogle.mp4'
+import comingSoon from "../assets/comingSoon.png"
+import bbfImage from "../assets/bffImage.jpg"
+import gagroImage from "../assets/gagroImage.jpg"
+import optimaImage from "../assets/optimaImage.png"
 
 export const projects: CardType[] = [
   {
     id: "1",
-    title: "projects.tradutorIA.title",
-    description: "projects.tradutorIA.description",
-    languages: ["React", "TypeScript", "CSS3", "Langchain", "Gemini", "Python", "Fast API", "SQLite"],
-    type: "projects.types.others",
+    title: "projects.Voogle.title",
+    description: "projects.Voogle.description",
+    languages: ["React", "Tailwind", "TypeScript"],
+    type: "projects.types.landing",
     status: "projects.status.done",
-    image: "https://picsum.photos/seed/portfolio-minimal/800/600",
-    highlight: true,
+    image: "https://picsum.photos/seed/tech-conf-landing/800/600",
     date: '01/05/2023',
-    siteLink: '',
-    gitHubLink: 'https://github.com/GuilhermeVieira05/Tradutor_IA',
-    video: testeVideo
+    highlight: true,
+    video: voogleVideo,
   },
   {
     id: "2",
-    title: "projects.ReadmeCreator.title",
-    description: "projects.ReadmeCreator.description",
-    languages: ["React", "TypeScript", "Langchain", "Python", "Fast API", "SQLite", "Gemini"],
+    title: "projects.GestorX.title",
+    description: "projects.GestorX.description",
+    languages: ["React", "TypeScript", "NodeJs", "Prisma", "PostgreSQL", "Sass"],
     type: "projects.types.others",
     status: "projects.status.inProgress",
-    image: "https://picsum.photos/seed/landing-saas/800/600",
     highlight: true,
     date: '01/05/2023',
+    image: comingSoon
   },
   {
     id: "3",
@@ -35,7 +40,6 @@ export const projects: CardType[] = [
     type: "projects.types.sites",
     status: "projects.status.done",
     image: "https://picsum.photos/seed/habits-app/800/600",
-    highlight: true,
     date: '01/05/2023'
   },
   {
@@ -45,8 +49,9 @@ export const projects: CardType[] = [
     languages: ["React", "JavaScript", "Java", "SpringBoot", "PostgreSQL"],
     type: "projects.types.sites",
     status: "projects.status.done",
-    image: "https://picsum.photos/seed/streetwear-shop/800/600",
-    date: '01/05/2023'
+    image: gagroImage,
+    date: '01/05/2023',
+    video: gagroVideo
   },
   {
     id: "5",
@@ -55,8 +60,9 @@ export const projects: CardType[] = [
     languages: ["HTML5", "CSS3", "JavaScript"],
     type: "projects.types.sites",
     status: "projects.status.done",
-    image: "https://picsum.photos/seed/metrics-dashboard/800/600",
-    date: '01/05/2023'
+    image: bbfImage,
+    date: '01/05/2023',
+    video: bbfVideo
   },
   {
     id: "6",
@@ -65,37 +71,20 @@ export const projects: CardType[] = [
     languages: ["Next.Js", "SCSS", "TypeScript", "Node.js", "Express.js", "Prisma", "PostgreSQL"],
     type: "projects.types.sites",
     status: "projects.status.done",
-    image: "https://picsum.photos/seed/tech-conf-landing/800/600",
-    date: '01/05/2023'
+    image: optimaImage,
+    date: '01/05/2023',
+    video: optimaVideo
   },
   {
     id: "7",
-    title: "projects.Ecommerce.title",
-    description: "projects.Ecommerce.description",
-    languages: ["HTML5", "CSS3", "JavaScript", "GSAP"],
-    type: "projects.types.ecommerce",
-    status: "projects.status.inProgress",
-    image: "https://picsum.photos/seed/tech-conf-landing/800/600",
-    date: '01/05/2023'
-  },
-  {
-    id: "8",
     title: "projects.Ajunta.title",
     description: "projects.Ajunta.description",
     languages: ["Next.Js", "CSS3", "TypeScript", "GraphQL", "Golang", "PostgreSQL", "Redis", "Aws", "Docker"],
     type: "projects.types.sites",
-    status: "projects.status.done",
-    image: "https://picsum.photos/seed/tech-conf-landing/800/600",
-    date: '01/05/2023'
+    status: "projects.status.inProgress",
+    image: comingSoon,
+    date: '01/05/2023',
+    highlight: true
   },
-  {
-    id: "9",
-    title: "projects.Voogle.title",
-    description: "projects.Voogle.description",
-    languages: ["React", "Tailwind", "TypeScript"],
-    type: "projects.types.landing",
-    status: "projects.status.done",
-    image: "https://picsum.photos/seed/tech-conf-landing/800/600",
-    date: '01/05/2023'
-  }
+
 ];

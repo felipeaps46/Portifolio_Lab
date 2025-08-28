@@ -3,23 +3,23 @@ import profileImg from "../assets/profile.jpeg";
 import curriculo from "../assets/curriculo.pdf"
 
 export const userData: User = {
-    name: "Guilherme Vieira",
+    name: "Felipe Pereira",
     img: profileImg,
     desc: "user.desc",
-    emailName: 'guilhermearv@gmail.com',
-    linkedinName: 'guilherme-arvieira',
-    githubName: 'GuilhermeVieira05',
+    emailName: 'felipeaps0918@gmail.com',
+    linkedinName: 'felipe-sousa',
+    githubName: 'felipeaps46',
     links: {
-        github: "https://github.com/GuilhermeVieira05",
-        linkedin: "https://www.linkedin.com/in/guilherme-arvieira/",
-        email: "guilhermearv3@gmail.com"
+        github: "https://github.com/felipeaps46",
+        linkedin: "https://www.linkedin.com/in/felipe-sousa-974004210/",
+        email: "felipeaps0918@gmail.com"
     },
-    telefone: "+5531986991214",
+    telefone: "+5531971316645",
     curriculo,
     caracteristicas: [
         "user.fullstack",
         "user.backend",
-        "user.ai",
+        "user.frontend",
         "user.software"
     ]
 }

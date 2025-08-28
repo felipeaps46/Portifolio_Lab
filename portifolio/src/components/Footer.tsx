@@ -96,6 +96,7 @@ export const Footer: React.FC<FooterProps> = ({
                     key={idx}
                     aria-label={text}
                     component="a"
+                    target="_blank"
                     href={href}
                     rel="noopener noreferrer"
                     sx={{

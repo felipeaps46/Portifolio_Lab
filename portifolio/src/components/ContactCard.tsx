@@ -59,7 +59,6 @@ export const ContactCard: React.FC<ContactCardProps> = (props) => {
                 {props.link ? (
                     <Typography
                         component="a"
-                        href={props.link}
                         sx={{
                             color: "#666666",
                             textDecoration: "none",

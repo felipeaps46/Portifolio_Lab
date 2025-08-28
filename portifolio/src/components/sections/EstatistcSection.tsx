@@ -23,9 +23,9 @@ export const EstatitcSection: React.FC = () => {
         <StatsPanel
           title={t("estatisticasSecao.titulo").toUpperCase()}
           items={[
-            { label: t("estatisticasSecao.estatisticas.projetos"), value: 50, plus: true },
-            { label: t("estatisticasSecao.estatisticas.anos"), value: 3, plus: true },
-            { label: t("estatisticasSecao.estatisticas.clientes"), value: 25, plus: true },
+            { label: t("estatisticasSecao.estatisticas.projetos"), value: 10, plus: true },
+            { label: t("estatisticasSecao.estatisticas.anos"), value: 2, plus: true },
+            { label: t("estatisticasSecao.estatisticas.clientes"), value: 3, plus: true },
             { label: t("estatisticasSecao.estatisticas.dedicacao"), value: 100, suffix: "%", decimals: 0 },
           ]}
           satisfaction={98}

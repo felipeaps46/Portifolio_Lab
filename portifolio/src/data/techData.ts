@@ -79,14 +79,14 @@ export const skills: SkillItem[] = [
   },
 
   // Backend
-  {
-    name: "Python",
-    icon: SiPython,
-    color: "#3776AB",
-    bg: "#E3F2FD",
-    ariaLabel: "Python",
-    category: "Backend",
-  },
+  // {
+  //   name: "Python",
+  //   icon: SiPython,
+  //   color: "#3776AB",
+  //   bg: "#E3F2FD",
+  //   ariaLabel: "Python",
+  //   category: "Backend",
+  // },
   {
     name: "Golang",
     icon: FaGolang,
@@ -95,14 +95,14 @@ export const skills: SkillItem[] = [
     ariaLabel: "Golang",
     category: "Backend",
   },
-  {
-    name: "PHP",
-    icon: SiPhp,
-    color: "#777BB3",
-    bg: "#E3F2FD",
-    ariaLabel: "PHP",
-    category: "Backend",
-  },
+  // {
+  //   name: "PHP",
+  //   icon: SiPhp,
+  //   color: "#777BB3",
+  //   bg: "#E3F2FD",
+  //   ariaLabel: "PHP",
+  //   category: "Backend",
+  // },
   {
     name: "Java",
     icon: FaJava,
@@ -111,22 +111,22 @@ export const skills: SkillItem[] = [
     ariaLabel: "Java",
     category: "Backend",
   },
-  {
-    name: "Django",
-    icon: SiDjango,
-    color: "#092E20",
-    bg: "#E3F2FD",
-    ariaLabel: "Django",
-    category: "Backend",
-  },
-  {
-    name: "SpringBoot",
-    icon: SiSpringboot,
-    color: "#6DB33F",
-    bg: "#E3F2FD",
-    ariaLabel: "SpringBoot",
-    category: "Backend",
-  },
+  // {
+  //   name: "Django",
+  //   icon: SiDjango,
+  //   color: "#092E20",
+  //   bg: "#E3F2FD",
+  //   ariaLabel: "Django",
+  //   category: "Backend",
+  // },
+  // {
+  //   name: "SpringBoot",
+  //   icon: SiSpringboot,
+  //   color: "#6DB33F",
+  //   bg: "#E3F2FD",
+  //   ariaLabel: "SpringBoot",
+  //   category: "Backend",
+  // },
   {
     name: "Node.js",
     icon: SiNodedotjs,
@@ -161,22 +161,22 @@ export const skills: SkillItem[] = [
     ariaLabel: "PostgreSQL",
     category: "Database",
   },
-  {
-    name: "MongoDB",
-    icon: SiMongodb,
-    color: "#47A248",
-    bg: "#E8F5E9",
-    ariaLabel: "MongoDB",
-    category: "Database",
-  },
-  {
-    name: "ChromaDB",
-    icon: BiVector,
-    color: "#000000",
-    bg: gray200,
-    ariaLabel: "ChromaDB",
-    category: "Database",
-  },
+  // {
+  //   name: "MongoDB",
+  //   icon: SiMongodb,
+  //   color: "#47A248",
+  //   bg: "#E8F5E9",
+  //   ariaLabel: "MongoDB",
+  //   category: "Database",
+  // },
+  // {
+  //   name: "ChromaDB",
+  //   icon: BiVector,
+  //   color: "#000000",
+  //   bg: gray200,
+  //   ariaLabel: "ChromaDB",
+  //   category: "Database",
+  // },
 
   // Mobile
   {
@@ -197,14 +197,14 @@ export const skills: SkillItem[] = [
   },
 
   // DevOps
-  {
-    name: "Docker",
-    icon: SiDocker,
-    color: "#2496ED",
-    bg: "#E3F2FD",
-    ariaLabel: "Docker",
-    category: "DevOps",
-  },
+  // {
+  //   name: "Docker",
+  //   icon: SiDocker,
+  //   color: "#2496ED",
+  //   bg: "#E3F2FD",
+  //   ariaLabel: "Docker",
+  //   category: "DevOps",
+  // },
   {
     name: "Linux",
     icon: SiLinux,
@@ -222,14 +222,14 @@ export const skills: SkillItem[] = [
     category: "DevOps",
   },
   // Testing
-  {
-    name: "Jest",
-    icon: SiJest,
-    color: "#C21325",
-    bg: "#FFEBEE",
-    ariaLabel: "Jest",
-    category: "Testing",
-  },
+  // {
+  //   name: "Jest",
+  //   icon: SiJest,
+  //   color: "#C21325",
+  //   bg: "#FFEBEE",
+  //   ariaLabel: "Jest",
+  //   category: "Testing",
+  // },
   // Design
   {
     name: "Figma",
@@ -257,30 +257,30 @@ export const skills: SkillItem[] = [
     ariaLabel: "GitHub",
     category: "Tools",
   },
-  {
-    name: "Langchain",
-    icon: SiLangchain,
-    color: "#000000",
-    bg: gray200,
-    ariaLabel: "Langchain",
-    category: "Tools",
-  },
-  {
-    name: "OpenAI",
-    icon: SiOpenai,
-    color: "#000000",
-    bg: gray200,
-    ariaLabel: "OpenAI",
-    category: "Tools",
-  },
-  {
-    name: "Google Gemini",
-    icon: SiGooglegemini,
-    color: "#000000",
-    bg: gray200,
-    ariaLabel: "Gemini",
-    category: "Tools",
-  },
+  // {
+  //   name: "Langchain",
+  //   icon: SiLangchain,
+  //   color: "#000000",
+  //   bg: gray200,
+  //   ariaLabel: "Langchain",
+  //   category: "Tools",
+  // },
+  // {
+  //   name: "OpenAI",
+  //   icon: SiOpenai,
+  //   color: "#000000",
+  //   bg: gray200,
+  //   ariaLabel: "OpenAI",
+  //   category: "Tools",
+  // },
+  // {
+  //   name: "Google Gemini",
+  //   icon: SiGooglegemini,
+  //   color: "#000000",
+  //   bg: gray200,
+  //   ariaLabel: "Gemini",
+  //   category: "Tools",
+  // },
 
   // Build
   {
