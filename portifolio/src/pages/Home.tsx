@@ -1,5 +1,5 @@
 // src/pages/Home.tsx
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { Box, Container, Typography } from "@mui/material";
 import { Header } from "../components/Header";
 import { PersonalChat } from "../components/PersonalChat";
