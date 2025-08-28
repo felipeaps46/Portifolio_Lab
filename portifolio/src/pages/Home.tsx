@@ -15,7 +15,6 @@ import { health } from "../api/healthApi.ts";
 import { userData } from "../data/userData.ts";
 import ServicesSection from "../components/sections/ServicesSection.tsx";
 import i18n from "../i18n.ts";
-import TypingAnimation from "../components/TypingAnimation.tsx";
 import { ReactTyped } from "react-typed";
 
 function isFirstVisitThisSession() {
@@ -28,14 +27,6 @@ function markVisitedSession() {
 export const Home: React.FC = () => {
 
   const { t } = useTranslation();
-
-  const [isMac, setIsMac] = useState(false)
-
-  useEffect(() => {
-    if (typeof navigator !== "undefined") {
-      setIsMac(/Macintosh|Mac OS/i.test(navigator.userAgent))
-    }
-  }, [])
 
   const user = userData
 
@@ -125,7 +116,6 @@ export const Home: React.FC = () => {
                     aria-atomic="true"
                   >
                     <Box component="span">{t("home.desenvolvedor")}</Box>
-                    {isMac ? (
                       <Box
                         component="span"
                         sx={{
@@ -150,10 +140,6 @@ export const Home: React.FC = () => {
                           cursorChar="|"
                         />
                       </Box>
-                    ) : (
-                      <TypingAnimation texts={palavrasTraduzidas} />
-                    )}
-
                   </Typography>
                 ) : (
                   <Typography
@@ -176,7 +162,6 @@ export const Home: React.FC = () => {
                     aria-live="polite"
                     aria-atomic="true"
                   >
-                    {isMac ? (
                       <Box
                         component="span"
                         sx={{
@@ -201,9 +186,6 @@ export const Home: React.FC = () => {
                           cursorChar="|"
                         />
                       </Box>
-                    ) : (
-                      <TypingAnimation texts={palavrasTraduzidas} />
-                    )}
                     <Box component="span">{t("home.desenvolvedor")}</Box>
                   </Typography>
                 )}
