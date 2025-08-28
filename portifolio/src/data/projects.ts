@@ -4,9 +4,11 @@ import gagroVideo from '../assets/gagro.mp4'
 import optimaVideo from '../assets/optima.mp4'
 import voogleVideo from '../assets/voogle.mp4'
 import comingSoon from "../assets/comingSoon.png"
-import bbfImage from "../assets/bffImage.jpg"
-import gagroImage from "../assets/gagroImage.jpg"
+import bbfImage from "../assets/bbfImage.png"
+import gagroImage from "../assets/gagroImage.png"
 import optimaImage from "../assets/optimaImage.png"
+import portifolioImage from "../assets/portifolioImage.png"
+import voogleImage from "../assets/voogleImage.png"
 
 export const projects: CardType[] = [
   {
@@ -16,7 +18,7 @@ export const projects: CardType[] = [
     languages: ["React", "Tailwind", "TypeScript"],
     type: "projects.types.landing",
     status: "projects.status.done",
-    image: "https://picsum.photos/seed/tech-conf-landing/800/600",
+    image: voogleImage,
     date: '01/05/2023',
     highlight: true,
     video: voogleVideo,
@@ -39,7 +41,7 @@ export const projects: CardType[] = [
     languages: ["React", "TypeScript", "Langchain", "Gemini", "Python", "Fast API", "Material UI"],
     type: "projects.types.sites",
     status: "projects.status.done",
-    image: "https://picsum.photos/seed/habits-app/800/600",
+    image: portifolioImage,
     date: '01/05/2023'
   },
   {

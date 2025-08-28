@@ -167,28 +167,28 @@
             "description": "GestorX is a complete business management solution designed to centralize and optimize your company's internal processes. It brings together sales, purchasing, inventory, and financial modules in a single intuitive platform, ensuring full control over operations and results. With dynamic reports and customizable dashboards, it provides strategic support for faster decision-making, reduces operational costs, and increases business efficiency."
         },
         "Portifolio": {
-            "title": "Portifolio",
-            "description": "Este portfólio foi pensado para ser dinâmico e conversacional. Além de apresentar meus projetos, experiências e contato, ele traz um assistente de IA que ajuda visitantes a navegar e entender rapidamente o que faço: explica tecnologias usadas, sugere projetos relevantes e responde dúvidas frequentes. A proposta é transformar o portfólio em uma experiência guiada, com descobertas contextualizadas e interação natural."
+            "title": "Portfolio",
+            "description": "This portfolio was designed to be dynamic and conversational. In addition to showcasing my projects, experiences, and contact information, it features an AI assistant that helps visitors navigate and quickly understand what I do: explains technologies used, suggests relevant projects, and answers frequently asked questions. The goal is to transform the portfolio into a guided experience with contextual discoveries and natural interaction."
         },
         "G-agro": {
             "title": "G-AGRO",
-            "description": "O G-Agro é um sistema voltado a produtores e gestores do agronegócio, oferecendo uma visão unificada das operações no campo. Permite organizar propriedades e áreas de produção, acompanhar insumos e atividades (plantio, tratos, colheita), registrar custos e visualizar desempenho por safra. Com painéis sintéticos, facilita a identificação de gargalos, o controle de estoque e a análise de rentabilidade."
+            "description": "G-Agro is a system aimed at producers and agribusiness managers, offering a unified view of field operations. It allows organizing properties and production areas, tracking inputs and activities (planting, treatments, harvest), recording costs, and visualizing performance by crop. With concise dashboards, it facilitates bottleneck identification, inventory control, and profitability analysis."
         },
         "BasicoBemFeito": {
             "title": "Básico Bem Feito",
-            "description": "O Básico Bem Feito nasce da ideia de que simplicidade e capricho elevam a experiência do usuário. É um site estático para academia, construído com atenção a layout responsivo, tipografia legível e acessibilidade. Inclui uma funcionalidade simples de criação de fichas de treino e seções essenciais como planos, horários e contato. Um projeto que prioriza boas práticas de front-end desde o início da jornada."
+            "description": "Básico Bem Feito was born from the idea that simplicity and attention to detail enhance the user experience. It is a static website for a gym, built with focus on responsive layout, legible typography, and accessibility. It includes a simple functionality for creating workout plans and essential sections such as plans, schedules, and contact. A project that prioritizes front-end best practices from the very beginning."
         },
         "Optima": {
             "title": "Optima",
-            "description": "O Optima é um sistema de gestão empresarial que integra os principais processos de uma empresa em um só lugar. Abrange módulos de vendas, compras, estoque e financeiro, permitindo controle do fluxo de ponta a ponta — da entrada de pedidos ao acompanhamento de margens e lucros. Com painéis e relatórios personalizáveis, apoia decisões rápidas e embasadas, reduzindo retrabalho e aumentando a visibilidade operacional."
+            "description": "Optima is a business management system that integrates the main processes of a company in one place. It covers sales, purchasing, inventory, and financial modules, allowing end-to-end control—from order entry to margin and profit tracking. With customizable dashboards and reports, it supports quick and informed decision-making, reduces rework, and increases operational visibility."
         },
         "Ajunta": {
             "title": "Ajunta",
-            "description": "A Ajunta é uma rede social criada para valorizar e integrar a cena artística de Contagem. Artistas podem criar perfis, publicar trabalhos, se conectar com outros criadores e descobrir oportunidades locais. O objetivo é fortalecer o ecossistema cultural, facilitar parcerias e dar visibilidade a talentos por meio de portfólios, eventos e interações em comunidade."
+            "description": "Ajunta is a social network created to value and integrate the artistic scene of Contagem. Artists can create profiles, publish works, connect with other creators, and discover local opportunities. The goal is to strengthen the cultural ecosystem, facilitate collaborations, and give visibility to talents through portfolios, events, and community interactions."
         },
         "Voogle": {
             "title": "Voogle",
-            "description": "A Ajunta é uma rede social criada para valorizar e integrar a cena artística de Contagem. Artistas podem criar perfis, publicar trabalhos, se conectar com outros criadores e descobrir oportunidades locais. O objetivo é fortalecer o ecossistema cultural, facilitar parcerias e dar visibilidade a talentos por meio de portfólios, eventos e interações em comunidade."
+            "description": "Voogle is a landing page custom-built for a client, focused on lead capture. The project prioritized responsive design, intuitive user experience, and optimized performance, ensuring visitors were clearly guided to the desired actions."
         }
     }
 }
